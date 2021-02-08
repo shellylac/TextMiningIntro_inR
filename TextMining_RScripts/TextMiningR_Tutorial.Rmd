@@ -9,25 +9,73 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(here)
+library(readtext)
+library(quanteda)
 ```
 
-## Importing textual data
+## Importing text data: package(readtext)
 
-The readtext function from the package with the same name, detects automatically file formats of the given files list and extracts the content into a data.frame. The parameter docvarsfrom allows you to set metadata variables by splitting path names. In our example, docvar3 contains a source type variable derived from the sub folder name.
+The **readtext** function from the package with the same name, detects the file formats of a given files list and extracts the content into a data.frame. **readtext** supports .txt, .json, .csv, .tab, .tsv, .xml, .pdf, .doc, .docx, .odt, .rtf, files from URLs and archive file (.zip, .tar, .tar.gz, .tar.bz). It can read in multiple files at once and supports glob/wildcard expressions. The parameter *docvarsfrom* allows you to set metadata variables by splitting on file name or path names.
 
-```{r importing_text_data}
-library(readtext)
-data_files <- list.files(path = here('Working_Data/import_data_types'), full.names = T, recursive = T)
-# View first file paths
-head(data_files, 3)
+```{r importing_text_data, include=TRUE}
+#Docvars from file paths (file paths must be same length)
+extracted_texts<- readtext(here('Working_Data/import_data_types/*'), docvarsfrom = "filepaths", dvsep = "/")
+print(extracted_texts)
+print(extracted_texts[1], n = 12)
 
-extracted_texts <- readtext(data_files, docvarsfrom = "filepaths", dvsep = "/")
+#Docvars from file names (File names need to be standardised across list - same num/type separator)
+extracted_texts <- readtext(here('Working_Data/import_data_types/Mindy*'), docvarsfrom = "filenames", dvsep = "_", docvarnames = c("author", "place", "year"))
+print(extracted_texts, n=4)
 
-# View first rows of the extracted texts
-head(extracted_texts)
+#text stored in a pre-formatted file, one column contains text, other columns store document-level variables
+#dat_tsv <- readtext(path_to_data, "/tsv/example.tsv"), text_field = "speech")
 
-# View beginning of the second extracted text
-cat(substr(extracted_texts$text[5] , 0, 300))
+# View beginning of the first extracted text
+cat(substr(extracted_texts$text[1] , 0, 400))
+```
+
+```{r get_pdfs, include=T}
+#Load only pdfs from a folder
+RC_data <- readtext(here('Working_Data/import_data_types/*.pdf'), docvarsfrom = "filenames", dvsep = "_", docvarnames = c("author", "journal", "year"))
+RC_data
+str(RC_data)
+```
+
+### A note on encodings
+
+This is from the readtext package tutorial: "As encoding can also be a challenging issue for those reading in texts, we include functions for diagnosing encodings on a file-by-file basis, and allow you to specify vectorized input encodings to read in file types with individually set (and different) encodings. (All encoding functions are handled by the stringi package.)"
+
+## From data to corpus (corpora)
+
+```{r build_corpus, include=TRUE}
+
+RC_corpus<- corpus(RC_data)
+summary(RC_corpus)
+texts(RC_corpus)[2]
+
+tokeninfo <- summary(RC_corpus)
+if (require(ggplot2)) ggplot(data = tokeninfo, aes(x = journal, y = Tokens, group = 1)) + 
+    geom_line() + geom_point()  + theme_bw()
+
+tokeninfo[which.max(tokeninfo$Tokens), ]
+
+#Here show all sorts of things you can do with corpus
+#subset
+#concatenate
+#trim sentences - based on length or on pattern (do for the one subsetted)
+#change unit length to sentences/paragraphs/ or token(default)
+
+#The kwic function (keywords-in-context) performs a search for a word and allows us to view the contexts in which it occurs:
+#kwic(data_corpus_inaugural, pattern = "terror")
+#kwic(data_corpus_inaugural, pattern = phrase("United States")) %>% head()
+
+#Describe a bit how tokens are interpreted
+#txt <- c(text1 = "This is $10 in 999 different ways,\n up and down; left and #right!", 
+#    text2 = "@kenbenoit working: on #quanteda 2day\t4ever, http://textasdata.com#?page=123.")#
+#tokens(txt)
+
+#Get Jane Austen books
+#copy what is done in tidytext analyses
 
 ```
 
