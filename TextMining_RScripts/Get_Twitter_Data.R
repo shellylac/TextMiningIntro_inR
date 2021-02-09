@@ -32,11 +32,13 @@ twitter_token <- create_token(
   app = appname,
   consumer_key = key,
   consumer_secret = secret,
-  set_renv = TRUE)
+  access_token = access_token,
+  access_secret = access_secret)
 
 #search_tweets only gets tweets from past 6-9 days
-covid19_tweets_orig <- search_tweets2('covid19', n=1000, include_rts=FALSE, lang='en')
-write_as_csv(covid19_tweets_orig, here('Original_Data/covid19_tweets_08022021.csv'))
+covid19_tweets_orig <- search_tweets('covid19', n=1000, include_rts=FALSE, lang='en')
+(filename<-paste0(here('Original_Data//'), 'covid19_tweets_', Sys.Date(), '.csv'))
+write_as_csv(covid19_tweets_orig, filename)
 
 covid19_tweets_basecolumns<-read.table(here('Original_Data/covid19_tweets_08022021.csv'), header = T, sep=',' ) %>% 
   as_tibble() %>% 
