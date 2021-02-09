@@ -8,8 +8,8 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(include = TRUE)
-library(tidyverse)
 library(data.table)
+library(tidyverse)
 library(here)
 library(readtext)
 library(quanteda)
@@ -18,7 +18,9 @@ library(lubridate)
 
 ## Importing text data: package(readtext)
 
-The **readtext** function from the package with the same name, detects the file formats of a given list of files and extracts the content into a data.frame. **readtext** supports .txt, .json, .csv, .tab, .tsv, .xml, .pdf, .doc, .docx, .odt, .rtf, files from URLs and archive file (.zip, .tar, .tar.gz, .tar.bz). It can read in multiple files at once and supports glob/wildcard expressions. The parameter *docvarsfrom* allows you to set metadata variables by splitting on file name or path names.
+The **readtext** function from the package with the same name, detects the file formats of a given list of files and extracts the content into a data.frame. **readtext** supports .txt, .json, .csv, .tab, .tsv, .xml, .pdf, .doc, .docx, .odt, .rtf, files from URLs and archive file (.zip, .tar, .tar.gz, .tar.bz). It can read in multiple files at once and supports glob/wildcard expressions.
+
+The parameter *docvarsfrom* allows you to set metadata variables by splitting on file name or path names.
 
 ```{r importing_text_data, include=TRUE}
 #Import text data files
@@ -33,10 +35,8 @@ print(extracted_texts, n=4)
 
 # View beginning of the first extracted text
 cat(substr(extracted_texts$text[1] , 0, 400))
-```
 
-```{r get_pdfs, include=T}
-#Load only pdfs from a folder
+#Get pdfs
 RC_data <- readtext(here('Working_Data/import_data_types/*.pdf'), docvarsfrom = "filenames", dvsep = "_", docvarnames = c("author", "journal", "year"))
 RC_data
 str(RC_data)
@@ -46,34 +46,37 @@ str(RC_data)
 
 This is from the readtext package tutorial: "As encoding can also be a challenging issue for those reading in texts, we include functions for diagnosing encodings on a file-by-file basis, and allow you to specify vectorized input encodings to read in file types with individually set (and different) encodings. (All encoding functions are handled by the stringi package.)"
 
-## From data to corpus (corpora)
+## From data to corpus/corpora
 
-Here we will use a data set of \~XXXX tweets with the subject "covid19" (obtained using the rtweet package from the 8th - 15th Feb) to understand concepts in text analysis and perform a sentiment analysis on the content of the tweets
+Here we will use a data set of \~XXXX tweets with the subject "covid19" (obtained using the rtweet package from the 8th - 15th Feb) to understand concepts in text analysis, do some basic text exploration, run some simple statistics and perform a sentiment analysis on the content of the tweets
 
 ```{r build_corpus_tweets, include=TRUE}
 
 #Load the data
 covid_data<-readtext(here('Working_Data/covid19_tweets.tsv'), text_field = "text")
+covid_data<-read_tsv(here('Working_Data/covid19_tweets.tsv'))
 
 #Clean the dataset
 covid_data_clean <- covid_data %>% 
-  #Remove hashtags
-  mutate(text_clean = str_replace_all(text, '#', '')) %>% 
   #Remove @mentions
-  mutate(text_clean = str_replace_all(text_clean, '@\\S+', '')) %>%
+  mutate(text_clean = str_replace_all(text, '@\\S+', '')) %>%
+  mutate(text_clean = str_replace_all(text_clean, 'amp', '')) %>%
+  #Remove hashtags
+  #mutate(text_clean = str_replace_all(text_clean, '#', '')) %>% 
   #Remove URLs
   mutate(text_clean = str_replace_all(text_clean, 'http\\S+', '')) %>%  
-  #trim literal new line indicators
+  #trim literal new line indicators and retweet indicators
   mutate(text_clean = str_replace_all(text_clean, '\\n', '')) %>%
+  mutate(text_clean = str_replace_all(text_clean, '\\r', '')) %>%
   #set all words to lower case
-  mutate(text_clean = tolower(text_clean)) %>% 
+  #mutate(text_clean = tolower(text_clean)) %>% 
   #trim leading/tailing whitespace
   mutate(text_clean = trimws(text_clean, which = 'both')) %>%     
   #Format date to ymd
   mutate(tweet_date = as.Date(lubridate::ymd_hms(created_at))) %>% 
   #Add day of week variable
   mutate(week_day = lubridate::wday(ymd_hms(created_at), label = T)) %>%
-  select (-text, -created_at)
+  select (-text, -created_at, -location)
 
 #Create your corpus
 covid_corpus<-corpus(covid_data_clean, text_field = 'text_clean')
@@ -83,6 +86,10 @@ head(docvars(covid_corpus))
 texts(covid_corpus)[2]
 summary(covid_corpus)
 
+corp_summary <- summary(covid_corpus)
+ggplot(data = corp_summary, aes(x = log(followers_count), y = Tokens, group = 1)) + geom_line() + geom_point()  + theme_bw()
+
+corp_summary[which.max(corp_summary$Tokens), ]
 ```
 
 The corpus can be manipulated in a variety of ways (somewhat analogous to a data frame). You can subset, concatenate, trim components from the text body, and change the unit of texts between documents, paragraphs and sentences. You can extract segments of texts and tags from documents (useful when you analyze sections of documents or transcripts separately). You can also perform a keywords-in-context search (kwic function).
@@ -91,14 +98,14 @@ The corpus can be manipulated in a variety of ways (somewhat analogous to a data
 #Corpus manipulations
 #Subset a corpus
 corp_monday <- corpus_subset(covid_corpus, week_day == 'Mon')
-ndoc(corp_sunday)
+ndoc(corp_monday)
 
 #concatenate two corpus
 corp_tuesday <- corpus_subset(covid_corpus, week_day == 'Tues')
 new_corp <- corpus(corp_tuesday + corp_monday)
 ndoc(new_corp)
 
-#change unit length to sentences/paragraphs/ or token(default)
+#change unit length to sentences/paragraphs/ or document (default)
 corp_sentences <- corpus_reshape(corp_monday, to = "sentences")
 ndoc(corp_sentences)
 
@@ -107,61 +114,102 @@ head(kwic(covid_corpus, pattern = 'vaccination'))
 head(kwic(covid_corpus, pattern = phrase("conspiracy theories")))
 texts(covid_corpus)[345]
 texts(covid_corpus)[898]
+
 ```
 
-## Tokenisation and simple lexical analysis 
+## Tokenisation
+
+`tokens()` segments texts in a corpus into tokens (words or sentences) by word boundaries.
+A corpus is passed to `tokens()` in the code above, but it works with a character string too.
+By default, `tokens()` only removes separators (typically whitespaces), but you can set other separators, and you can remove punctuation and numbers.
+
+You can remove tokens that you are not interested in using `tokens_select()`. Usually we remove function words (grammatical words) that have little or no substantive meaning in pre-processing. `stopwords()` returns a pre-defined list of function words.
 
 ```{r get_tokens}
 #Get Tokens
-tokeninfo <- summary(covid_corpus)
-if (require(ggplot2)) ggplot(data = tokeninfo, aes(x = location, y = Tokens, group = 1)) + 
-    geom_line() + geom_point()  + theme_bw()
-
-tokeninfo[which.max(tokeninfo$Tokens), ]
-
-
-
 
 #Describe a bit how tokens are interpreted
-#txt <- c(text1 = "This is $10 in 999 different ways,\n up and down; left and #right!", 
-#    text2 = "@kenbenoit working: on #quanteda 2day\t4ever, http://textasdata.com#?page=123.")#
-#tokens(txt)
+txt <- c(text1 = 'This is $10 in 999 different ways,\n up and down; left and #right!', 
+         text2 = '@shellstar working: @ something on #Rtexttutorial 2day\t4ever!')#
+tokens(txt)
+tokens(txt, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
 
+#----------------------------------------
+#Get tokens from covid_tweets data
+#----------------------------------------
+#Remove punctuation, symbols, numbers
+(covid_toks<-tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T))
+
+#Remove stopwords
+head(covid_toks_nostop <- tokens_remove(covid_toks, pattern = stopwords("en")))
+
+#Select only interesting words
+head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", "immunis*")))
 ```
 
-## sentiment analysis of twitter data
+To preserve [multiword expressions]{.ul} in a bag-of-word analysis, you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`. You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is useful if you want to create negative bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then select them from your corpus : `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
+
+## From tokens to dfm (document feature matrix, aka document term matrix)
+
+`dfm()` constructs a document-feature matrix (DFM) from a tokens object or a corpus object (in which case the tokenisation occurs internally). `topfeatures()` will list the features (terms/tokens) in descending order. `textstat_frequency()` shows both term and document frequencies. You can also use the function to find the most frequent features within groups.
+
+```{r get_dfm}
+covid_toks <- tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
+my_stopwords<-c('covid', 'covid19', 'covid-19', 'coronavirus', '#covid', '#covid19', '#covid-19', '#coronavirus', 'u')
+dfmat_covidtweets <- dfm(covid_toks, tolower = TRUE, stem = FALSE, remove = c(stopwords(), my_stopwords))
+dfmat_covidtweets
+  ndoc(dfmat_covidtweets)
+  nfeat(dfmat_covidtweets)
+  head(docnames(dfmat_covidtweets))
+  head(featnames(dfmat_covidtweets))
+  head(rowSums(dfmat_covidtweets), 10)
+  head(colSums(dfmat_covidtweets), 10)
+
+topfeatures(dfmat_covidtweets, 10)
+
+tstat_freq <- textstat_frequency(dfmat_covidtweets, n = 5)
+head(tstat_freq, 20)
+
+dfmat_covidtweets %>% 
+  textstat_frequency(n = 15) %>% 
+  ggplot(aes(x = reorder(feature, frequency), y = frequency)) +
+  geom_point() +
+  coord_flip() +
+  labs(x = NULL, y = "Frequency") +
+  theme_minimal()
+
+#Let's take a look at a word cloud
+set.seed(132)
+textplot_wordcloud(dfmat_covidtweets, max_words = 100)
+
+
+##SHOULD WE STEM TERMS? - we have 'vaccine' and 'vaccines' as top terms
+dfmat_covidtweets_stem <- dfm(covid_toks, tolower = TRUE, stem = TRUE, remove = c(stopwords(), my_stopwords))
+tstat_freq_stem <- textstat_frequency(dfmat_covidtweets, n = 5)
+head(tstat_freq_stem, 20)
+
+
+
+#Let's subset the dfm to look at popular hastags
+dfmat_hashtags <- dfm_select(dfmat_covidtweets, pattern = '#*')
+tstat_freq_hashtags <- textstat_frequency(dfmat_hashtags, n = 5)
+head(tstat_freq_hashtags, 20)
+textplot_wordcloud(dfmat_hashtags, max_words = 100)
+```
+
+As with `tokens()`, you can select features from a DFM using `dfm_select()`. You can also select features based on the length of features (e.g. keep features consisting of at least five characters: `dfm_keep(dfmat_inaug, min_nchar = 5)`). While `dfm_select()` selects features based on patterns, `dfm_trim()` does this based on feature frequencies. If `min_termfreq = 10`, features that occur less than 10 times in the corpus are removed.
+
+
+
+If you want to convert the frequency count to a proportion within documents, use `dfm_weight(scheme = "prop")`
+
+## Simple lexical analysis of the tweets
 
 ```{r tweet_analysis_1, echo=FALSE}
-#Load the data
-covid_data<-readtext(here('Working_Data/covid19_tweets.tsv'), text_field = "text")
 
-#Clean the dataset
-covid_data_clean <- covid_data %>% 
-  #Remove hashtags
-  mutate(text_clean = str_replace_all(text, '#', '')) %>% 
-  #Remove @mentions
-  mutate(text_clean = str_replace_all(text_clean, '@\\S+', '')) %>%
-  #Remove URLs
-  mutate(text_clean = str_replace_all(text_clean, 'http\\S+', '')) %>%
-  #set all words to lower case
-  mutate(text_clean = tolower(text_clean)) %>% 
-  #trim leading/tailing whitespace
-  mutate(text_clean = trimws(text_clean, which = 'both')) %>%     
-  #Format date to ymd
-  mutate(tweet_date = as.Date(lubridate::ymd_hms(created_at))) %>% 
-  #Add day of week variable
-  mutate(week_day = lubridate::wday(ymd_hms(created_at), label = T)) %>% 
-  select (-text, -created_at)
-
-#Create your corpus
-covid_corpus<-corpus(covid_data_clean, text_field = 'text_clean')
-head(docvars(covid_corpus))
-
-#Text Pre-processing
-#remove punctuation
-#remove numbers
-#remove stopwords
 
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## sentiment analysis of twitter data
