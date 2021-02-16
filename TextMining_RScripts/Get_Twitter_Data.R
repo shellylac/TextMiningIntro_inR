@@ -40,11 +40,15 @@ covid19_tweets_orig <- search_tweets('covid19', n=1000, include_rts=FALSE, lang=
 (filename<-paste0(here('Original_Data//'), 'covid19_tweets_', Sys.Date(), '.csv'))
 write_as_csv(covid19_tweets_orig, filename)
 
-covid19_tweets_basecolumns<-read.table(here('Original_Data/covid19_tweets_08022021.csv'), header = T, sep=',' ) %>% 
-  as_tibble() %>% 
+
+#Combine all the twitter data from different days
+data.files<-list.files(here('Original_Data/'), '.csv', full.names = T)
+twitter_data_full<-bind_rows(lapply(data.files, read_csv))
+
+#De-duplicate and prepare twitter data
+twitter_data_working<-twitter_data_full %>% as_tibble() %>% 
+  distinct() %>% 
   select(screen_name, created_at, text, location, followers_count)
 
-fwrite(covid19_tweets_basecolumns, here('Working_Data/covid19_tweets.tsv'), sep = '\t')
-
-
+fwrite(twitter_data_working, here('Working_Data/covid19_tweets.tsv'), sep = '\t')
 
