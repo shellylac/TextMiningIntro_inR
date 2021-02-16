@@ -8,7 +8,7 @@ output:
     fig_height: 8
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(include = TRUE)
 library(data.table)
@@ -25,7 +25,7 @@ The **readtext** function from the package with the same name, detects the file 
 
 The parameter *docvarsfrom* allows you to set metadata variables by splitting on file name or path names.
 
-```{r importing_text_data, include=TRUE}
+```{r importing_text_data, include=TRUE, warning=FALSE, message=FALSE}
 #Import text data files
 #..with docvars taken from file paths (file paths must be same length)
 extracted_texts<- readtext(here('Working_Data/import_data_types/*'), docvarsfrom = "filepaths", dvsep = "/")
@@ -51,7 +51,7 @@ This is from the readtext package tutorial: "As encoding can also be a challengi
 
 ## From data to corpus/corpora
 
-Here we will use a data set of \~XXXX tweets with the subject "covid19" (obtained using the rtweet package from the 8th - 15th Feb) to understand concepts in text analysis, do some basic text exploration, run some simple statistics and perform a sentiment analysis on the content of the tweets
+Here we will use a data set of \~7,000 tweets with the subject "covid19" (obtained using the rtweet package from the 8th - 15th Feb) to understand concepts in text analysis, do some basic text exploration, run some simple statistics and perform a sentiment analysis on the content of the tweets
 
 ```{r load_tweet_data, message = FALSE}
 
@@ -91,12 +91,12 @@ head(docvars(covid_corpus))
 #Inspecting the corpus
 texts(covid_corpus)[2]
 covid_data$text[2]
-head(summary(covid_corpus))
+summary(covid_corpus, n = 50)
 
+#Can save and plot from this (but only summary of first 50 texts)
 corp_summary <- summary(covid_corpus)
 ggplot(data = corp_summary, aes(x = log(followers_count), y = Tokens, group = 1)) + geom_line() + geom_point()  + theme_bw()
 
-corp_summary[which.max(corp_summary$Tokens), ]
 ```
 
 The corpus can be manipulated in a variety of ways (somewhat analogous to a data frame). You can subset, concatenate, trim components from the text body, and change the unit of texts between documents, paragraphs and sentences. You can extract segments of texts and tags from documents (useful when you analyze sections of documents or transcripts separately). You can also perform a keywords-in-context search (kwic function).
@@ -108,7 +108,8 @@ corp_monday <- corpus_subset(covid_corpus, week_day == 'Mon')
 ndoc(corp_monday)
 
 #concatenate two corpus
-corp_tuesday <- corpus_subset(covid_corpus, week_day == 'Tues')
+corp_tuesday <- corpus_subset(covid_corpus, week_day == 'Tue')
+ndoc(corp_tuesday)
 new_corp <- corpus(corp_tuesday + corp_monday)
 ndoc(new_corp)
 
@@ -119,7 +120,7 @@ ndoc(corp_sentences)
 #The kwic function (keywords-in-context) performs a search for a word and allows us to view the contexts in which it occurs:
 head(kwic(covid_corpus, pattern = 'vaccin*'))
 head(kwic(covid_corpus, pattern = phrase("conspiracy theories")))
-texts(covid_corpus)[345]
+texts(covid_corpus)[3138]
 
 ```
 
@@ -212,17 +213,16 @@ ggplot(data = tstat_freq_gpd, aes(x = factor(nrow(tstat_freq_gpd):1), y = freque
 #Let's take a look at a word cloud
 set.seed(132)
 textplot_wordcloud(dfmat_covidtweets, max_words = 100)
-textplot_wordcloud(dfmat_covidtweets_gpd, comparison = TRUE, max_words = 100)
+textplot_wordcloud(dfmat_covidtweets_gpd, comparison = TRUE, max_words = 100, color = c("blue", "red"))
 
-##SHOULD WE STEM TERMS? - we have 'vaccine' and 'vaccines' as top terms
+##SHOULD WE STEM TERMS? - we have 'vaccine' and 'vaccines' and vaccination as top terms
 (dfmat_covidtweets_stem <- dfm(covid_toks, tolower = TRUE, stem = TRUE, remove = c(stopwords(), my_stopwords)))
 tstat_freq_stem <- textstat_frequency(dfmat_covidtweets_stem, n = 30)
 head(tstat_freq_stem, 20)
+textplot_wordcloud(dfmat_covidtweets_stem, max_words = 100)
 
 #Let's subset the dfm to look at popular hastags
-dfmat_hashtags <- dfm_select(dfmat_covidtweets, pattern = '#*')
-tstat_freq_hashtags <- textstat_frequency(dfmat_hashtags, n = 5)
-head(tstat_freq_hashtags, 20)
+dfmat_hashtags <- dfm_select(dfmat_covidtweets, pattern = '#*') 
 textplot_wordcloud(dfmat_hashtags, max_words = 100)
 ```
 
