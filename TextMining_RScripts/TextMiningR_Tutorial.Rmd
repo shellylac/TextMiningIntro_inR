@@ -3,9 +3,7 @@ title: "A brief introduction to text mining in R"
 author: "Shelly Lachish"
 date: "02/02/2021"
 output: 
-  html_document: 
-    fig_width: 10
-    fig_height: 8
+  html_document
 ---
 
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE}
@@ -49,7 +47,7 @@ str(RC_data)
 
 This is from the readtext package tutorial: "As encoding can also be a challenging issue for those reading in texts, we include functions for diagnosing encodings on a file-by-file basis, and allow you to specify vectorized input encodings to read in file types with individually set (and different) encodings. (All encoding functions are handled by the stringi package.)"
 
-## From data to corpus/corpora
+## Load our twitter data
 
 Here we will use a data set of \~7,000 tweets with the subject "covid19" (obtained using the rtweet package from the 8th - 15th Feb) to understand concepts in text analysis, do some basic text exploration, run some simple statistics and perform a sentiment analysis on the content of the tweets
 
@@ -61,15 +59,15 @@ covid_data<-read_tsv(here('Working_Data/covid19_tweets.tsv'))
 #Clean the dataset
 covid_data_clean <- covid_data %>% 
   #Remove @mentions
-  mutate(text_clean = str_replace_all(text, '@\\S+', '')) %>%
+  mutate(text_clean = str_replace_all(text, '@\\S+', ' ')) %>%
   #Remove URLs
-  mutate(text_clean = str_replace_all(text_clean, 'http\\S+', '')) %>%  
+  mutate(text_clean = str_replace_all(text_clean, 'http\\S+', ' ')) %>%  
   #trim new line indicators and retweet indicators
-  mutate(text_clean = str_replace_all(text_clean, '\\n|\\r', '')) %>%
+  mutate(text_clean = str_replace_all(text_clean, '\\n|\\r', ' ')) %>%
   #Replace ampersand indicators
   mutate(text_clean = str_replace_all(text_clean, '&amp', 'and')) %>%
   #Remove unicode character indicators <U+0001F449> (used in place of emojis)
-  mutate(text_clean = str_replace_all(text_clean, '<U.*>', '')) %>%
+  mutate(text_clean = str_replace_all(text_clean, '<U.*>', ' ')) %>%
   #trim leading/tailing whitespace
   mutate(text_clean = trimws(text_clean, which = 'both')) %>%     
   #Format date to ymd
@@ -82,6 +80,8 @@ covid_data_clean <- covid_data %>%
   select (-text, -created_at)
 ```
 
+## From data to corpus/corpora
+
 ```{r build_corpus}
 
 #Create your corpus
@@ -91,7 +91,7 @@ head(docvars(covid_corpus))
 #Inspecting the corpus
 texts(covid_corpus)[2]
 covid_data$text[2]
-summary(covid_corpus, n = 50)
+summary(covid_corpus, n = 5)
 
 #Can save and plot from this (but only summary of first 50 texts)
 corp_summary <- summary(covid_corpus)
@@ -152,7 +152,7 @@ head(covid_toks_nostop <- tokens_remove(covid_toks, pattern = stopwords("en")))
 head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", "immunis*")))
 ```
 
-To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-word type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`. You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create negative bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then select them from your corpus : `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
+To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`. You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create negative bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then select them from your corpus : `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
 
 ## From tokens to dfm (document feature matrix, aka document term matrix)
 
@@ -175,8 +175,8 @@ dfmat_covidtweets
 
 topfeatures(dfmat_covidtweets, 10)
 
-#Can be a good idea to remove very sparse terms from the dfm
-(dfmat_covidtweets<-dfmat_covidtweets %>% dfm_trim(min_termfreq = 5, verbose = FALSE))
+#Can be a really good idea to remove very sparse terms from the dfm
+(dfmat_covidtweets<-dfmat_covidtweets %>% dfm_trim(min_termfreq = 10, verbose = FALSE))
 
 ```
 
@@ -196,9 +196,29 @@ dfmat_covidtweets %>%
   labs(x = NULL, y = "Frequency") +
   theme_minimal()
 
+#Let's take a look at a word cloud
+set.seed(132)
+textplot_wordcloud(dfmat_covidtweets, max_words = 100)
+
+##SHOULD WE STEM TERMS? - we have 'vaccine' and 'vaccines' and 'vaccination' as top terms
+(dfmat_covidtweets_stem <- dfm(covid_toks, tolower = TRUE, stem = TRUE, remove = c(stopwords(), my_stopwords))
+                            %>% dfm_trim(min_termfreq = 10, verbose = FALSE))
+
+dfmat_covidtweets_stem %>% 
+  textstat_frequency(n = 30) %>% 
+  ggplot(aes(x = reorder(feature, frequency), y = frequency)) +
+  geom_point() +
+  coord_flip() +
+  labs(x = NULL, y = "Frequency") +
+  theme_minimal()
+
+textplot_wordcloud(dfmat_covidtweets_stem, max_words = 100)
+
+#----------------------
 #Look at grouping variables 
-dfmat_covidtweets_gpd<-dfm_group(dfmat_covidtweets, groups = 'location_US_UK')
-tstat_freq_gpd <- textstat_frequency(dfmat_covidtweets, n = 30, groups = 'location_US_UK')
+#----------------------
+dfmat_covidtweets_gpd<-dfm_group(dfmat_covidtweets_stem, groups = 'location_US_UK')
+tstat_freq_gpd <- textstat_frequency(dfmat_covidtweets_stem, n = 30, groups = 'location_US_UK')
 
 #Plot group differences
 ggplot(data = tstat_freq_gpd, aes(x = factor(nrow(tstat_freq_gpd):1), y = frequency)) +
@@ -208,15 +228,6 @@ ggplot(data = tstat_freq_gpd, aes(x = factor(nrow(tstat_freq_gpd):1), y = freque
     scale_x_discrete(breaks = nrow(tstat_freq_gpd):1,labels = tstat_freq_gpd$feature) +
     labs(x = NULL, y = "Relative frequency")
 
-#Let's take a look at a word cloud
-set.seed(132)
-textplot_wordcloud(dfmat_covidtweets, max_words = 100)
-
-##SHOULD WE STEM TERMS? - we have 'vaccine' and 'vaccines' and vaccination as top terms
-(dfmat_covidtweets_stem <- dfm(covid_toks, tolower = TRUE, stem = TRUE, remove = c(stopwords(), my_stopwords)))
-tstat_freq_stem <- textstat_frequency(dfmat_covidtweets_stem, n = 30)
-head(tstat_freq_stem, 20)
-textplot_wordcloud(dfmat_covidtweets_stem, max_words = 100)
 
 #Let's subset the dfm to look at popular hastags
 dfmat_hashtags <- dfm_select(dfmat_covidtweets, pattern = '#*') 
@@ -229,53 +240,216 @@ As with `tokens()`, you can select features from a DFM using `dfm_select()`. You
 
 If you want to convert the frequency count to a proportion within documents, use `dfm_weight(scheme = "prop")`
 
-## sentiment analysis of twitter data
+## Sentiment analysis of the twitter data
 
 The aim of sentiment analysis is to determine the polarity of a text (i.e., whether the emotions expressed in it are rather positive or negative). This is often done by word lists and by counting terms that were previously assigned to the categories *positive* or *negative* (sometimes a third category is included; *neutral,* andsometimes words can also be assigned a sentiment strength).
 
 So basically a dictionary ('sentiment/topic dictionary') is used to group a number of individual terms into a 'sentiment' category, then the content of the whole text as the sum of the sentiment content of the individual words. (This isn't the only way to approach sentiment analysis, but it is an often-used approach). The quanteda package provides access to four general-purpose sentiment dictionaries (for English).
 
-We will apply the the Lexicoder Sentiment Dictionary to the selected contexts using `tokens_lookup()`.
-All three of these lexicons are based on unigrams, i.e., single words. These lexicons contain many English words and the words are assigned scores for positive/negative sentiment, and also possibly emotions like joy, anger, sadness, and so forth.
+We will apply the the Lexicoder Sentiment Dictionary to the selected contexts using **textstat_polarity()**. All three of these lexicons are based on unigrams (i.e., single words), and bigrams. These lexicons contain many English words and the words are assigned scores for positive/negative sentiment, and also possibly emotions like joy, anger, sadness, and so forth.
 
 ```{r sentiment_analysis}
+devtools::install_github("quanteda/quanteda.sentiment")
+library(quanteda.sentiment)
+
 lengths(data_dictionary_LSD2015)
+print(data_dictionary_LSD2015, max_nval = 20)
 
-# select only the "negative" and "positive" categories
-data_dictionary_LSD2015_pos_neg <- data_dictionary_LSD2015[1:2]
+#Set the polarity categories we wish to use
+my_polarity <- list(pos = c("positive", "neg_negative"), neg = c("negative", "neg_positive"))
+polarity(data_dictionary_LSD2015) <- my_polarity
 
-#use function tokens_lookup to assign sentiment
-covidtweets_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_LSD2015_pos_neg)
+#Get sentiment scores on our original corpus 
 
-# create a document document-feature matrix and group it by location
+##default function == log(\frac{pos}{neg}) --> If you have very long documents - you may want to weight the sentiment values by the length (total words) in the document. There are other functions that can do this for you - or you can write your own and feed it in using the option 'fun = xxx'
+
+sentiment<-textstat_polarity(dfmat_covidtweets, dictionary = data_dictionary_LSD2015)
+range(sentiment$sentiment)
+head(sentiment)
+
+#use function tokens_lookup to assign sentiment to tokens
+covidtweets_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_LSD2015)
+# if you do the above - then need to create a document document-feature matrix
 dfmat_covidtweets_lsd <- dfm(covidtweets_lsd) %>% dfm_group(c('location_US_UK', 'week_day')) 
 
-sentiment_dat<- dfmat_covidtweets_lsd %>%
-  convert(to = "data.frame") %>% 
-  mutate(score = positive - negative) %>% 
-  mutate(location = str_sub(doc_id, 1, 2), week_day = str_sub(doc_id, 4, 6))
-  
-ggplot(data = sentiment_dat, aes(y = score, x = week_day, group = location, color = location))+
+#Create data for plotting
+sentiment_dat<- cbind(sentiment, docvars(covid_corpus)) %>%
+  filter(!is.na(location_US_UK)) %>% 
+  mutate(week_day = fct_relevel(week_day, 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')) %>% 
+  group_by(location_US_UK, week_day) %>% 
+  summarise(mean_sent = mean(sentiment))
+ 
+ggplot(data = sentiment_dat, aes(y = mean_sent, x = week_day, group = location_US_UK, color = location_US_UK))+
   geom_line()+
   geom_hline(yintercept = 0)+
   theme_bw()
+```
+
+```{r topic_models}
+
+# This script:
+#1. load the freetext field corpus
+#1. Splits the dataset into training and testing sets
+#2. build a sparse dfm matrix
+#3. runs a XXX model/s using the sparse matrix as input
+#4. predicts with the model to the test data
+
+#load the text mining, ML classification packages
+library(quanteda.textmodels)
+library(caret)
+
+#*************************************************************
+# 1. Read in data for building the ML model ====
+
+coded_freetext<-fread(here('Data/RFS_recoded_freetextfields.txt'))
+
+  #dim(coded_freetext)
+  #table(coded_freetext$new_meaning)
+  #table(coded_freetext$new_code)
+
+#*************************************************************
+# 4. Create the corpus ====
+
+freetext_codesandtext <- coded_freetext_clean %>% 
+  select(doc_id, new_code, freetext_clean) %>% 
+  rename(Label = new_code) 
+
+##create the corpus and clean
+freetext_corpus<-corpus(freetext_codesandtext, text_field = 'freetext_clean') 
+
+#add the doc_id as to docvars
+docvars(freetext_corpus, field = 'doc_id') <- freetext_codesandtext$doc_id
+
+  #list the docvars [Label is a docvars]
+  #head(docvars(freetext_corpus) )
+
+  #see bits of the corpus:
+  #summary(freetext_corpus, n = 20)
+  #texts(freetext_corpus)[9]
+
+#*************************************************************
+# 5. Build the Document Feature Matrix ====
+
+#EXTRA STOPWORDS to remove from corpus
+#This lists all the abbreviation variations for participant to remove from the corpus and other random words found during data clean
+mystopwords<-c('participant', 'patient', 'p', 'p\'s', 'p-', 'ps', 'p:', 'p', 'pt', 'ppt', 'p.', 'p,', 'opt', 
+               'rt', 'right', 'rhs', 'lhs', 'lt', 'left', 'authorised', 'DM', 'dm', 'tp', 're', 'ch', 'ca', 'oh', 'ohs', 'ot',
+               'mr', 'mrs', 'miss', 'participanrt', 'x2', '2x', '3x', 'x3')
+
+#Build the Document Feature Matrix from text field
+base_dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T,
+                           remove = c(stopwords('english'), mystopwords)) 
+
+#remove low freq words and terms only found in a few documents
+base_dfm_nolows <-dfm_trim(base_dfm, min_termfreq = 6, min_docfreq = 3)
+
+  #dim(freetext_corpus_dfm_nolows)
+  #topfeatures(freetext_corpus_dfm_nolows, 20)
+  #featnames(freetext_corpus_dfm_nolows)
+  #sparsity(freetext_corpus_dfm_nolows) #0.9973569
+
+
+#*************************************************************
+# 6. Split the data into training and testing datasets ====
+
+#Split in two parts 60:40. A 60% that will become our training data set / 40% for our testing data set 
+
+#set the seed so random draws are reproducible
+set.seed(4321)
+
+training_data <- dfm_sample(base_dfm_nolows, size = 0.6*nrow(base_dfm_nolows))
+testing_data<-base_dfm_nolows[setdiff(docnames(base_dfm_nolows), docnames(training_data)), ]
+
+#*************************************************************
+#NOTES -->
+  #Initial investigation showed that 60:40 was the best split (no improvement with higher % for training)
+  #Initial investigation showed that stemming words did not improve accuracy or kappa significantly
+  #Initial investigation showed that weighting the dfm (i.e. using tf-idf matrix) did not improve accuracy or kappa significantly
+  #Initial investigation showed that svm model outperforms the nb model
+  #If you need to do stemming then run this line of code
+      #>  stemd_dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, remove = c(stopwords('english'), mystopwords), stem = T) 
+  #If you want to use tf-idf weighting then run these lines of code
+      #> base_dfm_nolows <-dfm_trim(base_dfm, min_termfreq = 6, min_docfreq = 3)
+      #> based_dfm_tfidf <-dfm_tfidf(base_dfm_nolows, scheme_tf = "count", scheme_df = "inverse")
+
+
+#*************************************************************
+#APPLY Linear SVM classifier model to classify and predict ====
+
+#Run the model
+svm_model <- textmodel_svm(training_data, training_data$Label)
+  #summary(svm_model)
+
+#Get the predictions (force = T means to only use features that exist in the both training and prediction dfms)
+svm_predicted_class <- predict(svm_model, newdata = testing_data, type = "class", force = T)
+svm_actual_class <- testing_data$Label
+svm_tab_class <- table(svm_actual_class, svm_predicted_class); svm_tab_class
+sum(diag(svm_tab_class))/dim(testing_data)[1] # 0.914
+
+#Look at accuracy etc
+confusionMatrix(svm_tab_class, mode = "everything")
+
+
+#***********************************************************************
+# 8. APPLY SVM model to predict classes of new freetext data fields ====
+
+#load the new data
+newfields_data<-fread(here('Data/preprocessed_newfields_data.txt'))
+
+#create the corpus and clean
+newfields_corpus<-corpus(newfields_data, text_field = 'freetext_clean') 
+
+#add the doc_id as to docvars
+docvars(newfields_corpus, field = 'doc_id') <- newfields_data$doc_id
+
+#Add new stopwords (these are common words that I found in this second corpus that were not in the first))
+extra_stopwords<-c('core', 'core protocol', 'core scan', 'scans', 'only', 'due to', 'fmri', 'history', 'trigger')
+
+newdata_dfm <- dfm(newfields_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T,
+                            remove = c(stopwords('english'), mystopwords)) 
+
+#remove low freq words and terms only found in a few documents
+newfields_dfm_nolows <-dfm_trim(newdata_dfm, min_termfreq = 6, min_docfreq = 3)
+
+
+#Match the features of the new corpus to that used to build the model
+newfields_matched <- dfm_match(newfields_dfm_nolows, features = featnames(training_data))
+
+#Predict new classes for the new fields
+newfields_predicted_class <- predict(svm_model, newdata = newfields_matched, type = "class")
+newfields_predicted_probs <- predict(svm_model, newdata = newfields_matched, type = "probability")
+
+#Find second highest class
+#secondhighest<- newfields_predicted_probs %>%
+#  as_tibble() %>% 
+#  mutate(doc_id  = newfields_data$doc_id) %>% 
+#  pivot_longer(!doc_id, names_to = "PredLabel", values_to = "Probs") %>% 
+#  group_by(doc_id) %>%
+#  arrange(doc_id, desc(Probs))%>% 
+#  slice(2) %>%  #This takes the second value for each group
+#  select(doc_id, PredLabel)
+
+#bind the classifications to the original data
+model_classified_newfields<-cbind(newfields_data, newfields_predicted_class) %>% 
+  rename(ModelClassified_Label = newfields_predicted_class)
 
 ```
 
-*All* actual mentions of the terms contained in the dictionary have been replaced in the \~7000 tweets with their respective categories. All terms that do not appear in the dictionary are simply omitted. This leaves a table with only two columns left - the sum of all *positive* and *negative* terms per location. We will discuss this in detail later, but perhaps you have already noticed that *dictionary* is used to summarize the columns of a DFM (the words), while the *group* argument of the dfm() function summarizes the rows (the texts). This dimensional reduction is one of the most useful properties of quanteda.
+```{r spell_check_textfields}
+#*************************************************************
+library(hunspell)
 
-```{r weighted_sentiment}
-#You may want to weight the sentiment values by the length (total words) in tweet
-dfm.sentiment.prop <- dfm_weight(dfmat_covidtweets_lsd, scheme = "prop")
-dfm.sentiment.prop
+# Get bad words.
+  incorrectly_spelled_words <- hunspell(coded_freetext_clean$freetext_clean) %>% unlist()
 
-sentiment_dat<- dfm.sentiment.prop %>%
-  convert(to = "data.frame") %>% 
-  mutate(score = positive - negative) %>% 
-  mutate(location = str_sub(doc_id, 1, 2), week_day = str_sub(doc_id, 4, 6))
+# Extract the first suggestion for each bad word. - TAKES ~ A FEW  MINUTES TO RUN
+  suggestions <- sapply(incorrectly_spelled_words, function(x) hunspell_suggest(x)[[1]][1]) %>% unname()
 
-ggplot(data = sentiment_dat, aes(y = score, x = week_day, group = location, color = location))+
-  geom_line()+
-  geom_hline(yintercept = 0)+
-  theme_bw()
+#replace in the original text - TAKES ~ A FEW  MINUTES TO RUN
+  corrected_coded_freetext_clean <- mutate(coded_freetext_clean, 
+                             freetext_clean = stringi::stri_replace_all_regex(str = freetext_clean, 
+                                              pattern = paste0('\\b', incorrectly_spelled_words, '\\b'),
+                                              replacement = suggestions, vectorize_all = FALSE))
+
+
 ```
