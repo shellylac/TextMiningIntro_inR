@@ -1,0 +1,5001 @@
+id	freetext_clean
+58389	insufficient sample
+6699	short staffed
+22684	   time constraints
+445	ppt claustrophobic
+37547	participant unwilling
+21185	no task - lenses not strong enough
+21553	no task, no lenses
+51007	insufficient sample
+4408	laser treatment pre cancerous cervical cells
+33899	insufficient sample
+38105	insufficient sample
+53206	participant unwilling
+44235	insufficient sample
+52644	insufficient sample
+49521	insufficient sample
+27496	 + swi - time manag.
+43104	insufficient sample
+48947	participant unwilling
+7748	short staffed
+65187	on her menstrual period
+29596	insufficient sample
+56616	insufficient sample
+63304	0100000731956
+47444	participant unwilling
+52092	insufficient sample
+9826	ppt late
+32155	insufficient sample
+3117	right knee not scanned metal artefact acl repair
+799	ppt claustrophobic
+26924	 protocol as t1 repeated for movement
+20459	no task- eqipment failure
+16733	no abdo: staff shortage
+54359	insufficient sample
+31831	unable
+3209	 - low staff
+11873	vicorder out of action
+30055	cannot get blood
+64875	participant unwilling
+386	noise aggrevating tinnitus
+33783	insufficient sample
+17736	ppt is unsure if he had neuro intervention 1970s?
+15660	vicorder failure
+5781	short staffed
+57578	insufficient sample
+35017	participant unwilling
+47601	insufficient sample
+54459	insufficient sample
+33243	insufficient sample
+12317	atrial-fibrillation - abdo 
+62526	participant unwilling
+64938	on investigion for pv bleeding
+63635	no containers available
+58264	insufficient sample
+31044	insufficient sample
+44096	feels very faint
+4546	brain surgery abroad
+31185	participant unwilling
+44339	insufficient sample
+40732	insufficient sample
+43836	other equipment failure
+44268	participant unwilling
+49535	participant unwilling
+37188	insufficient sample
+9022	no scan - staff shortage
+43829	participant unwilling
+57637	insufficient sample
+18447	claustrophobic
+42051	insufficient sample
+8814	staff shortage
+29839	other equipment failure
+23917	no task, cannot see chart, no suitable lenses
+22036	scan upto t2, training
+20809	 - time management
+46951	insufficient sample
+13501	vicorder not working
+3727	 . participant late
+2512	staff
+38943	insufficient sample
+64089	participant unwilling
+7786	participant not dressed correctly
+17934	unable to fit in head coil
+39301	participant unwilling
+16433	vicorder failure x3 attempts
+4437	iofb unsure not safe rn
+57083	unable to obtain
+30729	participant unwilling
+32806	insufficient sample
+63834	no containers available
+64779	no containers available
+12348	vicorder failed
+4536	previous iofb
+9490	participant late
+45533	insufficient sample
+3688	 staff
+19665	femoral hernia pre 2000- unsure of procedure, varicose veins staples (now remove
+37581	no good veins
+65579	participant unwilling
+45772	insufficient sample
+20503	participant found scan too noisey
+17338	metal artefact noted on dxa scan. unsafe.
+50286	insufficient sample
+10919	 failure - cardiaca bandoned
+16123	vicorder fail to record file
+67667	participant not present
+16669	vocorder completed
+46433	failed attempts at sample collection
+15087	vicorder failed
+4891	operator error - stopped before it was finished
+62761	insufficient sample
+30360	participant unwilling
+11449	unable to hold breath cardiac abandoned
+33954	participant unwilling
+52877	insufficient sample
+22969	no time - heart-rate meeting this day
+53839	insufficient sample
+61996	insufficient sample
+27635	 scan, chillers fault
+45018	insufficient sample
+40012	insufficient sample
+47813	participant unwilling
+44108	insufficient sample
+9056	staff
+55284	insufficient sample
+38409	insufficient sample
+54652	insufficient sample
+57043	insufficient sample
+15249	 - reboot  system error
+37766	insufficient sample
+46776	insufficient sample
+42762	insufficient sample
+49821	insufficient sample
+17717	claustrophobic
+14759	ppt delayed in clinic -  scan
+61785	insufficient sample
+3053	 staff
+64379	no containers available
+62078	insufficient sample
+48098	insufficient sample
+60733	participant unwilling
+47228	insufficient sample
+11065	no abdomen  participant wanting to stop
+14939	no vicorder - short scan/time constraints
+4048	iofb
+41226	participant unwilling
+42502	insufficient sample
+35936	insufficient sample
+46609	insufficient sample
+20028	 scan ppt late, along with another .50.
+9795	medical physics checks. unable to scan.
+3687	  - short staffed
+28497	insufficient sample
+57531	insufficient sample
+62157	participant refused said it was hurting
+58184	no green butterflies unable to take
+13978	ppt claustrophobic
+59754	insufficient sample
+9564	dexa not in service
+18745	claustrophobic
+3546	 ppt was .5hrs late
+17799	helium fill
+61400	participant unwilling
+49905	insufficient sample
+24003	was complete - key taken out too early
+52771	participant unwilling
+27564	no suitable lenses for task
+35733	participant unwilling
+36032	insufficient sample
+4491	anal fissure repair 1980s
+47509	insufficient sample
+27403	, ptt delayed
+30923	participant unwilling
+10561	-making time
+26160	no suitable lenses for task
+57558	insufficient sample
+65678	participant unwilling
+41814	participant unwilling
+48148	insufficient sample
+32459	insufficient sample
+47210	insufficient sample
+27015	  staff shortage
+39058	vein collapsed
+21882	auto align failed, incorrect position
+19110	iofb
+25998	no task- software issue
+13465	""
+67431	participant not present
+62727	tube unavailable
+66654	participant unwilling
+18659	kyphotic cannot fit into coil
+28561	participant unwilling
+27348	 scan
+9119	short staffed
+37972	difficult to bleed insufficient sample
+42259	insufficient sample
+38855	insufficient sample
+51644	participant unwilling
+53324	insufficient sample
+8827	short staffed
+26173	button box droped task was skipped
+39120	insufficient sample
+66615	participant unwilling
+5050	no staff
+26067	no task
+44610	participant unwilling
+33855	participant unwilling
+1499	 no staff
+15543	vicorder froze the computer
+1345	low staff
+53566	insufficient sample
+28101	  - staff shortage
+26032	unable to do task mobility issues
+36666	insufficient sample
+51432	insufficient sample
+32637	insufficient sample
+48449	participant unwilling
+37673	insufficient sample
+1533	 - staff
+6760	no staff
+50829	insufficient sample
+44399	tube breakage
+47469	insufficient sample
+38109	insufficient sample
+54014	participant fainted
+10281	error message - pressure too low
+62650	insufficient sample
+48678	insufficient sample
+697	ppt claustrophobic
+28668	insufficient sample
+15010	 scan late
+3607	staff
+46701	participant unwilling
+22044	short scan  equipment failure
+19187	? tearduct re channeling
+8207	short staffed
+423	ppt claustrophobic
+31987	participant unwilling
+18562	ppt claustrophobic, did not want to attempt
+58916	insufficient sample
+8417	staff
+31123	participant unwilling
+28792	insufficient sample
+31778	insufficient sample
+42782	insufficient sample
+39802	insufficient sample
+5263	no ecg skin on ankles sore so did not want scan
+66379	participant unwilling
+52056	insufficient sample
+56788	participant unwilling
+38232	insufficient sample
+26458	ppt. claustrophobic. scan abandoned.
+32747	participant unwilling
+12413	vicorder failure
+42278	insufficient sample
+53248	insufficient sample
+39136	insufficient sample
+41265	insufficient sample
+55344	insufficient sample
+39427	difficult vein,  phlebs tried.
+15784	vicorder failed no readings.
+34965	insufficient sample
+3010	 - staff shortage
+57312	insufficient sample
+67867	other equipment failure
+26876	no task
+23982	staff shortage
+39111	insufficient sample
+49974	insufficient sample
+33854	insufficient sample
+14096	vicorder not working
+12182	no cardiac scan: difficult anatomy
+30718	insufficient sample
+48746	insufficient sample
+8159	no staff to do the scan
+42874	participant unwilling
+11433	ppt buzzed - claustrophobic
+48174	insufficient sample
+60905	insufficient sample
+4744	ptt claustrophobic refuse the scan
+28066	no task screen not started
+5181	staff shortage
+3172	 - no staff
+54563	insufficient sample
+64566	participant unwilling
+40482	insufficient sample
+34927	insufficient sample
+4846	hernia operation pre-2000
+3468	 , time constraints
+4066	eyes surgery
+38649	feels faint
+1114	 - no staff
+45429	insufficient sample
+42626	insufficient sample
+55724	participant unwilling
+50294	participant unwilling
+17787	ppt claustophobic
+24578	no task, no prescription
+31238	insufficient sample
+35690	participant unwilling
+39883	insufficient sample
+14719	vicord not working
+30428	other equipment failure
+54550	insufficient sample
+42369	insufficient sample
+2550	 - no staff
+36283	insufficient sample
+62387	participant unwilling
+30242	participant unwilling
+24326	  ppt late plus t1 repeat
+28659	difficult vein
+42170	insufficient sample
+14026	no cardiac dot failure unusual anatomy
+35863	insufficient sample
+48303	participant unwell
+43442	insufficient sample
+61942	participant passed out in the process
+21363	 - timing
+66511	unable because she is on catheter
+62600	insufficient sample
+56675	insufficient sample
+37622	insufficient sample
+6591	staff
+893	staff
+57393	insufficient sample
+37433	vein inaccessible
+16813	 scan time restraints
+25644	computer crashed. all completed.
+11850	vicorder failed to record the readings times
+16405	short scan  delay
+34945	insufficient sample
+54396	insufficient sample
+18076	ppt too kyphotic  - pb
+1920	 staff
+8798	no staff trained to perform ultrasound
+11198	equipment failure
+43672	participant unwilling
+5112	low staff
+34971	insufficient sample
+46628	insufficient sample
+44020	pt feeling faint
+52942	low / prefered not to give
+62234	participant felt faint
+55684	fainted
+63905	not taken, no saliva tubes
+46843	insufficient sample
+11537	ectopics so cardiac abandoned
+3885	orchidectomy with implant (unknown material); ?iofb at risk industry unsure
+21323	 - time constraints
+54626	insufficient sample
+1875	 staff
+29350	insufficient sample
+26247	no task, controller broken
+36650	recently had blood taken- all veins collapsed
+40884	insufficient sample
+25811	short scan had to reboot scanner
+56023	participant fainted
+8039	staff shortage
+41774	participant unwilling
+64651	no containers available
+7608	 imaging - staff
+7136	 scan no ecg
+62816	run out of bottles
+13452	 scan ppt uncomfotable and needed toilet
+67894	participant unwilling
+34970	insufficient sample
+13729	-time constraints
+56584	insufficient sample
+4128	? pregancy test
+49929	insufficient sample
+26790	 
+45869	insufficient sample
+2507	 short staffed
+31595	participant unwilling
+28621	participant unwilling
+4888	short staffed
+35040	insufficient sample
+6427	staff
+65516	0100000750339
+15048	ppt had bloods taken from left arm
+35745	participant unwilling
+26739	scanner crash on swi
+31139	insufficient sample
+67370	participant unwilling
+25192	claustrophobic.
+59103	participant unwilling
+10301	no cardiac scan -  failure, no shmolli
+54521	insufficient sample
+25097	task ran
+39189	insufficient sample
+42796	participant unwilling
+46979	insufficient sample
+19573	?iofb
+16263	vicorder failure
+50929	insufficient sample
+24356	: ppt late
+5553	short staffed
+34284	insufficient sample
+2649	  staff shortage
+2433	 - staff
+8926	staff shortage
+65644	no toilets
+32900	participant unwilling
+61362	participant unwilling
+40179	insufficient sample
+47974	insufficient sample
+26481	 timings
+10433	arrythmia. scan abandoned.
+48646	insufficient sample
+60093	insufficient sample
+28576	participant unwilling
+34617	insufficient sample
+23772	patient feeling nauseous
+66860	participant unwilling
+58910	insufficient sample
+58133	insufficient sample
+33896	insufficient sample
+4637	bowel operation
+55416	insufficient sample
+36634	participant unwilling
+11000	 time constraints.
+35457	insufficient sample
+39849	insufficient sample
+59988	participant fainted
+28555	participant unwilling
+21763	no suitable lenses
+18790	claustrophobia
+49919	insufficient sample
+27840	 time management
+52439	insufficient sample
+48069	insufficient sample
+32049	insufficient sample
+7538	staff issues
+2700	not all complete  longitudinal error.
+29047	participant declined
+26363	, time constraints
+56212	insufficient sample
+58913	insufficient sample
+31165	insufficient sample
+26051	claustrophobic
+11776	vicorder failure
+8193	staff shortage
+44375	insufficient sample
+40106	insufficient sample
+48063	insufficient sample
+59190	participant unwilling
+56902	insufficient sample
+31475	participant unwilling
+19170	left hand possible metallic injury
+7429	staff
+15646	error
+3397	dexa room in use and very hard of hearing
+31137	participant is fainting
+10539	  ppts tea break
+13961	vicoder failure
+6707	staff shortage
+21972	t1 repeated
+5937	low staff -  protocol
+57171	insufficient sample
+48941	participant unwilling
+67813	participant unwilling
+65331	participant unwilling
+65131	unable to pass urine
+65379	participant not present
+50137	insufficient sample
+35929	participant unwilling
+60703	insufficient sample
+45674	insufficient sample
+15636	vicorde not working
+32025	participant unwilling
+14686	vicorder failed
+59648	insufficient sample
+432	renal transplant
+7185	short staffed
+48866	insufficient sample
+66975	participant unwilling
+9358	staff shortage
+48700	insufficient sample
+35916	insufficient sample
+56621	vein collapsed
+45137	unable to obtain  sample
+63457	participant unwilling
+61777	, fainted
+62063	participant unwilling
+13263	ppt claustrophobic
+34253	participant fainting
+5920	no ecg staff shortage
+60104	insufficient sample
+39541	participant unwilling
+29228	insufficient sample
+19935	re pre 1990 gall bladder surgery
+54369	fainting
+10259	vicorder failed
+38965	other equipment failure
+15737	 time restraints
+62920	participant unwilling
+13001	unable to follow breathing - chest problems
+37792	insufficient sample
+39925	insufficient sample
+42590	insufficient sample
+17752	ppt did not want scan- uncomfortable lying flat
+61493	insufficient sample
+60353	insufficient sample
+27428	no task-lenses tried could see
+67915	participant unwilling
+15124	vicorder failure
+57272	participant unwilling
+57315	insufficient sample
+16249	vicorder saying failed??
+44361	insufficient sample
+46710	phlebs tried difficult to bleed and felt faint
+47815	insufficient sample
+3300	 scan short of staff
+5434	no staff
+61622	participant unwilling
+23578	no task googles did not fit in coil
+15231	no vicorder
+25349	no task - no lenses
+8128	no ecg possible adhesive allergy
+62797	participant unwilling
+29210	insufficient sample
+29044	insufficient sample
+54566	participant felt faint
+63715	other equipment failure
+14084	vicorder not working
+37494	participant unwilling
+27350	 scan - time constraints
+1166	staff shortage
+53685	insufficient sample
+6959	short staffed
+12383	no cardiac irregular heartbeat
+50797	insufficient sample
+12420	vicorder not responding
+27930	no task  time and staff issues
+33446	insufficient sample
+22826	no task no lenses
+46372	insufficient sample
+55166	insufficient sample
+65182	participant unwilling
+33048	participant unwilling
+4803	? staples varicose veins
+24811	ppt not responding
+64140	participant unwilling
+57186	insufficient sample
+38512	insufficient sample
+45075	insufficient sample
+42990	insufficient sample
+20341	scanner crash after t1
+36059	participant unwilling
+16485	icorder failure
+32072	insufficient sample
+1504	  staff
+21995	ppt aborted scan
+46413	insufficient sample
+15030	vicorder failed
+31174	unable to obtain sample
+41301	participant unwilling
+9144	staff shortage
+4292	review femoral hernia repair
+2227	 - short staffed
+35711	had donated  blood  hrs previously
+45700	other equipment failure
+17054	no abdomen - participant declined  cough
+16425	no abdo, behind  training.
+55912	insufficient sample
+24536	scanner failure, stopped after resting 
+66307	participant unwilling
+48392	other equipment failure
+64766	no containers available
+31373	insufficient sample
+312	ppt did not want scan, struggling with breathing
+57	ppt claustrophobic
+28625	other equipment failure
+54094	insufficient sample
+20192	 sequences  time pressures
+58436	insufficient sample
+16373	 scan late arrival
+14676	vicorder not working
+21097	no task - no prescription
+37839	insufficient sample
+32341	insufficient sample
+16614	vicorder failure
+52987	insufficient sample
+36636	participant unwilling
+37437	insufficient sample
+15173	.time management
+27031	no scan claustrophobic
+1899	  
+21509	  time restraints
+64347	participant unwilling
+36158	insufficient sample
+20681	rpt  movement
+325	claustrophobic
+32994	insufficient sample
+15893	.time management
+30382	insufficient sample
+28379	insufficient sample
+57676	insufficient sample
+65921	participant unwilling
+8676	short staffed
+39655	participant unwilling
+19009	staples of unknown kind
+55633	insufficient sample
+42177	insufficient sample
+3735	 and left knee completed time restraints
+28520	insufficient sample
+34208	participant unwilling
+14998	clasutropbic
+23640	no task, ppt unable to see cross on screen
+1973	 no staff
+49086	insufficient sample
+29959	has skin condition
+12667	no cardiac-pt unable to hold breath, poor images
+54638	insufficient sample
+38121	insufficient sample
+42597	particpant fainted
+54614	insufficient sample
+61808	insufficient sample
+33226	insufficient sample
+52216	participant unwilling
+66130	participant unwilling
+51788	insufficient sample
+2898	bilateral total knee replacement
+60696	insufficient sample
+64524	no containers available
+32133	insufficient sample
+36975	insufficient sample
+43235	insufficient sample
+51904	participant unwilling
+40655	participant unwilling
+45982	participant unwilling
+3111	 - staff
+51291	collapsed vein
+42022	participant unwilling
+33886	participant unwilling
+6414	staff
+14400	vicorder failure
+43649	insufficient sample
+53671	insufficient sample
+61307	difficult veins
+13670	 scan time restraints
+35269	participants tensed
+50238	participant unwilling
+6019	staff shortage
+21861	  time constraints
+36482	insufficient sample
+42286	participant unwilling
+57530	insufficient sample
+24678	eprime  crashed
+43558	participant fainted
+67046	no containers available
+39815	insufficient sample
+56224	insufficient sample
+8234	staff
+44220	insufficient sample
+16507	ppt claustrophobic
+62080	veins collapsed,tried 3x
+45159	insufficient sample
+26322	no task, controller broken
+14395	ecg failure, no cardiac scan
+20504	no task-no lenses
+334	time constraints following helium fill and moving
+62469	insufficient sample
+37663	participant unwilling
+57066	insufficient sample
+21527	time restraints
+24370	no task
+46607	insufficient sample
+32861	participant unwilling
+29937	insufficient sample
+11274	 time constraints
+66087	other equipment failure
+18608	kyphotic unable to fit into head coil
+40954	insufficient sample
+36129	insufficient sample
+49044	insufficient sample
+29638	jehovahs witness
+35353	insufficient sample
+22496	no task - next ppt waiting
+8695	staff
+50788	insufficient sample
+31299	participant unwilling
+18877	ppt had previous iofb
+2562	 scan - ppt late
+27339	   staff
+25411	no task - no suitable lenses
+58237	other equipment failure
+22440	no task, unknown strong prescription
+8459	no equipment
+2244	staff
+52046	insufficient sample
+26600	 scanner error and reboot
+35129	insufficient sample
+28064	""
+23249	no task - time
+23507	no task, no prescription
+57196	participant unwilling
+46062	insufficient sample
+14499	 scan - no time
+50305	insufficient sample
+4704	? lens replacement
+61369	insufficient sample
+63390	other equipment failure
+29832	insufficient sample
+55079	insufficient sample
+60204	insufficient sample
+19165	iofb
+8409	 - staff
+35204	participant unwilling
+10763	vicorder not working
+45141	insufficient sample
+32935	insufficient sample
+49874	insufficient sample
+5335	participant cannot tolerate laying flat anymore
+11386	vicorder failed
+47871	participant unwilling
+62999	insufficient sample
+52561	refused nervous
+51416	participant unwilling
+20404	task deleted in favour of t1 rpt
+25829	no task as no suitable lenses available
+66536	participant unwilling
+47870	insufficient sample
+23943	no task, t1 repeated
+23470	no task - did not remember instructions and moved
+3037	 staff
+17374	claustrophobic and cannot lay flat - scan cancelled
+15937	ppt discomfort
+5297	short staffed
+25267	time constraints
+26967	ppt moving excessively  parkinsons, aborted
+36637	participant unwilling
+56218	insufficient sample
+60773	participant unwilling
+54658	insufficient sample
+66719	participant unwilling-on her period
+27703	scanner crashed after t1 images
+57219	insufficient sample
+47227	insufficient sample
+699	mri in service
+64132	no containers available
+18219	claustrophobic
+36925	insufficient sample
+37936	insufficient sample
+3672	low staff - 
+13861	vicorder failure
+48874	insufficient sample
+61539	participant unwilling
+12967	vicorder error
+2784	time constraints
+48583	insufficient sample
+4293	gastric operation
+52576	pt difficult to bleed, tiny veins
+39669	insufficient sample
+5223	low staff
+54405	insufficient sample
+54326	insufficient sample
+23374	claustrophobic
+32120	insufficient sample
+59912	insufficient sample
+18441	claustrophbic
+25798	t1 repeated - dropped task
+44	claustrophobic
+30277	insufficient sample
+29587	insufficient sample
+63602	participant unwilling
+26823	 due time management
+60417	insufficient sample
+48694	insufficient sample
+62154	difficult veins
+54750	insufficient sample
+24195	: time management
+17883	distance prescription unknown
+36805	insufficient sample
+7889	no ecg available
+4280	recent angio for pe
+27158	no task - unable to see wall chart, / prescripti
+7177	key error
+17453	ppt did not want to lie flat
+61427	participant unwilling
+3044	 - short staffed
+51352	participant unwilling
+42655	participant fainted
+59628	insufficient sample
+44428	insufficient sample
+36471	participant unwilling
+26635	svanner crash after resting
+28842	insufficient sample
+8253	staff shortage
+22644	timings out of synch
+22768	no scan - scanner crash
+37948	insufficient sample
+56915	participant unwilling
+43622	insufficient sample
+26048	task error
+38072	insufficient sample
+8522	staff shortage
+31208	participant unwilling
+26893	no task: no prescription
+53199	unsuccessful
+21507	no task, ppt unable to see, no suitable lenses
+64605	participant unwilling
+55069	participant unwilling
+59896	insufficient sample
+26821	no task timing
+49035	insufficient sample
+22567	no task - lenses not strong enough
+16285	artefact found
+10190	vicorder failure
+45214	participant unwilling
+33304	participant  cannot continue
+44554	unable to obtain sample
+17541	ppt late
+7966	no equipment
+8154	staff
+15150	 scan -   staff
+53996	insufficient sample
+38385	participant unwilling
+11308	vicorder error, measurements after
+65070	no containers available
+16848	  ppt flow
+61637	veins are collapsing
+9867	participant arrived late
+12414	reaction to ecg stickers
+53832	insufficient sample
+30779	participant unwilling
+2983	  staff
+6341	short staffed
+25842	no task complex perscription
+4352	stent ? where
+34672	participant unwilling
+19959	 - running behind.
+36273	insufficient sample
+64518	participant unwilling
+45767	insufficient sample
+3579	 staff
+8048	staff shortage
+9609	ppt late
+67213	unable
+51260	participant unwilling
+42962	insufficient sample
+7801	short staffed
+62612	insufficient sample
+14836	  clinic staff shortage.
+61623	insufficient sample
+38742	insufficient sample
+36973	see above
+15850	ppt did not want blood-pressure doing,  hx of breast ca
+27577	no task ppt caused delay to scan.
+7764	short staffed
+2714	, time management
+26111	""
+4046	hernia repair 1985 - ?safe to scan
+34940	insufficient sample
+9722	mobility issues
+33607	participant unwilling
+54879	insufficient sample
+67603	no containers available
+11302	 sequences  - running behind time
+37986	participant fainted
+1694	 complete, time restraints
+48900	insufficient sample
+8675	short staffed
+3284	-shortstaffed
+48598	participant unwilling
+63096	insufficient sample
+1832	  time restraints
+34830	insufficient sample
+34506	insufficient sample
+24962	ppt unable to lay flat for 30 mins. no scan done.
+54594	insufficient sample
+55020	participant unwilling
+67410	participant unwilling
+14273	vicorder failed to store results
+1977	 - staff
+34988	insufficient sample
+40760	insufficient sample
+14048	vicorder failure
+56815	insufficient sample
+905	left knee not imaged - left knee acl repair
+19053	varicose veins 1998 - unsure if staples used,
+8602	staff shortage
+3756	 scan staff shortages
+33967	participant unwilling
+31722	insufficient sample
+38886	insufficient sample
+55908	participant unwell
+32961	insufficient sample
+14401	vicorder failure
+55049	insufficient sample
+22187	no task  complex perscription
+16965	claustrophobic
+28690	unable to take as had breast ca
+1463	 
+16482	scanner reboot -  cardiac, no abdo
+2847	ppt late arriving and long time in changing room
+29451	participant unwilling
+16563	 protocol  time constraints
+1555	total knee replacement both knees
+19933	thyriodectmy pre 2000
+53292	insufficient sample
+4570	lens replacement 2014 (none cataract related)
+14257	 scan short of staff
+46981	participant unwilling
+67543	participant not present
+26918	kyphotic unable to lie in coil
+30395	participant unwilling
+9501	staff shortage
+59935	insufficient sample
+7284	no equipment
+38766	participant unwilling
+40486	insufficient sample
+36442	insufficient sample
+12753	  
+11053	vicorder failed
+35189	unsuccessful
+44683	insufficient sample
+56575	insufficient sample
+18036	helium fill
+44648	insufficient sample
+59852	insufficient sample
+9606	had to leave emmergency
+26738	ppt unable to lay flat
+52539	vein collapsed, no further access
+59109	insufficient sample
+41242	insufficient sample
+52935	insufficient sample
+11906	vicorder omitted - not working
+18927	surgery within  weeks
+27089	no task- unclear chart
+8825	short staffed
+48875	insufficient sample
+30495	insufficient sample
+41566	phlebs but cannot get blood out of the ,
+67078	participant unwilling
+44524	insufficient sample
+19155	? metal staples variocose veins
+20152	ppt late -  scan
+32759	insufficient sample
+57849	participant unwilling
+8141	no equipment
+18092	claustrophobic
+41100	participant unwilling
+52070	insufficient sample
+53207	insufficient sample
+56959	insufficient sample
+24885	patient claustrophobic. test not completed
+30632	participant unwilling
+19277	ovarian surgery
+3992	no safe potencially needle placed in right hip 1961
+57463	insufficient sample
+13360	no cardiac images,  fail
+16443	: time
+25852	t1 repeated for movement
+32541	insufficient sample
+49967	insufficient sample
+5731	no ecg stickers
+66454	participant unwilling
+24844	no  helium fill and cold head repair
+51872	insufficient sample
+34515	participant veins poor
+27691	claustrophobic, mri stopped at 10 min since start.
+47211	insufficient sample
+57812	insufficient sample
+7101	staff
+57304	insufficient sample
+49103	insufficient sample
+61538	participant unwell
+10033	short scan - ppt late
+35091	insufficient sample
+23424	no task - repeated t1 for movement
+41128	participant unwilling
+54490	insufficient sample
+36983	participant unwilling
+62723	no tubes
+19442	dental implants  weeks ago
+5923	staff shortage
+11911	ppt claustrophobic
+47032	insufficient sample
+57672	participant unwilling
+13726	vicorder failure
+52918	insufficient sample
+31363	insufficient sample
+22590	no task- no suitable lenses
+51610	insufficient sample
+45279	insufficient sample
+19807	iofb - detached retinal surgery aswell
+21264	 
+48936	unwell
+59338	insufficient sample
+860	not mri safe
+19862	for review
+28042	no suitable lenses
+67256	participant unwilling
+49941	insufficient sample
+4381	iofb
+6986	no staff
+43804	participant unwilling
+17235	fail
+10476	vicorder failed
+34534	insufficient sample
+63687	no containers available
+27662	no task equipment broke
+20682	no task pt. did not have correct perscription
+42918	insufficient sample
+20796	no task, no lenses and cannot see.
+18351	iofb incident
+49233	participant unwilling
+32883	insufficient sample
+5034	short staffed
+63881	participant unwilling
+41133	insufficient sample
+5306	staff
+39673	participant unwilling
+55173	insufficient sample
+22428	no scan claustrophobic
+43785	insufficient sample
+51464	unsuccessful
+31162	insufficient sample
+15213	vicorder out of action
+16792	vicorder failed to load
+47412	insufficient sample
+6978	short staffed
+55336	insufficient sample
+5345	ppt late
+64327	participant on menstrual cycle so refused
+48177	participant unwilling
+691	ppt declined scan - discomfort laying still
+39782	insufficient sample
+7596	staff shortage
+16941	stopped after tagging on cardiac - unable to plan
+64649	participant unwilling
+22370	notask:no suitable lenses found
+8887	  staff
+44559	insufficient sample
+16661	blood-pressure measurement did not work correctly
+44321	insufficient sample
+18750	claustrophobic
+40378	participant unwilling
+6825	no equipment
+58258	insufficient sample
+63926	participant unwilling
+33684	insufficient sample
+21667	no task   staff at lunch time staff sickness
+49727	feeling sick so had to stop collection
+24162	t1 repated excessive movement
+16545	vicorder failed
+32644	insufficient sample
+8807	no staff available
+35357	insufficient sample
+46112	insufficient sample
+3678	lva not completed  body habitus
+49970	insufficient sample
+28552	insufficient sample
+38365	insufficient sample
+61959	unsuccesful attempts
+63639	participant withdrawn
+15613	 scan -ppt late + leaving early
+24707	no task
+13805	-time-engineer came
+5746	allergy to plasters so no stickers
+41029	insufficient sample
+26467	no task, lenses were not suitable
+30625	participant unwilling
+33829	participant unwilling
+49686	insufficient sample
+16657	 protocols - time management
+65637	participant unwilling
+54830	insufficient sample
+31956	insufficient sample
+23033	""
+12152	vicorder not working
+49231	insufficient sample
+24524	task completed, but computer crashed
+37618	insufficient sample
+27513	task aborted  ppt non-compliance
+13044	-scanner error-needed to be reboot
+14284	vicorder failure
+30861	participant unwilling
+48557	insufficient sample
+14059	vicorder error
+67980	participant unwilling
+47766	insufficient sample
+7518	no equipment
+63739	participant not present
+34482	insufficient sample
+30666	participant unwilling
+60833	insufficient sample
+22536	no task- unable to see the chart
+49497	insufficient sample
+49199	participant unwilling
+13895	measurement completed
+24966	t1 repeat, no diffusion
+60283	insufficient sample
+19593	staples scalp ? removed
+31136	unable to take as had breast ca
+27759	task not performed operator mistake
+16604	pendrive failure
+53589	insufficient sample
+55165	procedure abandoned because  was feeling sick
+150	ppt late
+33546	insufficient sample
+13563	 scan ppt. very late
+58274	insufficient sample
+29795	participant unwilling
+60883	insufficient sample
+9123	staff shortage
+30999	feeling dizzy
+33219	insufficient sample
+35164	past out
+31107	other equipment failure
+5077	staff
+20952	, ptt delayed
+24070	scan abandoned - ppt needed toilet
+12774	 time management
+63328	participant unwilling
+63837	participant not present
+57447	participant unwilling
+30106	insufficient sample
+61186	insufficient sample
+56029	insufficient sample
+46579	insufficient sample
+38227	participant unwilling
+2951	 
+56236	insufficient sample
+21221	no task - no lenses
+59897	participant unwilling
+6706	short staffed
+45153	insufficient sample
+2563	no total body scan  painful neck.
+44659	insufficient sample
+30526	participant unwilling
+5477	 
+13528	ppt had bloods taken
+61709	insufficient sample
+37666	insufficient sample
+66769	participant unwilling
+34463	insufficient sample
+12424	vicorder saving error
+40478	participant unwilling
+7840	staff
+41205	participant unwilling
+33713	unable to obtain sample
+57139	insufficient sample
+6372	staff shortage
+20846	no task - unknown prescription, cannot see chart
+8610	short staffed
+41948	insufficient sample
+8350	""
+6299	short staffed
+32562	difficult  vein morbidly obese
+60837	insufficient sample
+45792	insufficient sample
+21847	+swi-timing
+6468	short staffed
+4086	iofb
+45512	participant unwilling
+48285	insufficient sample
+9178	ppt declined - discomfort laying still
+23886	no task ppt wouldnt open eyes.
+24192	no task repeat of t1
+11742	not recorded
+880	ppt cannot remove ear rings
+16157	  blood-pressure worked
+34904	insufficient sample
+31739	insufficient sample
+23261	no task - ppt did not press buttons
+40161	insufficient sample
+16057	software failure
+34523	participant unwilling
+23653	  - time
+49093	unable to get  sample
+28830	insufficient sample
+60960	insufficient sample
+57172	difff. draw
+25991	: time management
+7772	short staffed
+39569	insufficient sample
+23706	 time constraints
+45797	insufficient sample
+2109	  staff shortage
+3961	hernia repair 1988 - to be checked
+2516	  staff
+2204	 - short staffed
+20717	no task - wequipment faulty
+10315	  time constraints
+63840	participant unwilling
+61507	run out of tubes
+64767	participant unwilling
+60980	participant unwilling
+30297	other equipment failure
+54763	insufficient sample
+31250	insufficient sample
+39820	insufficient sample
+45562	insufficient sample
+39984	participant unwilling
+28308	insufficient sample
+52742	insufficient sample
+16250	no cardiac - atrial-fibrillation
+29050	patient fainted
+47938	insufficient sample
+6266	 protocol - low staff
+43848	insufficient sample
+36270	insufficient sample
+23790	 protocol - running behind.
+58553	insufficient sample
+33433	participant unwilling
+23116	staff shortage
+63194	insufficient sample
+37415	participant unwilling
+25520	no task - no prescription
+6014	plaster allergy - no ecg as advised by supervisor.
+52390	insufficient sample
+5757	understaffed
+27085	no task -time constraints
+32146	insufficient sample
+35374	insufficient sample
+38429	insufficient sample
+46892	insufficient sample
+27186	task not completed, poor eyesight.
+43140	participant unwilling
+35898	insufficient sample
+9257	staff shortages
+44203	insufficient sample
+11328	vicorder failure
+55586	insufficient sample
+26461	low staff
+2730	 scan 
+62130	insufficient sample
+52695	insufficient sample
+55686	insufficient sample
+12376	 scan
+11927	measurements taken.
+31776	insufficient sample
+59726	insufficient sample
+1908	 - staff
+44972	insufficient sample
+49076	insufficient sample
+62117	participant unwilling
+6588	staff
+37842	participant unwilling
+57451	insufficient sample
+53845	insufficient sample
+64139	participant unwilling
+12076	clauustrophobic
+48500	insufficient sample
+58640	insufficient sample
+51225	participant unwilling
+32206	insufficient sample
+57608	participant unwilling
+12716	vicorder failed
+27436	no suitable lenses
+10799	no vicorder
+10210	vicorder failed
+55721	insufficient sample
+39979	insufficient sample
+26468	no task - ppt declined
+5268	no staff
+43870	insufficient sample
+16345	scan aborted - participant claustrophobic
+48914	insufficient sample
+21227	pt did not understand task
+28104	no images- no artery on screen-large body habitus
+26615	no task  time constraints
+1779	""
+40442	insufficient sample
+9516	no scan short of staff and training
+23081	  ppt movement
+58633	participant unwilling
+19925	inguinal hernia age  - unsure of procedure- do not scan as per rad glossary
+50925	insufficient sample
+48085	insufficient sample
+47934	no other veins accessible, 3x
+35998	insufficient sample
+29220	participant unwilling
+16803	vicorder failure
+10847	ppt claustraphobic and wanted out
+21588	, time management
+34073	insufficient sample
+25236	no task no lenses
+51789	insufficient sample
+24160	  staff shortages
+47157	participant unwilling
+17041	, timing
+18162	ppt claustrophobic
+49052	insufficient sample
+11792	  time restraints
+26543	no task:no lenses
+21338	ptt uncooperative and slow
+26430	no suitable lenses
+12964	: time management ( failure)
+23506	swi cut - t1 repeated  movement
+57682	insufficient sample
+23671	 not performed  no matching lenses
+60383	insufficient sample
+50730	insufficient sample
+46773	insufficient sample
+43504	pt difficult to bleed
+47602	insufficient sample
+21949	no task-no suitable lenses
+44060	insufficient sample
+34100	no good veins
+3774	time constraints
+54739	participant unwilling
+41537	insufficient sample
+45019	vein collapsed
+17851	unable to lay flat  severe oa
+447	ppt has had retinal vein occlusion surgery
+44884	participant unwilling
+4514	declined 17.06.19 injury to face , tender
+60267	insufficient sample
+55739	participant unwilling
+4441	anal fissure repair 1998
+11606	""
+32139	insufficient sample
+42891	participant unwilling
+55565	insufficient sample
+47034	insufficient sample
+65416	participant unwilling
+34057	participant unwilling
+9447	short staffed
+16172	vicorder out of action
+34247	insufficient sample
+25988	error on key
+56574	participant unwilling
+24498	ppt too kyphotic
+32051	insufficient sample
+60749	insufficient sample
+6888	 - staff
+44834	insufficient sample
+1376	 staff
+18046	claustophobic
+58559	insufficient sample
+65249	no containers available
+5735	staff
+17452	unable to lie flat
+31769	participant unwilling
+24863	 for time management post re boot
+41053	insufficient sample
+41247	vein collapsed two attempts
+4544	hernia repair pre 2000, unsure of mesh or stitches in situ, gp to return contact
+34716	insufficient sample
+52169	participant unwilling
+58704	insufficient sample
+22469	no task, controller broken
+37005	participant unwilling
+34850	insufficient sample
+620	ppt late arriving
+18434	ppt unable to lie completely flat - dizzy
+64841	participant unwilling
+63041	insufficient sample
+223	engineers working
+27588	  time
+17234	no cardiac as unable to pick up ecg left bbb
+23659	ppt moved
+11830	vicorder completed, key did not save again
+17444	ptt claustrophobic
+24140	no task prescription too strong
+24495	no task - lenses not strong enough
+21705	unknown prescription
+64930	participant unwilling
+26294	claustrophobic
+65713	participant not present
+27472	task error
+23457	partial scan ppt late arrival. task 
+40684	insufficient sample
+15042	 time management
+36992	participant unwilling
+1652	 scan , ppt  late, thick mode total body
+9521	staff shortage - no scan
+31356	insufficient sample
+57317	insufficient sample
+43200	insufficient sample
+25610	no task: chart unclear
+7331	no ecg stickers
+59014	participant unwilling
+48502	insufficient sample
+28475	difficult veins
+22505	scanner froze
+66377	participant unwilling
+8322	no staff
+4636	pouch
+29074	insufficient sample
+47911	participant unwilling
+58126	insufficient sample
+54168	insufficient sample
+25950	participant not responding to task thereforenotask
+23450	no task - no prescription
+50785	insufficient sample
+27776	ppt cannot see the images
+54351	participant unwilling
+25736	no task - screen not working.
+48090	insufficient sample
+34030	insufficient sample
+6321	 imaging - staff
+62495	participant unwilling
+58933	participant unwilling
+7664	short staffed
+65907	participant unwilling
+64175	participant not able to stand (in  wheelchair)
+48150	insufficient sample
+37358	difficult  vein manager aware
+63557	cannot do saliva because of time
+3838	tear duct surgery - unsure of procedure
+57361	insufficient sample
+20120	double vision - no task
+57495	participant unwilling
+14375	cardiac abandoned - ing problems
+6016	staff shortage
+1146	  staff
+64341	participant unwilling
+20797	no task no lenses
+59351	insufficient sample
+50053	near faint- had to stop
+14966	ppt claustrophobic
+20136	t1 repeated
+61403	insufficient sample
+27084	repeated t1 - task cut.
+34397	participant unwilling
+12399	ppt was claustrophobic and felt uncomfortable
+60834	fainting
+24589	no  task
+52666	insufficient sample
+43341	insufficient sample
+36222	participant unwilling
+34222	insufficient sample
+58724	insufficient sample
+37762	insufficient sample
+9350	staff shortage
+31273	participant unwilling
+47143	insufficient sample
+51204	insufficient sample
+53908	insufficient sample
+63656	participant not present
+55880	insufficient sample
+20063	no suitable lenses
+13940	no abdo, ppt late
+8436	no staff
+27836	t1 repeated for movement, scan abandoned after t2
+6982	 staff
+16051	cardiac abandoned - poor breath control/dot fail
+25268	repeated t1.
+34938	participant unwilling
+28154	difficult scan, no diagnostic images
+12933	claustrophobic
+56278	insufficient sample
+40349	insufficient sample
+31444	participant unwilling
+65479	key not concluded but given urine tube
+61544	insufficient sample
+24102	claustrophobic no imaging
+25459	no diffusions, t1 repeated
+43359	insufficient sample
+6748	room drying out after flood
+4353	ppt has recent tattoo, also abdominal tattoo.
+60029	insufficient sample
+60100	insufficient sample
+37163	participant unwilling
+45875	insufficient sample
+65345	participant not present
+67699	participant not present
+38203	insufficient sample
+42790	insufficient sample
+5827	no ecg stickers available
+67506	participant not present
+55520	insufficient sample
+27042	no task - equipment broken
+42730	insufficient sample
+44076	insufficient sample
+36366	insufficient sample
+15935	ivox crashed, data lost
+18751	claustrophobic
+28622	participant unwilling
+28989	insufficient sample
+63200	insufficient sample
+7156	short of staff  
+60937	insufficient sample
+22914	no task-ppt error
+21419	 due radiographer shortgate
+19993	time management- 
+66599	participant unwilling
+64142	other equipment failure
+11623	failed to save correctly
+45372	participant unwilling
+30492	insufficient sample
+64497	participant unwilling
+41221	insufficient sample
+4668	emergency fix of artery - metal clip
+49756	insufficient sample
+7597	no equpment ready
+55810	insufficient sample
+22904	no task participation
+28564	difficult vein manager aware
+39362	insufficient sample
+57049	participant unwilling
+61905	insufficient sample
+3276	 understaffed ( staff)
+17561	helium refill, cold head replacement, no 
+23986	no task-no suitable lenses
+14420	vicorder performed but not recognized as coplete
+57982	no sample
+63898	no containers available
+65402	participant unwilling
+4436	lucentis injectio right eye  weeks ago capillary repair
+44943	insufficient sample
+26697	no task eprime failed
+30061	insufficient sample
+51044	insufficient sample
+6834	results cannot be recorded
+7143	no equipment
+13462	vicorder failure
+11628	vicorder faiure
+19288	renal operation
+38055	insufficient sample
+4578	wheelchair user
+47314	insufficient sample
+32344	two phlebotomists cannot get blood out of patien
+32876	failed attempts by me and the manager
+54035	insufficient sample
+31745	insufficient sample
+4196	?iofb
+67691	participant unwilling
+46874	abandoned because  was feeling queasy
+60166	insufficient sample
+37122	insufficient sample
+1307	 - short staffed
+16223	no cardiac
+6667	staff
+1814	 staff
+26035	no response to task
+55240	insufficient sample
+52595	insufficient sample
+55096	insufficient sample
+62966	difficult veins
+53465	insufficient sample
+5803	staff
+29837	participant unwilling
+57375	insufficient sample
+21456	 time management
+17202	time constraints
+42951	insufficient sample
+5870	no equipment
+54675	insufficient sample
+35307	insufficient sample
+16194	vicorder sent for repair at cheadle centre.
+20464	no task - no suitable lenses
+8557	staff shortage
+19565	detached retina, unknown repair
+59426	insufficient sample
+2018	low staff - 
+58149	insufficient sample
+63785	no containers available
+15423	vicorder
+45228	participant unwilling
+19682	iofb
+2105	  - scanner issues
+38770	participant unwilling
+10105	-time
+21016	no task no lenses
+38400	participant unwilling
+28260	deep artery
+4892	staff shortage
+212	ppt did not wish to proceed
+66862	 medication is impossible to give samples
+19462	gastro operation
+45743	insufficient sample
+158	ppt claustrophobic
+47701	participant unwilling
+16722	claustrophobic - scan abandoned
+5969	no staff
+55553	insufficient sample
+29287	other equipment failure
+44507	vein collapsed, no further access
+1847	low staff levels
+13943	vicorder failed
+66437	participant unwilling
+16621	   time
+2239	 - short staffed
+876	ppt claustrophobic
+20074	not scanned-claustophobic
+34748	insufficient sample
+34280	insufficient sample
+40222	insufficient sample
+24212	unable to fit earplugs in for adequate protection
+17206	abandoned after dixons. ppt cannot lie flat
+8512	""
+30345	insufficient sample
+64094	decline from giving salive
+31406	insufficient sample
+58996	unable to continue
+31222	insufficient sample
+29437	insufficient sample
+41831	tube breakage
+37079	pt not feeling well
+6322	ppt sick
+24453	no task-eprime not working
+46807	insufficient sample
+58566	insufficient sample
+17632	claustrophobic
+51496	insufficient sample
+35240	insufficient sample
+34429	insufficient sample
+66181	other equipment failure
+65994	participant unwilling
+39451	insufficient sample
+35213	participant unwilling
+9972	pt late
+559	late
+7388	no leads
+49136	insufficient sample
+29234	insufficient sample
+61960	participant unwilling
+19013	lens replacment
+55856	insufficient sample
+24537	flood
+3788	to check lens replacement
+14174	 cardiac
+15883	vicorder performed but not saved
+62734	participant unwilling
+64583	participant unwilling
+57104	insufficient sample
+28945	participant unwilling
+64075	no containers available
+51721	insufficient sample
+32201	participant unwilling
+45955	insufficient sample
+60925	insufficient sample
+1764	""
+22871	task not done - would not fit in coil with lenses
+8615	uss machine broken
+51886	difficult veins
+53670	insufficient sample
+48436	fainted
+53598	pt very scared
+31889	participant unwilling
+46929	insufficient sample
+26866	no suitable lenses
+62633	insufficient sample
+4796	needle injury - unsure if completely removed
+8291	no electrodes
+21248	no task- no prescription
+32494	diffic. draw
+6896	time constraints
+58207	insufficient sample
+11808	vicorder not working
+23253	abandoned task not responding
+17323	vicorder failed
+53103	insufficient sample
+57097	insufficient sample
+61694	flow stopped () unwilling
+4557	metallic iofb
+18572	claustrophobia no scan
+21152	 time management
+14612	 scanning. time constraints
+59895	insufficient sample
+54175	insufficient sample
+52947	insufficient sample
+16829	vicorder failure
+7673	no leads
+17351	no vicorder
+23017	task was completed, computer crashed
+65488	participant unwilling
+7377	""
+4064	rifle shot pellet still in situ
+38402	participant unwilling
+32106	insufficient sample
+3159	 - short staffed
+65649	participant unwilling
+50679	participant unwilling
+27981	no task. no prescription
+41165	insufficient sample
+53362	participant unwilling
+34678	insufficient sample
+63844	no containers available
+31491	participant unwilling
+2366	 - short staffed
+40573	participant unwilling
+12200	atrial-fibrillation - no cardiac scan
+13020	vicorder not working
+37251	insufficient sample
+40578	participant unwilling
+62321	insufficient sample
+14272	staff shortage -  
+1993	faulty equipment
+5205	fitted cardiac monitor in error prior
+20258	, time management
+9100	ppt late
+48480	insufficient sample
+13194	vicorder error
+2331	 - staff
+46471	participant unwilling
+21644	claustrophobic
+4485	dental instrument section in tooth
+51859	insufficient sample
+16903	ppt refused abdo scan
+49770	difficult veins
+26990	  - time management
+15457	ppt had atrial-fibrillation cardiac abandoned
+14020	 failed  scan abandoned
+35827	participant unwilling
+8604	short staffed
+29185	insufficient sample
+61584	insufficient sample
+46466	difficult veins
+41037	patient fainted
+32472	insufficient sample
+4382	fundoplication-ensure of procedure
+49050	insufficient sample
+20606	claustrophobic
+19644	reconstructive eye surgery - 2001
+62596	other equipment failure
+23159	 ,  staff shortage
+16055	measures present
+27908	no task no time
+53065	insufficient sample
+18779	potential metal seen in neck on abdo/chest mri
+6618	low staff - 
+57282	insufficient sample
+23783	 scan  ppt  late
+14300	no cardiac/shmolli - no ecg trace
+43852	insufficient sample
+44011	insufficient sample
+51990	insufficient sample
+44212	insufficient sample
+8413	operator error
+46400	insufficient sample
+10375	vicorder not done
+55638	participant unwilling
+10753	no scan: ppt stopped scan  claustrophobia
+664	unknown eyelid operation
+24112	 - time constraints
+32011	insufficient sample
+16188	repositioned for abdo before tagging complete
+28337	insufficient sample
+467	ppt late for appointment
+38148	insufficient sample
+20417	  time restraint
+12345	vicorder broken
+39676	insufficient sample
+6800	ppt late
+344	suspected metalic artefact in head on brain scout
+10839	vicorder crash
+51187	participant unwilling
+61920	difficult veins
+57814	insufficient sample
+37934	insufficient sample
+67659	participant unwilling
+57468	insufficient sample
+5134	no staff
+26257	no lenses
+66080	participant declined. was in  hurry to leave
+6326	not done ppt got changed
+51051	insufficient sample
+7984	staff shortage
+20511	no task. lenses not suitable.
+25717	 abadoned and t1 repeated  movement
+41044	participant pass out
+58963	not sufi. sample
+24847	no task: ppt cannot see
+57548	participant unwilling
+9813	no staff
+13250	vicorder measurement failed
+31990	insufficient sample
+6756	staff
+35248	participant unwilling
+66287	no containers available
+22497	abandoned after t1. movement ++ cannot lie flat
+60557	difficult vein
+67174	participant not present
+62868	has been fainted so dont want
+58919	difficult vein manager aware
+53126	participant unwilling
+56961	insufficient sample
+2723	 scan
+44561	participant unwilling
+20865	no suitable lenses
+36514	participant unwilling
+26	ppt claustophobic
+23631	no task - unknown prescription/chart blurred
+67276	participant unwilling
+44798	participant unwilling
+5883	time constraints
+28856	other equipment failure
+55791	unable to take blood
+4865	excision ???
+40966	unable to obtain sample
+49926	insufficient sample
+44440	insufficient sample
+54034	insufficient sample
+59135	insufficient sample
+45240	participant unwilling
+46934	insufficient sample
+53966	participant unwilling
+7932	no equipment
+62125	insufficient sample
+47366	insufficient sample
+41911	insufficient sample
+40674	other equipment failure
+27652	no task-eprime not working
+51013	insufficient sample
+48945	insufficient sample
+63967	other equipment failure
+14554	 heart - late from changing room/time constrai
+4242	previous temp pacemaker ? any wires left
+41130	insufficient sample
+65232	other equipment failure
+25946	claustrophobic
+33049	insufficient sample
+41972	insufficient sample
+29854	insufficient sample
+22404	ptt cannot tolerate
+4721	stomach surgery 3t unsafe
+19316	possible staples
+490	when questioned ppt stated possible iofb
+36813	insufficient sample
+1819	staff
+37874	insufficient sample
+26353	no task - ppt waiting
+12616	vicorder crashed
+14435	vicorder not working
+5589	time constraints
+48804	collapsed vein
+1316	lva not scanned
+4165	pre 2000, thyroidectomy
+61003	insufficient sample
+3018	 short staffed
+26155	no task, ppt delay.
+55427	insufficient sample
+51910	insufficient sample
+18196	ppt refused claustrophobic
+60185	insufficient sample
+66716	participant unwilling
+10487	atrial-fibrillation - no heart scan
+26087	 time management
+219	scanner being repared
+63796	no containers available
+36700	participant unwilling
+12451	claustrophobic
+10054	vicorder not working
+10344	ppt cluastrophobic
+29880	insufficient sample
+19614	need to check safety of ozurdex implant
+33758	insufficient sample
+41384	insufficient sample
+19698	?metal splinter
+64955	no containers available
+6370	staff shortage
+12278	no tagging: breath hold too long
+3358	staff
+4595	femoral hernia pre 2000- unsure of procedure, varicose veins staples (now remove
+45986	insufficient sample
+26302	no task
+13399	peru failed
+50802	insufficient sample
+66570	participant unwilling
+24226	timing constraints - ppts waiting
+4373	tear gas bullet fired and exploded; in childhood, ? all fragments removed
+55011	insufficient sample
+5110	short staffed
+21888	movement
+40802	insufficient sample
+56652	insufficient sample
+44082	participant unwilling
+10607	vicorder exported and complete but said not comple
+25152	task error
+17188	atrial-fibrillation error
+4641	varicous veins to check in dexa
+41119	insufficient sample
+7350	staff
+34901	insufficient sample
+59795	insufficient sample
+28825	participant unwilling
+54820	insufficient sample
+29056	insufficient sample
+15920	equipment failure
+38022	participant unwilling
+65093	participant unwilling
+19891	preganacy test result needed
+55090	insufficient sample
+25904	-ptt arrived late
+35585	insufficient sample
+49410	insufficient sample
+61979	insufficient sample
+44987	insufficient sample
+25342	time restrictions
+495	claustrophobic
+17903	patient cannot tolerate lying down: neck pain
+1500	 
+21068	equipment broken (head coil dropped)
+50106	insufficient sample
+12744	vicorder error
+3132	 - staff
+38562	vein collapse
+45778	insufficient sample
+47499	insufficient sample
+3646	 staff
+66582	participant unwilling
+48031	tube breakage
+42405	has  of difficult veins
+49258	insufficient sample
+53086	insufficient sample
+37647	insufficient sample
+1411	staff
+6613	no equipment
+43085	insufficient sample
+11013	scan abandoned, trigure failure  attempts.
+6023	 - staff
+3197	 scan staff shortages
+9003	previous participant vomited in the room
+6251	staff shortage
+53565	insufficient sample
+22325	no task - t1 repeated - lost time
+42370	week veins
+15929	 cardiac - staff shortage
+40430	participant unwilling
+3975	pharngeal pouch staplied ? metallic
+8503	ppt unable to lie flat
+3724	  as ppt needed +++ break
+56306	vein collapsed
+32856	insufficient sample
+47223	participant unwilling
+26433	no task no appropriate lenses
+20529	no task - stigmatism
+50713	insufficient sample
+43443	insufficient sample
+9976	staff shortage
+57883	insufficient sample
+23642	  - time
+65795	participant unwilling
+23836	no task complex prescription
+3060	 short staffed
+42331	participant unwilling
+60732	insufficient sample
+7761	time constraints
+15325	  time restraints
+47918	insufficient sample
+51565	insufficient sample
+24272	patient wanted  break
+23050	not incomplete, all measurements taken
+27660	no task: ppt did not want to
+16512	no blood-pressure recorded
+45610	insufficient sample
+1604	  staff shortage
+42487	very difficult venepuncture
+38757	insufficient sample
+47322	participant felt faint
+35635	insufficient sample
+29892	insufficient sample
+44548	insufficient sample
+46503	insufficient sample
+54037	participant unwilling
+12606	 scan
+9660	ppt needed to leave - no time for scan
+48406	insufficient sample
+20570	no task - t1 repeated
+18579	no , helium fill
+33058	recently had blood taken- all veins collapsed
+659	ppt labyrinthitis feeling unwell
+13297	 - time constraints
+15595	vicorder failure.
+17670	bad neck
+1233	total knee replacement +
+11403	equipment problem
+58485	insufficient sample
+47673	insufficient sample
+65705	participant unwilling
+39040	insufficient sample
+22633	no task as ppt unable to use left hand
+37164	insufficient sample
+39728	insufficient sample
+65514	participant unwilling
+62658	insufficient sample
+12228	claustrophobic
+32071	participant unwilling
+4406	?metallic eye injury
+15957	vicorder failed
+23344	no task-no suitable lenses for ppt
+3856	? hernia method
+48857	insufficient sample
+32134	insufficient sample
+58532	insufficient sample
+9224	staff shortage.
+4680	appendix
+61118	frequent vein collapse
+55442	insufficient sample
+29647	insufficient sample
+11339	  ppt claustrofobic
+33569	insufficient sample
+26648	eprime not currently working
+26828	 - time constraints
+25056	no task: no lenses
+35135	participant unwilling
+56314	insufficient sample
+33100	insufficient sample
+46757	insufficient sample
+41738	insufficient sample
+38445	insufficient sample
+28787	insufficient sample
+16112	software failed - no vicorder
+66851	participant unwilling
+12378	- time constraints
+67056	participant unwilling
+17519	claustrophobic
+32100	participant had operation so not poss to get more
+21296	, time management
+15982	  staff shortage
+57432	removed the nidle by accient
+26689	task incomplete - not able to respond
+62525	insufficient sample
+27346	no task - repeated t1
+65623	no containers available
+40203	insufficient sample
+16182	vicorder away for repair
+67564	no containers available
+59365	insufficient sample
+29133	insufficient sample
+6304	low staff
+9316	short staffed
+17700	helium fill#
+908	 imaging - staff
+13165	vicorder has not recorded readings for some reason
+62294	jehovahs witness
+27215	unknown prescription, chart blurred, no task
+20917	no swi, t1 repeated
+9600	staff shortage
+28481	participant unwilling
+39011	insufficient sample
+48175	participant unwilling
+63537	there is no stock of saliva tubes
+51407	insufficient sample
+11478	atrial-fibrillation/ failed - cardiac abandoned
+12018	vicorder failure
+37332	insufficient sample
+24347	no task - screen not working.
+14589	no cardiac
+5251	staff shortage
+34416	insufficient sample
+52903	participant unwilling
+4317	hair extensions
+30612	unable to obtain sample
+65754	participant unwilling
+66375	no containers available
+61549	veins collapsed,. unwiiling for 3x
+23787	 - time management
+59033	insufficient sample
+17604	no scan claustrophobic
+29520	participant refused
+21160	no lenses
+58176	insufficient sample
+32286	participant unwilling
+34	claustrophobic
+13042	:time management.
+36713	tried  times very poor  veins
+40254	insufficient sample
+30001	cust feels faint does not want to go ahead with bl
+27479	no suitable lenses
+23879	no task-no suitable lenses
+45015	participant unwilling
+14674	 - no vicorder
+23833	staff shortage
+1763	 low staff
+45484	insufficient sample
+10460	dot failure, unable to obtain heart images
+32329	cannot get blood from
+46732	insufficient sample
+59756	participant unwilling
+13082	vicorder failed
+19831	iofb
+3165	time constraints
+17005	vicorder failure
+37909	participant unwilling
+24633	time 
+11855	vicorder failured to produce real results
+30292	insufficient sample
+346	ppt had unknown surgery to mastoid / ear
+65569	participant fainted
+7866	low staff
+60385	insufficient sample
+55581	insufficient sample
+46363	vein collapsed
+38028	participant unwilling
+67423	participant unwilling
+19713	varicose veins possibly staples
+15390	staff shortage
+55102	insufficient sample
+49587	veins rolling- unable to locate decent vein
+9364	participant arrived late
+40242	insufficient sample
+48636	insufficient sample
+34438	insufficient sample
+64894	participant unwilling
+33527	participant unwilling
+59255	insufficient sample
+39558	insufficient sample
+19708	iofb
+65877	. on haemodialysis.
+46974	participant unwilling
+45644	insufficient sample
+57741	insufficient sample
+65549	participant unwilling
+41629	difficult  vein manager aware
+25820	ppt movement sag t1 - repeated - no swi scan
+31900	participant passed out
+59522	other equipment failure
+53681	participant unwilling
+24836	ppt unable to carry on
+5490	short staffed
+23080	no task, no appropriate lenses
+61825	insufficient sample
+41713	participant unwilling
+20848	time limited
+47872	veins collapse 3x
+33873	participant unwilling
+47854	insufficient sample
+15428	 cardiac  delays /ppt & ear protection
+6220	 imaging, staff
+18287	patient claustrophobic-head coil close to face
+36132	insufficient sample
+10982	vicorder is not working
+61010	insufficient sample
+18677	claustrophobic
+59828	insufficient sample
+10702	vicorder failed x2
+26525	equipment failure
+37996	insufficient sample
+38010	participant unwilling
+8051	short staffed
+23558	 time constraints
+13312	 cardiac  - time constraints from previous ppt
+27889	 plus swi. time constraints
+7013	staff
+27525	no suitable lens
+26550	t1 repeatedc no swi
+34220	insufficient sample
+29504	insufficient sample
+55803	insufficient sample
+7898	 
+42464	insufficient sample
+22163	no task - t1 repeated
+42919	insufficient sample
+9554	short-staffed
+53738	insufficient sample
+53754	participant unwilling
+14748	vicorder fail
+10933	shmolli cardiac not performed scanner error
+48811	insufficient sample
+10478	vicorder failed
+11958	 time management
+7523	staff
+36701	participant unwilling
+54914	participant unwilling
+21642	no task, strong unknown prescription
+34561	insufficient sample
+54348	insufficient sample
+62721	insufficient sample
+52041	insufficient sample
+41639	insufficient sample
+34486	insufficient sample
+9717	ppt 30 mins late/lengthy phone call in screening
+7782	 - staff
+5797	staff
+9372	short staffed
+49878	insufficient sample
+33949	participant unwilling
+21919	scan cut after t2  time restraints
+12924	vicorder not installed.
+13795	vicorder performed but not stored
+39571	insufficient sample
+54247	insufficient sample
+3275	 - staff
+37896	participant unwilling
+26695	 scan it issues
+58089	insufficient sample
+36101	collapsed vein
+42831	insufficient sample
+61053	veins collapsed,participant unwilling for 3x
+54217	insufficient sample
+15911	vicorder failure
+58609	insufficient sample
+26091	no task equipment faulty
+10139	 cardiac  time pressures
+5675	time constraints
+13410	abdo aborted, claustrophobic
+5243	staff shortage
+6609	short staffed
+8295	no leads
+43697	participant unwilling
+24654	no task as he would not fit in the scnner with gog
+45842	insufficient sample
+27009	ppt. buzzed off during task
+61687	insufficient sample
+67047	hard to do urine sample participant on wheelchair
+62911	insufficient sample
+17451	ptt unable to lie on his back
+19536	wainting dexa scan.
+9305	participant had to leave not allowed enough time
+7280	staff shortage
+10602	vicorder failure
+51311	insufficient sample
+4160	hemhorridectomy 2003 (unsure of procedure)
+24274	no prescription lens. no task.
+19834	ct contrast given within the last  weeks
+57221	participant unwilling
+65816	no containers available
+35312	participant unwilling
+15127	no mri ppt. claustrophobic.
+43257	insufficient sample
+6412	staff shortage
+28505	insufficient sample
+20124	ppt did not want to have scan
+18152	ppt claustrophobic - no 
+12578	 - time management
+31570	insufficient sample
+48786	participant unwilling
+62795	insufficient sample
+33173	participant unwilling
+14581	vicorder failure
+19533	hernia - not sure if mesh used
+36773	difficult veins
+28036	  time constraints
+59539	insufficient sample
+64568	participant unwilling
+37694	participant unwilling
+20910	no response to the task
+7305	staff
+4927	short staffed
+52660	insufficient sample
+45511	insufficient sample
+4	ppt .5hour late not peformed
+49293	insufficient sample
+31028	participant unwilling
+15322	 cardiac short staff
+19250	?iofb
+14146	no cardiac - dot engine failed, difficult to image
+54895	insufficient sample
+31959	difficult vein
+58753	participant unwilling
+62773	vein collapsed
+38440	insufficient sample
+66620	no containers available
+54793	participant unwilling
+63381	participant unwilling
+21304	t1 rpt (movement) no task
+20471	no task - no suitable lenses
+6086	short staffed
+64469	participant unwilling
+28350	insufficient sample
+22336	 - timing
+41146	insufficient sample
+6731	short staffed
+53701	insufficient sample
+18831	patient claustrophobic
+4348	pyloric stenosis - 12 days old- unsure of procedure
+52071	insufficient sample
+33762	difficult vein,manager aware
+26926	task not completed
+13240	vicorder failure
+20121	no task
+19038	as above
+59153	insufficient sample
+57298	insufficient sample
+50173	insufficient sample
+20311	 time constarints
+25710	unable to support head, extremely kyphotic
+64087	participant unwilling
+29057	unable to optain vein acess
+3782	 - short staffed
+29187	participant unwilling
+40668	insufficient sample
+4205	surgery  week ago
+43831	unable to obtain sample  phlebos tried
+20835	no task - no prescription
+54004	insufficient sample
+22433	no task no lenses
+6208	 imaging
+41508	other equipment failure
+55046	insufficient sample
+17405	too kyphotic
+2339	 staff
+21982	""
+26994	 sequences  time pressures
+61969	other equipment failure
+58688	insufficient sample
+7239	""
+3041	 - time management
+67382	0060001205613
+42448	vein collapsed
+18059	claustrophobia
+66310	participant unwilling
+26174	staff - time restrictions
+23515	no task ppt buzzed off
+58218	insufficient sample
+3427	low staff
+36504	insufficient sample
+59267	insufficient sample
+45256	insufficient sample
+14080	 to catch up
+38282	insufficient sample
+38839	insufficient sample
+5470	error
+4973	short of staff
+30823	insufficient sample
+19763	unknown lens for vision correction
+48617	insufficient sample
+26750	unable to lay flat and complete scan
+25688	ppt wanted to close eyes, no task
+40029	insufficient sample
+65327	other equipment failure
+64387	urine tube was not scanned
+45647	participant unwilling
+4270	ear operation
+13995	vicorder failure
+65233	participant unwilling
+22034	ppt did not wish to open her eyes
+37281	tube breakage
+326	ppt 35 mins late - no scan
+3243	right knee not scanned as knee replacement
+57094	participant unwilling
+33301	insufficient sample
+34620	insufficient sample
+59495	week veins
+5808	not done staff shortage
+30809	insufficient sample
+29493	insufficient sample
+49645	insufficient sample
+25355	scanner crashed - no 
+44928	participant unwilling
+55341	participant unwilling
+61676	participant unwilling
+65196	participant unwilling
+12219	vicorder message - not complete
+27756	no task  repeat of t1
+123	ppt late
+61930	participant unwilling
+42407	insufficient sample
+41405	insufficient sample
+49823	insufficient sample
+20014	ppt late no scan
+56125	insufficient sample
+55728	insufficient sample
+12543	time constraints,   scanned
+20131	claustrophobic
+40808	insufficient sample
+27821	ppt did not respond to task
+66469	participant unwilling
+51621	insufficient sample
+1036	, ppt. took long time on computers and changin
+50024	insufficient sample
+34210	insufficient sample
+60085	participant unwilling
+13678	vicorder failure
+67634	participant unwilling
+13440	time constraints
+60952	insufficient sample
+4087	shrapnel injury in the past
+38951	participant has bad arm &   access avail
+37788	insufficient sample
+15762	staff shortage
+42271	insufficient sample
+4722	detache retina -band used
+1277	 - staff
+63543	participant not present
+24626	short scan, training
+15798	vicorder failure, computer rebooted
+36982	other equipment failure
+9042	no staff available
+13842	 scan time restraints and short of staff
+10880	no cardiac scan, dot fail, poor images.
+6890	tried twice failed to obtain  measurement
+56527	participant unwilling
+48417	insufficient sample
+37121	insufficient sample
+32095	insufficient sample
+19474	check lens
+37780	insufficient sample
+20226	no prescription/wall chart blurred
+66596	participant unwilling
+48977	insufficient sample
+32619	insufficient sample
+44514	insufficient sample
+40507	insufficient sample
+3330	 short staffed
+13817	vicorder problems
+42237	insufficient sample
+452	ppt very late, no scan done
+59581	insufficient sample
+35686	insufficient sample
+50083	insufficient sample
+25890	no task - no suitable lenses
+66240	participant unwilling
+23025	no task-unable to read chart-no prescription
+61417	insufficient sample
+54527	insufficient sample
+28571	insufficient sample
+31085	participant unwilling
+25115	no task, no prescription
+2491	""
+57716	no other accessible vein
+30082	insufficient sample
+28966	insufficient sample
+33204	insufficient sample
+33853	insufficient sample
+39956	participant unwilling
+67908	participant unwilling
+49928	insufficient sample
+54052	insufficient sample
+46003	insufficient sample
+38369	participant unwilling
+67614	participant unwilling
+39394	participant unwilling
+22454	no task-unable to see the chart-no prescription
+40970	insufficient sample
+8172	staff shortage, not performed
+8904	short staffed
+40118	insufficient sample
+34649	insufficient sample
+28844	insufficient sample
+13641	 abdo as   coil operational
+45003	insufficient sample
+56349	insufficient sample
+34973	participant unwilling
+40761	insufficient sample
+42300	insufficient sample
+20338	no task - blurred wallchart
+9479	short staffed
+17533	siemens on scanner
+38113	insufficient sample
+64359	no containers available
+67809	participant unwilling
+47219	insufficient sample
+37579	insufficient sample
+12309	vicorder failure: no blood-pressure recorded
+54681	feels very faint
+31001	insufficient sample
+58722	insufficient sample
+25769	clasutrophobic
+10786	vicorder failed
+60118	insufficient sample
+41536	insufficient sample
+57787	insufficient sample
+34474	participant unwilling
+29502	participant unwilling
+16987	 abdomen: time management
+65964	no containers available
+9747	ptt refuse the scan
+15722	measurement was completed - error message
+35429	insufficient sample
+62347	vein collapsed
+40062	insufficient sample
+59720	insufficient sample
+67732	participant not present
+27007	task was complete, ivox error
+67891	participent unable to do urine because she fainted
+14153	claustrophobic
+57710	insufficient sample
+65886	participant unwilling
+50165	insufficient sample
+33543	insufficient sample
+11338	.ppt was late.
+50763	participant unwilling
+26380	not done
+55208	insufficient sample
+5084	staff
+24036	 scan time restraints
+61373	run out of rna tubes
+64386	participant unwilling
+32897	insufficient sample
+56032	insufficient sample
+55921	insufficient sample
+57640	insufficient sample
+25269	no task - no prescription
+19703	small metal fragment in eye c1978 - removed at hospital ? penetrating?
+47922	participant unwilling
+61457	participant fainted
+28905	insufficient sample , () not bleeding
+22363	no task no perscription
+38765	participant unwilling
+35783	no good veins
+58650	unable to get sample
+47791	insufficient sample
+8531	failed to record
+33665	insufficient sample
+5396	short staffed
+43410	insufficient sample
+17979	helium fill- no scan
+8970	staff shortage
+54966	insufficient sample
+31897	insufficient sample
+15149	 scan due scanner reboot
+56068	insufficient sample
+16118	vicorder failed.
+32157	insufficient sample
+45631	insufficient sample
+38786	insufficient sample
+55222	insufficient sample
+2062	 staff
+5431	staff shortages
+53690	insufficient sample
+26369	 scan
+22178	software error
+52189	withdrew hand swelling
+10030	 to catch up
+33879	insufficient sample
+42264	participant unwilling
+60743	participant unwilling
+15375	vicorder not working
+57418	insufficient sample
+43776	insufficient sample
+56182	participant unwilling
+64847	participant not present
+45790	insufficient sample
+2598	  staff shortage
+49785	insufficient sample
+27280	no task- ppt has hand problems
+4864	thyriodectomy pre 2000
+18639	ppt not willing - vertigo
+63099	participant unwilling
+11445	vicorder error
+16066	vicorder failure
+13533	  , pt 30min late
+60847	insufficient sample
+4629	aortic valve replacement
+24457	  - time
+25489	 sequences  staff issues
+12778	vicorder error. heart rate too low to register.
+32597	participant unwilling
+22921	no task as ppt arrived late
+35618	participant unwilling
+37219	participant unwilling
+45612	participant unwilling
+6254	ppt late 30 min
+17668	ptt claustrophobic
+52065	insufficient sample
+50996	unable to obtain sample
+38087	insufficient sample
+162	participant declined
+32351	extremely difficult venepuncture
+64394	participant unable
+47254	participant unwilling
+7126	staff
+44183	insufficient sample
+28871	participant unwilling
+54114	insufficient sample
+41600	insufficient sample
+56753	insufficient sample
+14898	irregular ecg:  failure
+23007	no lenses
+65461	participant unwilling
+45573	insufficient sample
+17408	ppt had to leave - did not want scan
+13282	vicorder failure
+64701	no containers available
+24639	 staff
+40338	phlebos tried unable to get sample
+48238	insufficient sample
+34265	insufficient sample
+31872	difficult tiny veins, insufficient sample
+2056	""
+14317	""
+18869	to check lens replacement
+22122	""
+14373	vicroder as bloods recent; taken
+19996	no task, no suitable lenses
+16984	no cardiac scan, delayed  scanner restart
+20651	ppt claustrophobic
+9619	ppt unable to stay
+28496	insufficient sample
+20767	ppt too lordotic to fit in head coil
+41730	insufficient sample
+25047	no task, no suitable lenses, strong prescription
+10150	claustrophobic
+27679	. short staffed
+35529	participant unwilling
+19690	as above
+31148	participant unwilling
+9928	short staffed
+44894	participant unwilling
+58986	fainted, procedure stopped
+44580	participant unwilling
+29633	participant unwilling
+20995	no , pt extremely kyphotic and unable to fit
+7220	no equipment
+21819	 - time constraints
+13499	vicorder failed
+67921	no containers available
+18111	helium refill skyra scanner
+65393	participant unwilling
+48398	insufficient sample
+33003	participant unwilling
+67847	participant unwilling
+66261	participant not present
+20531	ppt movement, no task t1 t2 repeated
+45150	insufficient sample
+18469	claustrophobic, scannot performed
+33595	insufficient sample
+38220	vein collapsed
+34828	participant unwilling
+58889	insufficient sample
+30387	insufficient sample
+20333	ppt late - finifshed after task
+62905	participant unwilling
+64687	participant unwilling
+5742	short staffed
+49863	participant unwilling
+37396	insufficient sample
+31568	insufficient sample
+45035	participant unwilling
+49833	insufficient sample
+11660	  ran out of time
+19049	gerd surgery
+3534	 - short staffed
+37253	insufficient sample
+63630	no containers available
+10495	vicorder failure
+60589	participant unwilling
+6303	 - staff
+5343	no equipment
+17529	claustrophobic
+36707	insufficient sample
+35215	participant unwilling
+56529	insufficient sample
+4635	implant in eye - unsure what made of
+21129	no task - poor vision
+48778	part. fainted
+4789	ingunial hernia 27//19; thymectomy (not in glossary)
+54485	insufficient sample
+46182	insufficient sample
+57081	insufficient sample
+62705	insufficient sample
+63812	other equipment failure
+67749	unable to give sample
+37836	participant unwilling
+67686	participant unwilling
+63294	no containers available
+49830	difficult venepuncture
+10598	vicorder failure
+42818	insufficient sample
+26291	ppt did not respond to the task
+6847	short staff
+9708	ppt late
+3993	hernia repair 1965, no mesh?
+56455	participant unwilling
+49399	insufficient sample
+7789	no electrodes
+34502	insufficient sample
+3175	low staff
+47079	participant unwilling
+45830	participant unwilling
+19260	inginal hernia aged - unsure if mesh/stitched used
+29032	participant unwilling
+35678	insufficient sample
+60702	participant unwilling
+17182	   staff shortage
+42779	insufficient sample
+52663	insufficient sample
+36421	participant unwilling
+15990	vicorder fail
+18218	ppt late for appointment
+67278	participant unwilling
+26930	training issues, ppt cannot follow task .
+5578	no stickers available
+61518	participant unwilling
+57905	insufficient sample
+2183	   staff
+58071	insufficient sample
+26075	 timing
+8729	participant refused scan  lying flat.
+26604	claustrophobic
+7256	low staff
+48181	insufficient sample
+44128	insufficient sample
+52604	insufficient sample
+49712	insufficient sample
+26619	, timing
+66878	participant unwilling
+54024	participant unwilling
+65840	participant not present
+60753	other equipment failure
+27995	no suitable lenses
+58230	insufficient sample
+44178	insufficient sample
+11005	 scan time restraints
+5089	staff shortage
+55227	insufficient sample
+3220	 - staff
+50768	insufficient sample
+37994	participant unwilling
+56565	insufficient sample
+67874	participant unwilling
+18134	mri safety unknown
+60564	insufficient sample
+61484	participant unwilling
+31927	participant unwilling
+35398	participant unwilling
+19208	laser eye surgery  weeks ago , ? tack in  eye
+60326	insufficient sample
+1083	 short staffed
+57398	insufficient sample
+11895	vicorder failed
+44044	insufficient sample
+47648	insufficient sample
+13704	 scan- ecg failure
+47532	collapsed vein
+26733	- prescription so no task done
+20515	ppt head too big for coil no scan
+41152	insufficient sample
+60667	insufficient sample
+29427	participant unwilling
+65651	other equipment failure
+38276	participant unwilling after 1st try
+13620	vicorder ran
+65743	participant unwilling
+12834	abandoned -  failed
+7042	 - staff
+27370	sag t1 repeated , no task
+26212	ppt unresponsive to task - stopped
+31650	participant unwilling
+39593	insufficient sample
+64650	participant not present
+67678	participant unwilling
+9839	staff shortage
+4486	iofb
+67183	0060006105062
+9001	ppt 30 mins late/lengthy phone call in screening
+54219	insufficient sample
+50219	insufficient sample
+39151	insufficient sample
+37160	participant unwilling
+7437	""
+45529	insufficient sample
+36043	insufficient sample
+59305	insufficient sample
+61500	other equipment failure
+50533	insufficient sample
+41874	participant unwilling
+62053	insufficient sample
+5980	staff
+21205	no task, no suitable lenses
+5573	short staffed
+53835	difficult veins
+32795	participant unwilling
+36923	insufficient sample
+55261	participant fainted
+62838	no rna bottles
+13058	bilateral mastectomy
+43221	insufficient sample
+43774	insufficient sample
+33559	insufficient sample
+15652	vicorder failure.
+23375	participant had  taxi coming early scanabandoned
+22339	no task: eprime failure
+45269	insufficient sample
+25962	no task - no suitable lenses
+24297	 time
+42778	insufficient sample
+12198	measurements taked and recorded
+18015	claustrophobic
+57508	insufficient sample
+50272	insufficient sample
+15338	 time management
+50049	difficult vein,manager aware
+63752	no containers available
+19780	steel worker - ?metallic eye injury
+53483	insufficient sample
+34611	participant unwilling
+66781	participant unwilling
+51628	insufficient sample
+62763	insufficient sample
+8292	staff shortage
+63839	participant not present
+9206	short staffed
+21289	no dwi/swi/t2 (ppt 20 min late)
+3511	 scan short of staff
+7418	staff shortage no scan
+35198	insufficient sample
+63880	participant unwilling
+14172	vicorder failed to record results
+21022	no task, no suitable lenses
+61085	insufficient sample
+34587	insufficient sample
+4528	hernia operation pre 2000
+17256	 time managmeent
+51580	insufficient sample
+10695	vicorder failure
+56494	collapsed vein
+19113	inguinal hernia c1999 (ppt doesnt know how repaired)
+53063	insufficient sample
+46157	insufficient sample
+864	drill part in jaw left by dentist unsafe for mri
+15246	cardiac scan abandon. breathing difficulties cough
+16036	vicorder out of action
+53288	insufficient sample
+18865	valve repair
+65706	participant unwilling
+30810	participant unwilling
+7852	staff
+41530	participant unwilling
+21908	cannot see screen
+57965	difficult venepuncture
+17887	participant declined staff  back pain
+66374	participant unwilling in wheelchair would be diff
+10906	vicorder failed, repeated
+17944	claustrophobia
+20021	, staff
+5179	tried twice , both measurements failed
+61951	insufficient sample
+44254	participant unwilling
+7117	short of staff
+22222	  - time
+58813	insufficient sample
+51784	participant unwilling
+35199	participant unwilling
+37486	insufficient sample
+26865	no task time constraints
+62653	insufficient sample
+4963	no staff
+45001	insufficient sample
+57421	insufficient sample
+17619	claustrophobic
+61215	vain collapsed. clinic manager has tried as well
+44949	insufficient sample
+9820	ppt was 30 mins late - no time
+22659	no task: no suitable lenses
+13653	vicorder failed
+42870	insufficient sample
+45309	participant unwilling
+1670	 - short staffed
+59551	insufficient sample
+5654	short staffed
+31903	failed attempts to get samples
+19648	wheelchair user
+9729	late
+38047	participant unwilling
+39517	insufficient sample
+10107	  time restraints
+42198	insufficient sample
+21587	t1 repeated - movement, no task
+4440	hernia uknown repair 1970
+52806	participant unwilling
+60680	sample cannot be obtained
+13464	vicorder readings not complete
+41071	insufficient sample
+30328	insufficient sample
+33455	insufficient sample
+8648	no staff available
+28672	insufficient sample
+23607	no task - poor vision
+56133	insufficient sample
+5651	staff
+11812	no vicorder - left mastectomy
+11454	vicorder error
+58216	insufficient sample
+67128	participant unwilling
+3353	   staff
+48651	insufficient sample
+65622	participant not present
+13170	vicorder not working
+28227	imt not attained on left - anatomy
+11189	 time management
+66989	participant unwilling
+56558	insufficient sample
+2320	 imaging time constraints
+20200	  - staff
+43489	insufficient sample
+58894	insufficient sample
+50378	insufficient sample
+25633	no   licence expiration
+66604	participant unwilling
+9101	no staff
+44636	participant unwilling
+9031	staff shortage
+50263	insufficient sample
+37049	insufficient sample
+23093	scanner crash
+17715	no suitable lenses
+52756	insufficient sample
+43446	participant unwilling
+10841	  - staff
+17153	vicorder failure
+30031	try twice but coundnt find vein
+55012	insufficient sample
+2026	staff
+4550	bilateral lens replacement
+45858	insufficient sample
+19050	distal radius # volar plating 29/10/18
+36499	dificult veins
+46995	insufficient sample
+55332	insufficient sample
+42468	insufficient sample
+14050	poor breath holds abandond
+3291	lva cut ppt. needed toilet
+14803	abdo not scanned, paticipant wanted to stop
+4657	? gallbladder surgery 191 open surgery
+8550	no ecg staff shortages
+22509	no task, t1 repeated  movement
+3351	:ppt arrived late
+7990	room closed  staff shortages
+60300	participant unwilling
+15968	vicorder failed
+7188	staff
+32843	insufficient sample
+38550	insufficient sample
+21372	no prescription, anxious ppt
+19805	need to check
+62538	no tubes available
+26374	""
+66332	participant unwilling
+36566	other equipment failure
+67345	recently had polyps removed so still bleeding
+52270	insufficient sample
+8508	radiographer error
+21831	 time management
+49311	insufficient sample
+17720	claustrophobic
+10629	vicorder error
+55839	insufficient sample
+24465	task did not run
+6852	time constraints
+60438	participant unwilling
+29821	insufficient sample
+66831	participant unwilling
+21502	eye straining  lens. no task done
+19744	old iofb
+58268	insufficient sample
+8665	staff shortage
+2650	   staff
+13685	no blood-pressure - blood taken on both arms just before mri
+61907	felt faint
+5325	  short staffed
+11130	vicorder failed
+43283	participant unwilling
+61143	participant unwilling
+9913	ppt 30 mins late
+11436	vicorder error
+37180	insufficient sample
+53094	insufficient sample
+3770	dexa out of sync with mri
+9081	staff shortage
+3273	total knee replacement
+37949	insufficient sample
+23281	no task repeated t1 movement ++++
+49441	insufficient sample
+60568	participant unwilling
+10945	- time constraints
+38036	insufficient sample
+37941	insufficient sample
+36397	insufficient sample
+51522	insufficient sample
+62980	insufficient sample
+43245	insufficient sample
+34386	participant unwilling
+39118	insufficient sample
+5087	staff
+25110	no task - equipment broken
+51245	insufficient sample
+67274	participant unwilling
+2306	 scan, four staff
+18054	ppt late
+30812	participant unwilling
+33887	insufficient sample
+10583	 for time management
+64967	participant not present
+42333	insufficient sample
+59605	insufficient sample
+13604	ppt had reaction to ecg stickers - abdo 
+4493	eyebrows tattoed  week ago
+45400	insufficient sample
+5238	short staffed
+25316	timing constraints
+30087	insufficient sample
+51927	participant unwilling
+12579	 cardiac and abdo   time constraints
+1833	  large ppt lo9ng scan
+43124	insufficient sample
+17258	  time management
+54714	insufficient sample
+67569	participant unwilling
+28731	insufficient sample
+45925	difficult vein,  phlebs tried.
+51995	insufficient sample
+32154	insufficient sample
+25476	claustophobic - no mri
+48801	insufficient sample
+37913	participant unwilling
+12433	ppt claustrophobic, no images taken
+62109	participant unwilling
+13409	vicorder failure
+21150	no task, unsuitable perscription
+30703	insufficient sample
+57701	insufficient sample
+39069	difficult veins
+57766	unsuf sample
+62060	insufficient sample
+59663	insufficient sample
+27745	repeat t1, diffusion deleted
+20144	no task- amputated right arm
+13222	no vicorder
+63379	participant unwilling
+67412	participant unwilling
+6559	staff shortage
+49851	insufficient sample
+32811	insufficient sample
+14163	failed to load - tried  times
+333	ppt claustrophobic
+64257	participant unwilling
+43706	participant unwilling
+9247	staff shortage
+63251	participant unwilling
+10443	.  staff
+43182	participant unwilling
+20769	no task- unable to see the wall
+16371	 failed- no readings
+40530	insufficient sample
+58775	insufficient sample
+44397	insufficient sample
+13628	vorder failed
+9016	staff
+15861	 abdo-coil
+25664	no task- no suitable lenses
+34011	participant unwilling
+1656	""
+46941	participant unwilling
+41771	insufficient sample
+56549	insufficient sample
+39639	insufficient sample
+50492	insufficient sample
+38428	insufficient sample
+33776	insufficient sample
+64421	participant unwilling
+65985	participant unwilling
+54999	insufficient sample
+65260	started period today
+10690	 scan time restraints
+28077	no task  eyesight.
+65279	participant menstruating
+59417	insufficient sample
+22202	ppt uncomfortable; stopped after t2
+31050	insufficient sample
+57133	insufficient sample
+51578	insufficient sample
+11926	software error
+16573	 - time constraints
+4555	re lens replacment
+27920	no task, arrived late
+34650	insufficient sample
+20223	task failed
+39862	participant fainted
+62062	insufficient sample
+38576	participant unwilling
+64443	participant unwilling
+55944	insufficient sample
+11113	no smolli reconstrustion failedx
+8022	staff
+53398	other equipment failure
+1105	low staff - 
+47702	insufficient sample
+55658	insufficient sample
+18522	ppt claustrophobic - refused the scan
+41380	insufficient sample
+39255	insufficient sample
+30613	participant unwilling
+5634	ppt cannot lie flat - felt sick
+61511	unable to obtain sample
+7365	ppt late
+5873	 - staff
+50676	insufficient sample
+39534	insufficient sample
+6261	time constraints
+59841	insufficient sample
+61548	participant unwilling
+10147	vicorder failure
+2686	, time constraints
+24330	no task-no prescription
+35830	participant unwilling
+12756	no abdo - ppt late
+2305	 - no staff
+9878	staff shortage
+20779	no responses from ppt - task abandoned
+63554	other equipment failure
+48551	participant unwilling
+3377	no able to complete dexa, unconfortable
+468	known atrial-fibrillation-abdomen 
+46691	participant want to give   samples
+56136	insufficient sample
+59203	insufficient sample
+18118	ppt declined
+5109	broken
+8491	staff
+52694	insufficient sample
+13551	 
+62241	insufficient sample
+3	wanted to finish earlier
+11882	vicorder failure
+2959	  - staff shortage
+8140	no ecg -time- hca shortstaffed-radiographer covered
+62833	insufficient sample
+7816	no leads
+9151	not enough staff
+46108	participant unwilling
+23044	time
+28641	insufficient sample
+3843	? pre 2000 hernia repair ? not know what implant used
+53469	insufficient sample
+4163	ear operation
+27251	no lenses for ppt
+34737	insufficient sample
+65888	participant unwilling
+28883	insufficient sample
+45305	insufficient sample
+14183	vicorder software crashed - pb
+12215	no abdomen - siemens fixing scanner - no time
+43568	participant unwilling
+41420	participant unwilling
+66517	participant not present
+9562	short of staff
+34172	participant unwilling after 1st try
+47662	participant unwilling
+51026	insufficient sample
+42991	insufficient sample
+62557	insufficient sample
+38330	participant unwilling
+28800	participant has very poor veins moses tired as wel
+41740	insufficient sample
+27179	stopped after t2 - staff training
+29144	angioplasty tomorrow and prefers not to
+32176	phlebos tried unable to get sample
+20994	task failed
+59407	participant unwilling
+29360	insufficient sample
+7591	 imaging
+44275	insufficient sample
+20154	ppt did not want to do task
+22498	no task-eprime failure
+32147	insufficient sample
+24553	no task - no prescription
+34145	insufficient sample
+3510	just  program - staff shortage
+64519	participant unwilling
+57788	participant unwilling
+25228	vicorder failed
+62054	participant unwilling
+45628	participant unwilling
+54354	insufficient sample
+41207	participant unwilling
+35828	insufficient sample
+45745	participant unwilling
+36652	insufficient sample
+60514	insufficient.sample
+29116	other equipment failure
+3938	?iofb
+30808	participant unwilling
+15061	 scan
+48882	insufficient sample
+47802	insufficient sample
+43845	insufficient sample
+30581	insufficient sample
+54467	insufficient sample
+21992	diffusions and swi cut, time restraints.
+38271	other equipment failure
+6349	time constraints
+28666	participant fainted, unwilling also.
+6990	short staffed
+17820	no scan, scanner broken
+42549	tube breakage
+13832	vicorder failed
+19397	gb clips
+63760	no containers available
+13344	fault with vicorder
+29784	insufficient sample
+60843	insufficient sample
+46105	insufficient sample
+48967	insufficient sample
+22240	no task, no lenses
+250	claustrophobic
+19383	ct-aortagram (contrast agent)
+29559	other equipment failure
+21420	short staffed -  scan
+62645	participant unwilling
+49460	participant feeling unwell and light headed
+5349	short staffed
+51370	insufficient sample
+24246	software error
+14950	participant needs to leave early
+64458	participant not present
+6971	staff shortage
+9949	ppt. did not want radiation - has had radiotherapy
+30784	participant unwilling
+7890	staff shortage
+23813	, ppt needing to leave at 7pm to get his train
+15649	peru and ecg failed,  part abdomen completed
+57820	participant unwilling
+66229	participant unable  medical problem
+65376	participant unwilling
+29672	insufficient sample
+16220	no cardiac -  fail
+24659	no task t1 repeat
+30669	insufficient sample
+30205	insufficient sample
+26759	short scan. delayed in clinic
+54054	insufficient sample
+66797	participant unwilling
+37303	participant unwilling
+45045	difficult vein.manager aware
+25117	ppt delay
+24197	: time management
+6523	staff
+54867	insufficient sample
+49162	insufficient sample
+18389	ppt claustaphobic
+22124	 - time constraints
+59673	insufficient sample
+67856	participant unwilling
+40401	insufficient sample
+24898	stopped early iofb on scan
+46453	insufficient sample
+18617	transdermal patch, unwilling to remove.
+15515	 cardiac - claustrophobic - breathing
+19838	hernia operation pre 2000
+17986	no lenses
+11010	 short staffed x2
+36986	participant unwilling
+24952	 - time constraints
+27761	nervous ppt abandoned
+34615	participant unwilling
+177	partecipant cannot follow breathe instructions.
+66012	participant unwilling
+64399	not appropriate at this time
+18143	claustrophobic
+49945	other equipment failure
+51516	insufficient sample
+65332	participant unwilling
+36563	participant unwilling
+27613	no suitable lenses
+6566	no leads
+41775	insufficient sample
+42007	insufficient sample
+41813	insufficient sample
+23119	no task - no mprescription - unable to read chart
+12934	 cardiac - staff
+58917	insufficient sample
+24473	no suitable lenses
+26379	 scan
+29340	participant unwilling
+20318	  - time
+41615	insufficient sample
+8884	short staffed
+59934	insufficient sample
+5602	short staffed
+4539	metal worker
+32544	insufficient sample
+47	claustrophobia
+8420	time constraints
+11845	 - time constraints
+41876	insufficient sample
+41503	4x,vein collapsed
+63505	participant not present
+51345	participant unwilling
+21143	ppt claustrophobic
+59268	participant unwilling
+47153	insufficient sample
+65276	participant unwilling
+15205	no vicorder - lymph nodes removed left side
+23473	no suitable lenses
+35964	participant unwilling
+37317	insufficient sample
+14493	one measurement missing operator error
+6659	staff shortage
+7251	staff
+36557	participant fainted
+28603	cannot draw blood
+7174	user removed key before signing off results
+18549	claustrophobic
+47307	insufficient sample
+60829	insufficient sample
+46586	insufficient sample
+42893	participant unwilling
+63362	participant not present
+4504	possible metal in eyes
+31172	insufficient sample
+49853	insufficient sample
+53097	insufficient sample
+25142	no task, ppt unable to see
+16329	vicorder not yet installed.
+36321	participant unwilling
+47989	insufficient sample
+7293	no elecrodes
+29935	insufficient sample
+44241	participant unwilling
+16102	it is complete - issue saving
+62322	insufficient sample
+20454	time restraint
+35521	participant unwilling
+33471	participant unwilling
+60934	participant felt faint.
+47633	collapsing veins
+40678	participant unwilling
+24569	rpt t1
+40591	participant unwilling
+59557	insufficient sample
+43958	insufficient sample
+20238	 out of sync
+19602	unknown iud, no mri
+52268	insufficient sample
+34591	insufficient sample
+65161	participant unwilling, he is in hurry
+1686	 short staff
+53029	participant unwilling
+37255	insufficient sample
+54001	insufficient sample
+8412	short staffed
+32337	participant unwilling
+34204	insufficient sample
+9673	late
+58712	insufficient sample
+7368	no ecg stickers available
+50940	insufficient sample
+2570	 - short staffed
+55879	insufficient sample
+55593	other equipment failure
+6750	staff shortage
+42205	participant unwilling
+45278	insufficient sample
+39615	insufficient sample
+15409	vicorder not installed.
+49218	insufficient sample
+24796	no task: no suitable lenses
+49975	insufficient sample
+50097	insufficient sample
+25002	no task: no lenses
+22568	 - timings
+62954	insufficient sample
+55506	insufficient sample
+39107	insufficient sample
+39813	insufficient sample
+67025	participant unwilling
+67740	participant unwilling
+50100	insufficient sample
+58847	insufficient sample
+46643	insufficient sample
+5304	short staffed
+6105	ppt late time constraints
+6135	no staff
+44748	did one try but dint find any blood   dont want
+14356	 scan late
+24156	 - time manag.
+44499	insufficient sample
+7297	staff
+59502	insufficient sample
+22262	no task - screen not working
+4582	? staples
+23974	no task - screen issues
+53180	unwell
+40873	blood stopped flowing into tube
+40711	extremely difficult venepuncture
+44939	insufficient sample
+66056	participant unwilling
+37142	not able to take bloods. chemo
+33661	pt difficult to bleed
+6076	staff shortage
+4831	drain afrter appendectomy
+28749	insufficient sample
+16814	 cardiac short staff
+41474	insufficient sample
+31362	difficult vein.manager aware
+16915	vicorder failed
+29053	participant unwilling
+23083	error
+15094	vicorder failure.
+59986	participant unwilling
+34743	insufficient sample
+15220	scan stopped, query atrial-fibrillation
+9306	ppt late for appointment
+28782	did one try but dint find any blood   dont want
+40515	insufficient sample
+55292	participant unwilling
+10286	 - ppt on computer caused delay
+8231	short staffed
+51322	insufficient sample
+17790	ppt claustrophobic
+3065	 time
+60495	insufficient sample
+46772	insufficient sample
+14448	vicorder completed but ivox crashed as saving
+30278	veins rolling- unable to locate decent vein
+63474	participant not present
+26093	no task, ppt wanted to keep eyes closed
+7570	understaffed
+10037	vicorder fail
+59117	participant unwilling
+65600	participant unwilling
+55316	participant unwilling
+16303	vicorder completed, screen froze at end, all lost
+25670	ppt unable to fit in head coil, unable to lie flat
+13871	 - scanner crash - reboot
+9136	ppt late
+19645	inguial henia 1952 unknown repair- told prc no rad email.
+62985	difficult veins
+38386	insufficient sample
+45252	insufficient sample
+55490	insufficient sample
+29603	insufficient sample
+53722	insufficient sample
+45505	participant unwilling
+19833	squint corrected in adulthood-unsure if sutures used
+40317	participant unwilling
+20853	ppt. buzzed off - incomplete scan
+50641	insufficient sample
+56886	insufficient sample
+8109	staff shortages
+17329	vicorder did not save results
+24565	ivox pc error task not completed
+42347	faint
+4140	previous bowel surgery
+18321	surgery to eyeball multiple?safey
+66259	participant unwilling
+8016	ppt became unwell/vomited
+54030	insufficient sample
+30832	insufficient sample
+31873	insufficient sample
+54918	insufficient sample
+45938	insufficient sample
+53705	insufficient sample
+29622	insufficient sample
+15976	vicorder failure
+43617	participant unwilling
+46493	insufficient sample
+53204	participant unwilling
+39755	insufficient sample
+14540	difficulty holding breathe
+14908	vicorder crashed. measurement not saved
+35649	insufficient sample
+9984	ppt was 40 mins late
+24692	no task: wall chart blurred
+52361	-fainted
+55907	participant unwilling
+46816	insufficient sample
+49060	insufficient sample
+58679	insufficient sample
+32824	insufficient sample
+42332	insufficient sample
+7072	staff shortage
+51228	insufficient sample
+61516	insufficient sample
+36985	insufficient sample
+41736	insufficient sample
+4581	check
+8303	""
+8885	ppt sick
+4279	previous iofb
+11996	 sequences   time pressures
+52925	insufficient sample
+16248	scan abandoned participant claustrophobic
+27572	no task no suitable lenses
+34556	participant unwilling
+41583	insufficient sample
+62377	insufficient sample
+63908	participant unwilling
+56000	insufficient sample
+7909	no equipment
+14107	vicorder error
+65330	participant unwilling
+35454	insufficient sample
+63935	participant not present
+17836	ppt 40 mins late
+6033	short staff
+58146	insufficient sample
+50240	insufficient sample
+30169	participant unwilling
+33391	participant unwilling
+60543	insufficient sample
+10327	""
+46150	participant unwilling
+66597	participant unwilling
+47833	participant unwilling
+37199	insufficient sample
+33394	insufficient sample
+47232	participant unwilling
+14568	 - time constraints
+63275	participant unwilling
+47977	insufficient sample
+54376	participant unwilling
+44921	tried  times veins are very poor
+17729	ppt declined
+1988	 - staff shortage
+58311	insufficient sample
+45944	veins collapsed,.unwilling for 3x
+48919	insufficient sample
+22273	time constraints -  
+44472	insufficient sample
+40561	vein collapse,dont want  2nd try
+17440	ppt neck position -uncomfortable for ppt - lg head
+17492	helium fill + coldhead replacement
+39332	participant unwilling
+35657	insufficient sample
+65425	participant not present
+56421	insufficient sample
+61198	difficult veins
+38920	insufficient sample
+22138	 as ppt diabetic
+66634	participant unwilling
+51653	insufficient sample
+63927	participant unwilling
+25836	task halted no responses
+3342	 staff
+24918	task - not omitted as ppt unable to understand
+35481	phlebos tried unable to get sample
+31810	participant unwilling
+63676	participant in  hurry to leave
+53785	insufficient sample
+23715	task failure
+64890	participant unwilling
+22248	-time
+32976	participant fainted
+66796	participant unable
+31930	incomplete - patient upset
+59879	unsuf. sample
+11457	 scan, staff shortages clinic and imaging
+7270	staff shortage
+35442	insufficient sample
+10232	 scan short of staff
+17393	iofb
+30403	insufficient sample
+50129	vein collapse,no other accessible vein
+28748	participant unwilling
+15589	no abdo, too uncomfortable lying flat
+25045	ppt very kyphotic no scan
+26154	 - staff
+14598	vicorder fail
+46674	insufficient sample
+26755	no task - no suitable lenses
+17487	ppt was sick during ecg, cannot lay flat no  mri
+19285	mastoids 1960
+13238	vicorder failed
+25637	no task- no prescription
+28721	insufficient sample
+214	ppt claustrophobic
+24598	 scan went to toilet, delay starting scan
+12391	 
+42020	insufficient sample
+41108	insufficient sample
+63400	no containers available
+59301	participant unwilling
+14154	no cardiac  ppt was late.
+22365	no suitable lenses for task
+58511	insufficient sample
+25706	 - time constraints
+55710	insufficient sample
+63409	participant unwilling
+65372	participant unwilling
+51165	insufficient sample
+38286	vein collapsed, no further access
+2597	 short staffed
+44641	difficult venepuncture
+55091	insufficient sample
+67830	participant unwilling
+41885	insufficient sample
+17953	ppt claustrophobic
+40080	veins collapsed,tried 3x
+31037	insufficient sample
+20134	no task  repeating t1
+58970	insufficient sample
+37397	insufficient sample
+16589	vicorder failure
+168	contraindicated
+18260	ppt refused
+60386	insufficient sample
+57708	insufficient sample
+67179	already taken
+24838	no task as no suitable lenses
+27700	no task, system overload as images not sending
+65158	other equipment failure
+59418	participant unwilling
+31219	insufficient sample
+64603	participant unwilling
+37210	participant unwilling
+17812	ppt claustrophobic
+2996	 staff
+1626	  staff shortage
+15281	vicorder failed
+51712	insufficient sample
+12615	vicorder failed x3
+41492	insufficient sample
+32522	insufficient sample
+13303	 time management
+31321	participant unwilling
+37186	participant unwilling
+43988	insufficient sample
+13206	 sequences  staff/ppt flow
+38832	participant unwilling
+60400	insufficient sample
+11201	vicorder failed
+48709	insufficient sample
+15983	abandoned ppt needed to be sick
+24427	scan abandoned ppt unable tio lie
+8527	staff
+21158	no task, no suitable lenses
+60287	insufficient sample
+32659	insufficient sample
+45856	insufficient sample
+58576	insufficient sample
+45526	participant unwell
+14882	vicorder failure
+13553	ecg issues and ppt wanted  shorter scan, onto abd
+53674	insufficient sample
+8944	staff shortage
+33094	insufficient sample
+57855	insufficient sample
+55978	participant felt faintish
+40973	participant unwilling
+62432	run out of rna tubes
+58377	insufficient sample
+25604	no task - eprime failure
+30705	insufficient sample
+22780	no task movement t1
+26872	ppt. in too much pain to have scan.
+28746	insufficient sample
+15622	vicorder failure
+33851	insufficient sample
+31677	participant unwilling
+15290	no scan, ppt was unable to remove multiple piercin
+62398	participant unwilling
+45590	insufficient sample
+65168	participant unwilling
+5854	staff
+25307	 - ppt . hours late
+65027	participant unwilling
+20891	ppt did not understand the task
+39125	insufficient sample
+1824	 - staff shortage
+20079	no lenses suitable
+46575	insufficient sample
+60107	tube breakage
+50409	unable to get blood
+10156	 fail
+35167	insufficient sample
+60115	insufficient sample
+14561	wanted to stop after the cardiac scan. no abdoscan
+54643	participant unwilling
+52530	insufficient sample
+40612	insufficient sample
+23015	no task  confusion
+21782	 due time management
+19858	allergy to any sticky pads on skin-severe
+370	claustrophobic
+45451	insufficient sample
+53867	insufficient sample
+19095	previous metal swarf removed 40 years ago
+30776	participant unwilling
+34585	insufficient sample
+12828	arrived late - ( programme)
+17711	pppt has had enough - doesbt want brain mri
+23435	cyphosys, no able to set the helmet anyway. vd
+4673	intensive metal/magnetic braces in mouth.
+10859	vicorder failed to record
+46436	participant unwilling
+7106	staff
+30198	participant unwilling
+27192	no task  equipment failure
+20449	scanner crashed
+18676	claustrophobic
+38325	unable to obtain sample
+46240	insufficient sample
+53822	insufficient sample
+48928	insufficient sample
+32736	insufficient sample
+55701	insufficient sample
+24675	ppt buzzed during task, not completed
+28078	participant not scanned - 30 mins late
+45701	insufficient sample
+44149	insufficient sample
+63830	participant unwilling
+59564	insufficient sample
+16954	vicorder failed
+948	just 
+19157	veins stripped, ? metal
+40082	insufficient sample
+57327	participant unwilling
+58508	insufficient sample
+26050	  time issues.
+40602	insufficient sample
+26706	 time management
+67281	participant unwilling
+52005	insufficient sample
+22873	diffusion and swi cut, time restraints
+62313	insufficient sample
+2307	  - short staffed
+66404	participant unwilling
+38433	insufficient sample
+28044	 time management
+59656	insufficient sample
+40177	participant unwilling
+40645	insufficient sample
+31822	insufficient sample
+23635	  short staffed
+59903	insufficient sample
+7505	staff shortage
+12068	claustrophobic no 
+47511	insufficient sample
+1224	staff
+25895	screen not working for task.
+64411	given already
+66983	participant unwilling
+61828	insufficient sample
+21573	-time management
+48491	insufficient sample
+6541	no equipment
+16562	 cardiac - running behind time
+57465	feeling faint
+53697	participant unwilling
+1332	 
+59352	participant unwilling
+27791	no task no suitable lenses
+40053	insufficient sample
+50992	poor venous acsess
+22842	.
+62239	insufficient sample
+13595	vicorder failure
+61967	insufficient sample
+884	no scan does not want scan
+3969	gerd surgery
+13727	 , scanner malfunction
+4674	check info with super
+60156	insufficient sample
+62195	insufficient sample
+18465	ppt did not like head being covered - claustrophob
+42908	insufficient sample
+21092	no task - no prescription
+40800	insufficient sample
+52636	insufficient sample
+53625	insufficient sample
+66008	no containers available
+21680	 
+5865	staff
+38368	other equipment failure
+20982	  time management.
+65324	participant unwilling
+14319	vicorder failure
+8683	staff
+7619	staff shortage
+11586	 scan - short staffed
+17706	ppt claustophobic
+39484	insufficient sample
+36228	participant unwilling
+51061	insufficient sample
+5091	no staff
+53303	insufficient sample
+63680	participant unwilling
+199	not performed  scan repair
+49025	insufficient sample
+50559	insufficient sample
+56981	incomplplete participant unwell
+4642	eyebrow tatoo
+38138	insufficient sample
+5882	short staffed
+46598	insufficient sample
+23267	  as glasses made ppt claustrophobic
+47919	insufficient sample
+58675	insufficient sample
+65238	participant unwilling
+31538	participant unwilling
+59921	insufficient sample
+1433	""
+17248	vicorder failure
+32905	participant unwilling
+38340	insufficient sample
+60940	insufficient sample
+38795	insufficient sample
+6048	short staffed
+28922	insufficient sample
+27830	no task, -12 lenses required
+14663	vicorder failure
+11868	pt worried about allergy to the cuff
+54277	participant felt not well
+3890	tiny bones in the ears replaced / guidelines say to not scan
+48973	insufficient sample
+63493	participant unwilling
+27473	power cut
+24924	software error
+49948	insufficient sample
+2077	 - short staffed
+23282	 , short staffed.
+26203	  staff shortage
+15396	no equipmwnt
+12943	 scan - running behind
+25712	""
+32254	participant unwilling
+4766	clips in breast
+44479	insufficient sample
+53451	insufficient sample
+38853	insufficient sample
+56730	insufficient sample
+61508	other equipment failure
+8499	staff shortage
+6010	short staffed
+37702	failed filling all tubes, veins collapsed in 3x
+48361	insufficient sample
+33868	insufficient sample
+49613	participant unwilling
+36379	insufficient sample
+53010	insufficient sample
+24143	scan cut  time
+14437	 , time constraints
+6161	no equipment
+45936	insufficient sample
+54265	insufficient sample
+43684	insufficient sample
+16108	vicorder failed
+30763	insufficient sample
+66273	participant gave sample but this wasnt scanned
+37299	participant unwilling
+24532	cannot do task
+7988	short staffed
+60259	insufficient sample
+15392	vicorder failure
+67695	participant unable
+11243	vicorder failed
+61098	insufficient sample
+29227	insufficient sample
+43380	insufficient sample
+61074	insufficient sample
+12515	time constraints.  cut.  completed
+66675	participant unwilling
+48105	insufficient sample
+35741	insufficient sample
+67694	other equipment failure
+30202	insufficient sample
+25757	   time
+30305	participant unwilling
+40536	insufficient sample
+65400	participant not present
+42431	participant unwilling
+56920	participant unwilling
+20703	no task- no lenses
+38622	participant unwilling
+14655	no vivorder as patient has lymphadenopathy
+6735	ecg recording failed
+12674	vicorder failed.
+30994	insufficient sample
+27480	  ppt taking  longtime changing.
+18393	ppt 30mins late & equipment failure not scanned.
+12320	 running behind/short staffed
+33606	participant unwilling
+55133	0030001963417
+35934	insufficient sample
+20619	 
+53897	insufficient sample
+4991	no equipment
+37989	insufficient sample
+53597	insufficient sample
+30676	participant unwilling
+62050	run out of rna tubes
+3122	 scan time restraints
+33384	insufficient sample
+7522	staff
+13534	scan aborted  claustrophobia
+47246	collapsed vein problem
+48535	insufficient sample
+19033	detatched retina. ?years, ?preceedure
+8560	short staffed
+4688	heamorrhiod 2000 unsure of procedure
+58799	participant unwilling
+29695	participant fainted
+46476	insufficient sample
+38785	unsuf sample
+8053	staff
+52137	insufficient sample
+44575	insufficient sample
+26925	vicorder failure
+57318	insufficient sample
+9617	equipment service
+39474	insufficient sample
+4456	? metla or kevlar  little finger
+24940	no task , no suitable lenses
+36733	insufficient sample
+48378	started feeling dizzy and unwilling to continue
+6492	no leads
+28176	.time management
+3192	 - short staffed
+49213	participant unwilling
+59132	insufficient sample
+38754	insufficient sample
+29553	participant unwilling
+29956	insufficient sample
+31947	participant unwilling
+17290	vicorder failure
+65153	participant unwell
+13806	scan abandoned, claustrophobic
+54621	participant unwilling
+17891	iofb
+32117	insufficient sample
+19718	iofb
+28390	insufficient sample
+43899	participant unwilling
+52707	insufficient sample
+38858	insufficient sample
+51844	insufficient sample
+11035	ppt unable to hold breath  lung condition
+32274	insufficient sample
+62895	insufficient sample
+27296	ptt buzzed lost postioning
+67475	participant on menstrual cycle so refused
+29467	other equipment failure
+64278	participant unwilling
+5941	no staff
+49779	participant unwilling
+405	ppt very late
+36884	participant unwilling
+65508	participant unwilling
+19185	operation  weeks
+19040	unsure if tack used for detached retina
+41513	insufficient sample
+54581	insufficient sample
+67288	participant unwilling
+44616	insufficient sample
+21474	ice crash mid scan, ?saved?
+7828	short staffed
+54430	insufficient sample
+19023	? iofb
+17915	participant cannot lie flat for 30 min
+21328	   staff
+17705	claustrophobic
+31752	insufficient sample
+62270	vein collapsed .
+5617	no equipment available
+3182	 scan, ppt late
+46604	insufficient sample
+54823	insufficient sample
+1073	   staff
+44975	other equipment failure
+35449	insufficient sample
+20555	 
+13963	 cardiac scan - time constraints
+56664	participant unwilling
+35177	insufficient sample
+37771	participant unwilling
+50759	very dizzy
+27305	pc froze
+10647	no cardiac - poor breatholds
+10849	software crashed
+59844	insufficient sample
+63055	insufficient sample
+46040	unable to bleed
+51959	insufficient sample
+28000	no task
+55905	insufficient sample
+28544	participant unwilling
+2484	 staff
+35767	insufficient sample
+65657	participant not present
+36864	insufficient sample
+30951	insufficient sample
+30244	participant unwilling
+64592	participant unwilling
+24642	task ran
+20954	 
+863	ppt claustrophobic
+56717	insufficient sample
+19543	iofb
+39160	insufficient sample
+20036	claustrophobic
+49002	insufficient sample
+36227	participant unwilling
+3911	hernia unsure and iofb
+38803	insufficient sample
+13777	  - time constraints
+29416	insufficient sample
+65864	0060003887602
+1703	 staff
+20437	no task, staff shortage
+18840	ppt claustrophobic
+7012	time constraints
+41432	insufficient sample
+17228	time constraints
+43833	doesnt want  second attempt
+54191	insufficient sample
+16618	metal in right leg that ppt did not know about
+38479	insufficient sample
+21165	cluastrophobic
+6386	 imaging  - staff
+23243	t1 repeated three times-cannot get usable imgs
+42372	insufficient sample
+37275	participant unwilling
+47282	participant unwilling
+56145	insufficient sample
+32910	insufficient sample
+3982	mastoidectomy
+35011	insufficient sample
+13690	ppt claustrophobic
+5663	short staffed
+16283	vicorder failure
+45250	insufficient sample
+12831	 scan, staff training
+67479	no toilet
+55837	insufficient sample
+45317	insufficient sample
+50698	insufficient sample
+4599	hernia operation pre 2000
+18844	partial scan excess motion
+62396	no venous access
+6634	staff
+56953	insufficient sample
+31844	insufficient sample
+16128	ppt claustrophobic
+46142	insufficient sample
+34427	participant unwilling
+28619	insufficient sample
+28365	insufficient sample
+66562	participant unwilling
+794	claustrophobic
+66898	no containers available
+8965	short staffed
+66337	participant unwilling
+58977	insufficient sample
+61642	other equipment failure
+64127	participant unwilling
+16413	no vicorder - bloods left arm
+2533	 - no staff
+19622	surgery in last  weeks
+45746	insufficient sample
+14555	ppt worried about noise
+57228	participant unwilling
+65748	participant not present
+19796	eye lash tinted  week ago
+15059	no vicorder
+8651	ppt. late
+2923	 staff
+55928	unable to find vein
+56332	insufficient sample
+8381	short of staff
+30158	insufficient sample
+16586	 ppt unable to hold breath
+11442	 scan delays after scan restarting
+59471	insufficient sample
+27518	""
+42155	insufficient sample
+60838	() light headed. procedure stopped
+31449	insufficient sample
+62858	insufficient sample
+28119	imt impossible to measure
+7550	no equipment
+64596	participant unwilling
+20211	claustrophobic
+49039	insufficient sample
+12539	unable to save data
+47084	insufficient sample
+27131	no task, faulty equipment
+33026	participant unwilling
+65478	pt has catr.not able to give us urine
+65440	participant unwilling
+5896	faulty
+9942	no scan - short staffed
+23849	 + swi catch up timing
+10857	 abdo -   coil working
+67536	participant not present
+2632	 - short staffed
+39199	participant unwilling
+49716	insufficient sample
+52974	insufficient sample
+60933	participant unwilling
+38597	participant unwilling
+18137	no lenses.
+216	participant declined scan
+6142	staff shortage
+3862	check the model of lenses
+58844	insufficient sample
+14522	 - time constraints
+56117	insufficient sample
+721	ppt refused
+43186	participant unwilling
+41716	insufficient sample
+33547	insufficient sample
+35917	insufficient sample
+56763	insufficient sample
+56326	participant unwilling
+48370	faint
+15669	vocorder saving error
+37449	insufficient sample
+48131	insufficient sample
+61716	insufficient sample
+20083	no task, no suitable lenses
+30072	other equipment failure
+56904	insufficient sample
+21157	no task - t1 repeated for movement
+42629	participant unwilling
+18305	claustrophobic
+32887	insufficient sample
+1797	staff
+31347	insufficient sample
+26626	no task - rpt !
+27568	no task, no prescription
+5985	low staff
+47649	insufficient sample
+21837	no task no lenses
+44362	insufficient sample
+62393	participant unwilling
+26139	time 
+62998	insufficient sample
+16995	scanner crashed
+31126	participant unwilling
+9674	ppt 30 mins late on arrival
+14905	ppt claustrophobic
+3250	 no staff
+48815	mr hall fainted &  took bloods   lab unscanned
+20601	claustrophobic
+23698	no task - no lenses
+66708	no containers available
+64899	participant not present
+28175	  staff shortage
+26040	time restrictions
+48702	insufficient sample
+7799	 protocol - low staff
+3814	previous metal in eye.
+13991	vicorder failed
+45054	insufficient sample
+50099	insufficient sample
+9911	short staffed
+18383	claustrophobia
+51987	insufficient sample
+16942	 cardiac  ppt  hour late
+65831	no containers available
+10413	vicorder failure
+34396	participant unwilling
+14797	declined blood-pressure cuff no measures
+59430	insufficient sample
+55479	insufficient sample
+64490	participant unwilling
+180	claustrophobic
+3054	 short staffed
+1551	 - short staffed
+25982	scanner crashed/ rebooted
+35894	difficult draw
+35062	participant unwilling
+9576	not in service
+11500	last  seqs lost on abdo - operator error
+27332	claustrophobic, keeping eyes shut, no task
+52838	insufficient sample
+52221	insufficient sample
+18159	claustrophobic
+59219	insufficient sample
+62382	participant unwilling
+13181	claustrophobic
+45090	insufficient sample
+15135	no cardiac,  failure
+44413	partcipant felt sick
+50864	insufficient sample
+53475	insufficient sample
+42364	cannot get blood
+49251	insufficient sample
+38145	participant unwilling
+45724	participant unwilling
+33700	insufficient sample
+42686	insufficient sample
+56501	insufficient sample
+1459	 
+27032	scanner crashed at the beginning of sequence .
+41115	insufficient sample
+10273	vicorce
+56186	pt feel light headed
+29158	participant unwilling
+56960	insufficient sample
+38378	participant unwilling
+33064	participant unwilling
+57056	unable to obtain  sample  phlebos tried
+8458	staff
+27045	   time restraints
+58968	insufficient sample
+25569	no task- t1 movement, t1 repeat
+38652	insufficient sample
+31703	insufficient sample
+7034	no staff
+47406	insufficient sample
+41341	participant unwilling
+40030	insufficient sample
+45258	insufficient sample
+18259	?iofb
+57553	insufficient sample
+14637	cardiac not scanned irregular heartbeat and breath
+31817	insufficient sample
+45551	insufficient sample
+43594	insufficient sample
+23402	no suitable lenses
+23394	no suitable lenses - no task
+59786	insufficient sample
+35522	insufficient sample
+10311	ppy was late to scanning
+18489	participant unwell-declined .
+25284	unknown prescription - no lenses
+20901	ppt was late to arrive
+56174	insufficient sample
+39598	insufficient sample
+7667	no leads
+62749	participant unwilling
+53302	insufficient sample
+15419	vicorder failure
+33755	insufficient sample
+6120	 - staff
+22500	no task - no prescription
+24149	no lenses suitable -  plus swi
+14286	vicoder failure
+3744	staff
+13926	timings out therefore  
+25896	ppt buzzed because of the noise
+16982	vicorder failed to save measurements
+35125	insufficient sample
+48273	insufficient sample
+39791	insufficient sample
+40981	insufficient sample
+34218	participant unwilling
+46160	insufficient sample
+43902	participant unwilling
+61414	insufficient sample
+33678	participant unwilling
+18544	claustrophobic
+60570	insufficient sample
+34897	insufficient sample
+13016	 cardiac full abdo. staff shortage
+10167	 failure: no cardiac
+16901	vicorder failure
+39338	phlebotomist and manager tried difficult
+53084	insufficient sample
+32334	insufficient sample
+51318	insufficient sample
+31922	insufficient sample
+37231	insufficient sample
+60681	insufficient sample
+18940	duct surgery
+27506	no task - complicated prescription
+17186	vicorder omitted - not yet installed.
+30065	abandoned \ was uncomfortable
+17933	siemens engineers doinf maintenance
+62637	participant unwilling
+57469	participant unwilling
+4081	?iofb
+17698	ppt claustrophobic
+62697	insufficient sample
+4333	retina operation ? staples/tack
+46733	insufficient sample
+22816	no task, equipment faulty
+5023	short staffed
+59698	insufficient sample
+7785	 scan - short staffed
+64039	participant unwilling
+54774	insufficient sample
+38650	insufficient sample
+63776	participant not present
+35722	insufficient sample
+38218	insufficient sample
+8478	short of staff
+34974	participant unwilling
+58870	insufficient sample
+14742	vicorder failure
+969	 - staff
+6509	staff
+19530	colonoscopy (biopsy done) & gastroscopy 21//17
+27103	no task - no suitable lenses
+48754	participant unwilling
+7089	no staff
+33720	insufficient sample
+3805	hiatus hernia repair refer review
+21687	cannot lie flat enough
+55913	insufficient sample
+62971	insufficient sample
+48939	insufficient sample
+55734	insufficient sample
+66767	participant unwilling
+60859	insufficient sample
+30752	participant unwilling
+3481	: late
+41732	participant unwilling
+35625	insufficient sample
+16260	cardiac abandoned-poor breatholds-has angina
+42006	insufficient sample
+16750	vicorder failed
+2080	 staff
+10660	tagging not completed
+9845	dexa not in service
+17072	vicorder failed soft ware
+16677	 cardiac took  long time get ppt on scanner
+11558	vicorder error   measurements collated
+31303	blood taking attempt failed because of collapsed
+31821	unable to obtain sample
+42123	insufficient sample
+29556	insufficient sample
+25234	  - time management
+64495	cannot manage urine sample
+38604	insufficient sample
+49492	insufficient sample
+23077	no task- no prescriotion
+29515	insufficient sample
+54983	insufficient sample
+44492	insufficient sample
+17412	claustrophic
+46817	insufficient sample
+22636	 for time management
+37245	participant tried but unsuccessful
+26023	  
+27738	unable to see chart, no prescription, no task
+35532	insufficient sample
+10644	schmolli pancreas movement participant stop
+33980	insufficient sample
+31198	participant unwilling
+52575	insufficient sample
+17215	""
+19359	eyebrow tint  weeks ago
+40791	participant unwilling
+38441	insufficient sample
+53018	insufficient sample
+64823	participant unwilling
+24799	ppt claustrophobic, wanted to abandon scan
+41112	insufficient sample
+14793	vicorder failed
+65942	participant unwilling
+21871	running late.  protocol
+64354	participant unwilling
+19054	varicose vein ? staples
+53001	really bad veins
+24938	ppt unwell - aborted
+31740	unsuccessful
+19195	?iofb
+33900	insufficient sample
+6180	no radiographer.
+40681	insufficient sample
+49544	participant unwilling
+17309	no equipment
+14958	claustrophobic
+8208	no equipment
+1088	onlt  - short staffed
+15374	 scan.short staffed
+35151	participant unwilling
+21043	no images - significannot movement
+40663	insufficient sample
+510	ptt claustrophobic
+32572	insufficient sample
+24059	nbo task no presciprtion
+2288	 staff
+36643	insufficient sample
+20017	no task, no suitable lenses
+2036	  -short stafed
+23816	no task - no suitable lenses
+9091	not done staff shortage
+2303	staff
+45476	insufficient sample
+11679	no vicorder
+66758	participant unwilling
+7559	no equipment
+55927	insufficient sample
+16870	unable to hear instructions
+27602	 - time management
+7021	staff
+8440	no  staff
+17870	helium fill
+31516	insufficient sample
+64553	participant unwilling
+50906	participant unwilling
+3943	? iofb
+40145	lady fainted
+24853	no task no suitable lenses
+1616	 training
+22082	no task- unable to see
+44982	insufficient sample
+59814	insufficient sample
+11078	no abdo, scanner fault
+37174	insufficient sample
+33447	insufficient sample
+40025	insufficient sample
+9186	staff shortage
+4331	 of metal in eyes.
+52309	insufficient sample
+43890	insufficient sample
+17486	did not want to continue
+39261	fainted
+25780	 - movement on t2 so scan repeated
+7102	staff
+13722	software error
+14014	vicorder failed
+36453	difficult venepuncture
+11215	no cardiac scan-limited english
+4109	ppt had detached retina - unknown repair
+39714	insufficient sample
+31396	insufficient sample , () not bleeding
+54573	insufficient sample
+20190	 imaging time constraints
+7266	no scan short staffede
+46627	insufficient sample
+38633	insufficient sample
+27698	completed
+58493	insufficient sample
+9152	staff shortage
+41702	participant unwilling
+14926	measurements completed
+33395	pt not feeling well
+46232	participant unwilling
+17079	no cardiac: cannot hold breath
+14249	atrial-fibrillation no cardiac
+54955	participant unwilling
+42180	insufficient sample
+61512	insufficient sample
+45663	thrombosed
+14083	""
+67638	participant unwilling
+20080	no task, lenses not suitable.
+31565	insufficient sample
+45734	insufficient sample
+26320	 seq  repeat t1 for movement
+12397	time constraints late
+46481	insufficient sample
+7698	late
+31849	insufficient sample
+27806	no task t1 repeat
+24380	no task complex lenses
+52188	insufficient sample
+6051	time constraints
+45950	insufficient sample
+47744	insufficient sample
+22066	  time constraints
+11278	vicorderaortic pulse pressure: 70 mmhg aug index %
+12177	vicorder failed
+22456	ppt  hour late
+38338	insufficient sample
+5625	staff
+42823	insufficient sample
+32891	insufficient sample
+1011	 - no staff
+65729	other equipment failure
+67681	participant unwilling
+51145	insufficient sample
+10138	vicorder failure
+15348	staff shortage
+9105	not performed  staff
+2668	 no staff
+29648	insufficient sample
+52076	participant unwilling
+19870	possible hernia operation as  child unkown procedure do not scan as per safety databas
+44959	insufficient sample
+9111	staff shortage - no scan
+35525	insufficient sample
+17356	vicorder out of action
+19073	detached retina - pre 2000s and unsure of repair
+34294	did one try but dint find any blood   dont want
+37953	insufficient sample
+2393	staff shortage
+11123	 - time constraints
+22802	no task no prescriptoiom
+51242	insufficient sample
+32276	insufficient sample
+66912	participant unwilling
+31133	participant unwilling
+14113	   staff training
+60051	insufficient sample
+44832	insufficient sample
+31700	insufficient sample
+12731	no vicorder , lymph nodes removed
+40183	participant unwilling
+402	ppt declined scan
+27051	no task, repeated t1, time restraints
+50626	insufficient sample
+167	clastropobic
+51546	insufficient sample
+45996	insufficient sample
+3083	 scan short staffed
+37462	felt faint pre test
+29691	participant unwilling
+30854	participant unwilling
+22435	  time constraints
+10634	vicorder failure
+3633	time constraints
+58976	insufficient sample
+22878	  - short staffed
+8691	short of staff
+42061	phlebs tried  difficult to bleed
+45649	insufficient sample
+21641	short scan, training
+47684	insufficient sample
+39721	took  samples lady fainted
+48782	insufficient sample
+40861	participant unwilling
+16361	unable to tolerate cuff
+44169	participant unwilling
+26370	no task, no prescription/unknown
+54286	participant unwilling
+25298	time restrictions
+37860	participant unwilling
+39272	insufficient sample
+53388	insufficient sample
+18827	siemens on scanner
+46803	insufficient sample
+22143	part exam  equipment failure
+53686	insufficient sample
+15317	  staff
+12126	 cardiac and no abdomen  ppt late on tab
+58582	insufficient sample
+6749	staff shortage
+57305	insufficient sample
+19972	no task- ppt unable to see screen clearly
+57009	insufficient sample
+46464	insufficient sample
+24136	no task: no suitable lenses found.
+64559	participant unwilling
+51214	insufficient sample
+59845	insufficient sample
+63910	participant not present
+67953	participant unwilling
+44950	participant unwilling
+51475	insufficient sample
+64370	participant unwilling
+45921	insufficient sample
+843	operation in past  weeks
+10155	vicorder error
+23566	? if measurement saved
+46305	insufficient sample
+20577	no task - no prescription
+32295	insufficient sample
+6373	no equipment
+21788	 for time management
+39075	insufficient sample
+46970	insufficient sample
+35316	insufficient sample
+51574	participant unwilling
+41514	participant unwilling
+1573	 - staff
+18415	claustrophobic
+4753	ppt prefer to not be scanned
+45433	insufficient sample
+21432	t1 rpt  movement, no diff
+56112	vein collapsed,  attempts already
+45947	participant unwilling
+48093	insufficient sample
+67302	other equipment failure
+55394	participant unwilling
+36600	insufficient sample
+51776	participant unwilling
+7887	staff
+8768	no scan short of staff
+14212	 as per adl
+23777	no task no pescription
+29409	difficult veins
+51596	insufficient sample
+23278	short scan , training
+50518	insufficient sample
+3156	machine failure
+66889	participant unwilling
+41158	insufficient sample
+60662	insufficient sample
+8982	staff
+4861	ppt has iofb
+56165	insufficient sample
+22979	t1 repeated - movement; no dwi/swi
+47491	insufficient sample
+45238	insufficient sample
+66071	no containers available
+64992	participant unwilling
+22489	: time
+39367	difficulty to obtain sample
+26886	, timing
+12190	just had bloods taken
+8057	short staffed
+57512	insufficient sample
+56537	insufficient sample
+23420	time constraints - low staff
+7800	short staffed
+817	ppt late 30 min
+65195	participant unwilling
+59544	insufficient sample
+25839	participant did not respond to task. no task
+37811	stop follwing after  attempts
+20863	no task no perscription
+55395	insufficient sample
+38796	insufficient sample
+15308	ppt aborted scan - claustrophobic
+49495	insufficient sample
+32263	insufficient sample
+2276	 restricted mobility
+42678	insufficient sample
+49183	participant unwilling
+67539	participant unwilling
+60720	insufficient sample
+63467	participant not present
+66099	other equipment failure
+4386	previous metallic iofb - removed at hospital - ppt not 100% sure if any metal re
+51983	insufficient sample
+2642	   staff
+51631	other equipment failure
+50114	insufficient sample
+47094	participant unwilling
+61994	insufficient sample
+2950	no total body -ppt unable to lay flat on the table
+26810	""
+50429	insufficient sample
+33563	insufficient sample
+8606	no scan short of staff and training
+42849	insufficient sample
+27253	t1 rpt  movement, task deleted
+20299	 - previous ppt delayed us
+17205	cardiac abandoned, ppt poor breath holds
+27437	, timing
+3098	 - short staffed
+8454	ppt unable to lie flat
+66014	participant unwilling
+50060	unable to obtain sample
+8345	known adhesive allergy
+44752	insufficient sample
+31848	insufficient sample
+2511	no lva - ppt hurt back
+47006	unsuccessful
+65044	0060006451664
+18864	no suitable lenses for task
+9171	staff shortage
+13757	no vicorder obtained. no cardiac scan.
+23442	 - staff shortage - time delay
+51196	insufficient sample
+7610	staff shortage
+627	?iofb
+15675	measurement taken and repeated - error message
+25278	 imaging claustrophobic
+42463	insufficient sample
+13828	   time restrictions
+18357	no task,goggles did not fit
+61216	insufficient sample
+51860	insufficient sample
+14024	vicorder  measurements taken
+17039	  next ppt waiting
+29830	insufficient sample
+30302	difficulty in blood collection
+35664	insufficient sample
+9106	999 ppt ill
+35772	insufficient sample
+22606	no task, no suitable lenses
+54377	participant fainted
+46964	insufficient sample
+60527	insufficient sample
+25206	clasutrophobic
+47455	jehovahs witness
+9528	participant unable to lie still
+22023	no task - t1 repeated
+54861	insufficient sample
+32775	same as above
+27340	ppt pressed the buzz
+21801	ppt declined task, wants to keep eyes open
+9591	machine being serviced
+35477	insufficient sample
+36794	insufficient sample
+65753	participant not present
+23685	claustrophobic and cannot cope with noise
+20760	no lens prescription
+14621	ivox failed
+47355	insufficient sample
+22700	 - helium fill
+40340	insufficient sample
+10046	vicorder failure
+26400	flood
+20686	no task- no prescription
+13785	vicorder not working
+25669	no task - previous surgery on hand
+65732	participant unwilling
+19977	claustrophobic
+50473	insufficient sample
+31279	failed attempt,participant unwilling
+57577	insufficient sample
+33817	insufficient sample
+49622	participant unwilling
+62992	insufficient sample
+17341	claustrophobic
+9769	no staff available
+9994	dxa needs repairing
+44763	insufficient sample
+42161	insufficient sample
+45154	insufficient sample
+12121	measurements completed
+15232	 - time
+955	 scan short of staff
+27487	ptpnt poor vision no task
+63485	participant not present
+66338	participant unwilling
+49630	insufficient sample
+63452	participant unwilling
+27154	no taks- no prescription
+58277	insufficient sample
+51936	client passed out
+7152	staff
+23316	pt did not wish to continue
+42032	insufficient sample
+16959	no blood-pressure aquired
+63054	participant unwilling
+60269	insufficient sample
+30197	insufficient sample
+668	ppt claustrophobic - no scan
+28224	time constraints
+53930	participant unwilling
+53812	insufficient sample
+48854	insufficient sample
+42116	insufficient sample
+27767	no task - no prescription
+53923	insufficient sample
+33389	insufficient sample
+48062	insufficient sample
+22395	no task: double vision with lenses, cannot see char
+25523	no task - unable to see wall chart, unknown prescr
+56310	participant unwilling
+25133	no task- no prescripition
+46477	insufficient sample
+50001	participant unwilling
+21544	no task - high prescription/no suitable lenses
+65177	participant not present
+48180	insufficient sample
+48907	insufficient sample
+26574	very poor eyesight - unknown rescription
+16795	 failure
+63283	insufficient sample
+126	no scan - scanner down
+48455	insufficient sample
+16894	 cardiac
+34439	insufficient sample
+17280	 - scanner needed  re-boots
+17956	ppt claustrophobic
+43792	insufficient sample
+9802	ppt late for appointment
+25076	no task, ppt unable to see the cross
+61650	insufficient sample
+39033	insufficient sample
+16177	vicorder error
+44945	participant unwilling
+59752	insufficient sample
+11511	claustrophobic
+59292	insufficient sample
+23309	t1 repeatef - no task
+39680	unable to obtain sample
+17261	operator error
+27898	no task  t1 being repeated.
+30380	participant unwilling
+2648	 staff
+58937	insufficient sample
+36267	insufficient sample
+42129	participant unwilling
+29659	insufficient sample
+35207	participant unwilling
+1268	no lva ppt struggled with mobility
+26856	no task, no lenses
+1865	low staff
+11566	cardiac abandoned  atrial-fibrillation
+38088	insufficient sample
+64677	participant unwilling
+15586	no cardiac scan ecg mis
+23409	no perscriptiom unable to see wallchart
+25749	no task, time constraints
+54648	insufficient sample
+46566	insufficient sample
+31013	participant unwilling
+47971	participant unwilling
+36111	insufficient sample
+4067	bilateral phacoemulsification with intra ocular implants 2008 (glaucoma)
+15851	vicorder failure
+14170	cardiac  abandoned  irregular heart-rate
+5404	measurement not saved
+29967	insufficient sample
+2086	left knee total replacement
+41144	insufficient sample
+1026	 - no staff
+66466	participant unwilling
+46082	participant unwilling
+56784	insufficient sample
+34799	participant unwilling
+66091	participant unwilling
+30909	insufficient sample
+18545	ppt claustrophobic
+15200	cannot take measurment - lymphadenopathy
+64761	participant unwilling
+35422	insufficient sample
+60083	insufficient sample
+37772	insufficient sample
+1468	patient was unwell scan abandoned
+10160	cardiac abandoned - irregular heart rhythms
+480	not attempted  habitus
+48673	insufficient sample
+18554	equipment mataince
+1897	 scan short of staff
+65216	participant unwilling
+16751	vicorder not working
+62630	insufficient sample
+20474	 scan no time
+5206	staff
+54938	insufficient sample
+48504	insufficient sample
+67162	participant unwilling
+46158	insufficient sample
+50319	insufficient sample
+43779	insufficient sample
+18915	ppt has had mastoidectomy
+11556	no vicorder computer froze
+49369	insufficient sample
+52143	insufficient sample
+41293	participant unwilling
+51748	participant unwilling
+45762	participant unwilling
+43302	insufficient sample
+37614	veins collapse
+14852	no cardiac allergy to latex
+42233	participant faints and has difficult veins.
+9413	dexa repair
+49827	vein collapsed
+34964	unable to bleed
+50790	tube breakage
+24091	task failed
+12665	 time constraints
+8059	key removed before completion in error
+47786	participant unwilling
+33171	insufficient sample
+39406	insufficient sample
+36441	insufficient sample
+44762	insufficient sample
+53870	insufficient sample
+56963	insufficient sample
+29968	participant hard to bleed
+34630	participant unwilling
+43133	insufficient sample
+10218	no cardiac
+43952	difficult veins
+511	participant declined scan
+13636	vicorder fail
+53767	insufficient sample
+44385	insufficient sample
+64163	participant unwilling
+23152	ptt cannot see the screen
+49747	insufficient sample
+1076	staff shortage
+24732	no task no prescription
+9812	participant late
+22892	no task completed   time
+18113	claustrophobic
+28944	other equipment failure
+42388	insufficient sample
+47927	insufficient sample
+1052	staff
+56541	tube breakage
+63670	other equipment failure
+7065	time constraints
+11479	adhesive allergy, no ecg so no cardiac or shmolli
+58122	insufficient sample
+46206	insufficient sample
+19634	hernias   - ppt does not know if stitched or other 1986(ish) - pcr not queried
+20103	no task: late
+14490	vicorder failure
+57514	insufficient sample
+59824	0030004213526
+52893	insufficient sample
+45907	insufficient sample
+9393	short staffed
+15250	scan terminated - ppt had backache
+28356	insufficient sample
+39091	participant unwilling
+57921	participant unwilling
+21088	no task- repeated t1
+1765	low staff levels - 
+53064	participant unwilling
+21430	error
+39540	participant unwilling
+31882	difficult veins
+47098	insufficient sample
+66233	participant not present
+63358	no containers available
+35530	insufficient sample
+44019	insufficient sample
+2887	low staff
+17073	no vicorder, replacing
+43546	insufficient sample
+50193	insufficient sample
+3215	: time management
+67033	participant unwilling
+43301	insufficient sample
+49837	participant felt unwell
+6222	unable to lie flat
+55304	participant unwilling
+55961	unwell
+44503	insufficient sample
+2048	 staff
+31076	difficult vein,  phlebs tried
+607	no scan - scanner down
+55910	insufficient sample
+14447	vicorder not working
+23998	task done but error when saving
+18060	iofb
+50904	insufficient sample
+67684	participant unwilling
+31720	participant unwilling
+25460	no task as equipment  failure
+42399	insufficient sample
+7315	time constraints
+24230	no task- eqipment failure
+62344	insufficient sample
+25085	  time.
+35173	insufficient sample
+29607	insufficient sample
+41763	participant unwilling
+65213	participant unwilling
+65420	participant unwilling
+16928	no cardiac-atrial-fibrillation
+16160	no vicorder reading, froze
+8803	staff shortage
+23279	no task - unknown prescription
+49698	insufficient sample
+38798	insufficient sample
+53239	insufficient sample
+32774	insufficient sample
+34185	participant unwilling
+58123	insufficient sample
+15902	vicorder sent to cheadle
+46498	insufficient sample
+20780	no suitable lenses
+41851	insufficient sample
+35271	insufficient sample
+36738	participant difficuilt to bleed
+6633	staff shortage
+45668	insufficient sample
+24053	radiographer forgot to initiate -prime
+38643	participant unwilling
+55010	insufficient sample
+51198	insufficient sample
+17331	cannot get blood-pressure measurement
+29448	insufficient sample
+27070	 time management
+66193	participant unwilling
+29445	participant unwilling
+19268	hernia operation unkown
+46792	insufficient sample
+20011	ppt had to get off scanner at 19:15 for taxi/train
+34899	insufficient sample
+9721	staff shortage
+6247	no staff
+6547	short staffed
+47944	insufficient sample
+16543	vicorder failed
+49965	insufficient sample
+25730	no task- no prescription
+11898	vicorder error
+38042	insufficient sample
+3850	metallic iofb
+32219	wont able to get sample tried lot
+17955	ppt cannot lie flat
+617	aortic operation
+67958	participant unwilling
+29533	participant unwilling
+31853	insufficient sample
+49069	participant unwilling
+6504	 protocols - low staff
+15532	claustrophobic
+47340	participant unwilling
+56725	insufficient sample
+32149	insufficient sample
+10183	vicoder not working
+24742	claustrophobic ppt
+9935	short staffed
+34724	insufficient sample
+67089	other equipment failure
+33022	participant unwilling
+31227	participant unwilling
+39885	participant unwilling
+47286	insufficient sample
+40050	participant unwilling
+26897	no scan- claustrophobic
+36376	insufficient sample
+7247	no ecg stickers available
+53195	insufficient sample
+49766	insufficient sample
+26811	no task - no suitable lenses
+43634	insufficient sample
+57490	insufficient sample
+9102	short staffed
+44002	un well
+63928	it problem
+7154	low staff -  protocol
+13291	no scan claustrophobic
+4021	detatched retina surgery ?metal, ppt unsure.
+21728	no scan: ppt buzzed
+16509	 scan,ppt stop for sandwich and drink at 640
+33522	insufficient sample
+59969	not able to bleed
+19914	kidney stone removal
+67580	participant unwilling
+28279	ppt unable to lie flat, imt impossible
+42267	insufficient sample
+38155	insufficient sample
+53298	insufficient sample
+6584	staff
+42895	insufficient sample
+9192	ppt late - unable to do
+51127	insufficient sample
+31353	insufficient sample
+60986	tibe shortage
+52332	insufficient sample
+60289	insufficient sample
+44970	participant fainted
+60360	insufficient sample
+33955	participant unwilling
+58718	participant unwilling
+16383	""
+29293	insufficient sample
+38507	insufficient sample
+59423	insufficient sample
+59971	insufficient sample
+20750	no task, unable to see chart
+25321	no task- connection issue
+42067	insufficient sample
+2160	 - staff
