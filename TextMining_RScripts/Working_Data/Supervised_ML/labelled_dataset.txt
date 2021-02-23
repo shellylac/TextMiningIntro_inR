@@ -1,4 +1,4 @@
-doc_id	freetext_clean	new_code	new_meaning
+doc_id	freetext_clean	label	meaning
 66214	waiting time too long	419	Lack of time or staffing shortage
 7118	 unwilling	101	Against participant wishes
 20525	unable to hold	401	Physically unable or outside wt/ht specs

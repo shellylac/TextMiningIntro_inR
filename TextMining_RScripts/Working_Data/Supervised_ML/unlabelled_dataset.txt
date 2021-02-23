@@ -1,4 +1,4 @@
-id	freetext_clean
+doc_id	freetext
 28245	 scan
 42921	participant unwilling
 31253	participant unwilling
