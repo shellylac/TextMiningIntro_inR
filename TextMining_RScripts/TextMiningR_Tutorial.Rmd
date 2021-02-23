@@ -9,12 +9,12 @@ output:
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(include = TRUE)
-library(data.table)
-library(tidyverse)
 library(here)
+library(tidyverse)
+library(lubridate)
 library(readtext)
 library(quanteda)
-library(lubridate)
+library(quanteda.sentiment)
 ```
 
 ## Importing text data: package(readtext)
@@ -146,13 +146,13 @@ tokens(txt, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
 head(covid_toks<-tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T))
 
 #Remove stopwords
-head(covid_toks_nostop <- tokens_remove(covid_toks, pattern = stopwords("en")))
+head(covid_toks_nostop <- tokens_remove(covid_toks, pattern = stopwords("english")))
 
 #Select only interesting words
 head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", "immunis*")))
 ```
 
-To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`. You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create negative bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then select them from your corpus : `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
+To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`. You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then select them from your corpus : `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
 
 ## From tokens to dfm (document feature matrix, aka document term matrix)
 
@@ -175,9 +175,9 @@ dfmat_covidtweets
 
 topfeatures(dfmat_covidtweets, 10)
 
-#Can be a really good idea to remove very sparse terms from the dfm
-(dfmat_covidtweets<-dfmat_covidtweets %>% dfm_trim(min_termfreq = 10, verbose = FALSE))
-
+#For analysis purposes it is often a really good idea to remove very sparse terms from the dfm
+(dfmat_covidtweets<-dfmat_covidtweets %>% 
+                    dfm_trim(min_termfreq = 10, verbose = FALSE))
 ```
 
 ## Simple text analysis of the tweets
@@ -242,16 +242,14 @@ If you want to convert the frequency count to a proportion within documents, use
 
 ## Sentiment analysis of the twitter data
 
-The aim of sentiment analysis is to determine the polarity of a text (i.e., whether the emotions expressed in it are rather positive or negative). This is often done by word lists and by counting terms that were previously assigned to the categories *positive* or *negative* (sometimes a third category is included; *neutral,* andsometimes words can also be assigned a sentiment strength).
+The aim of sentiment analysis is to determine the polarity of a text (i.e., whether the emotions expressed in it are rather positive or negative). This is often done by word lists and by counting terms that were previously assigned to the categories *positive* or *negative* (sometimes a third category is included; *neutral,* and sometimes words can also be assigned a sentiment strength). In some lexicons, words may also be assigned to emotions like joy, anger, sadness, and so forth.
 
 So basically a dictionary ('sentiment/topic dictionary') is used to group a number of individual terms into a 'sentiment' category, then the content of the whole text as the sum of the sentiment content of the individual words. (This isn't the only way to approach sentiment analysis, but it is an often-used approach). The quanteda package provides access to four general-purpose sentiment dictionaries (for English).
 
-We will apply the the Lexicoder Sentiment Dictionary to the selected contexts using **textstat_polarity()**. All three of these lexicons are based on unigrams (i.e., single words), and bigrams. These lexicons contain many English words and the words are assigned scores for positive/negative sentiment, and also possibly emotions like joy, anger, sadness, and so forth.
+We will apply the the Lexicoder Sentiment Dictionary to the selected contexts using **textstat_polarity()**. All three of these lexicons are based on unigrams (i.e., single words), and some bigrams.
 
 ```{r sentiment_analysis}
-devtools::install_github("quanteda/quanteda.sentiment")
-library(quanteda.sentiment)
-
+#Dictionary based sentiment analysis
 lengths(data_dictionary_LSD2015)
 print(data_dictionary_LSD2015, max_nval = 20)
 
@@ -285,15 +283,27 @@ ggplot(data = sentiment_dat, aes(y = mean_sent, x = week_day, group = location_U
   theme_bw()
 ```
 
-```{r topic_models}
+## Case Study: Using supervised machine learning to build a text classifier
 
-# This script:
-#1. load the freetext field corpus
-#1. Splits the dataset into training and testing sets
-#2. build a sparse dfm matrix
-#3. runs a XXX model/s using the sparse matrix as input
-#4. predicts with the model to the test data
+**Aim:** create a automatic/semiautomatic classification system that could code (label) the free-text answers into one of the existing coded categories.
 
+**Process:**
+
+1.  Create the corpus
+
+    -   I have done the cleaning/pre-processing of the free-text field already
+
+2.  Build the DFM
+
+3.  Split the data into training and testing datasets
+
+4.  Apply a linear SVM classifier model to classify and predict (can use other models if needed)
+
+5.  Assess the accuracy/precision of our model
+
+6.  Use the model to 'label' the new data
+
+```{r supervised_ML_example}
 #load the text mining, ML classification packages
 library(quanteda.textmodels)
 library(caret)
@@ -332,13 +342,9 @@ docvars(freetext_corpus, field = 'doc_id') <- freetext_codesandtext$doc_id
 
 #EXTRA STOPWORDS to remove from corpus
 #This lists all the abbreviation variations for participant to remove from the corpus and other random words found during data clean
-mystopwords<-c('participant', 'patient', 'p', 'p\'s', 'p-', 'ps', 'p:', 'p', 'pt', 'ppt', 'p.', 'p,', 'opt', 
-               'rt', 'right', 'rhs', 'lhs', 'lt', 'left', 'authorised', 'DM', 'dm', 'tp', 're', 'ch', 'ca', 'oh', 'ohs', 'ot',
-               'mr', 'mrs', 'miss', 'participanrt', 'x2', '2x', '3x', 'x3')
-
 #Build the Document Feature Matrix from text field
 base_dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T,
-                           remove = c(stopwords('english'), mystopwords)) 
+                           remove = stopwords('english')) 
 
 #remove low freq words and terms only found in a few documents
 base_dfm_nolows <-dfm_trim(base_dfm, min_termfreq = 6, min_docfreq = 3)
