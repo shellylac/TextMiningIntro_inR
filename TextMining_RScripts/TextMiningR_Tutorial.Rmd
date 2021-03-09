@@ -7,8 +7,7 @@ output:
 ---
 
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(include = TRUE)
+knitr::opts_chunk$set(echo = TRUE, include = TRUE, message = FALSE, warning = FALSE)
 library(here)
 library(tidyverse)
 library(lubridate)
@@ -23,7 +22,7 @@ The **readtext** function from the package with the same name, detects the file 
 
 The parameter *docvarsfrom* allows you to set metadata variables by splitting on file name or path names.
 
-```{r importing_text_data, include=TRUE, warning=FALSE, message=FALSE}
+```{r importing_text_data}
 #Import text data files
 #..with docvars taken from file paths (file paths must be same length)
 extracted_texts<- readtext(here('Working_Data/import_data_types/*'), docvarsfrom = "filepaths", dvsep = "/")
@@ -222,7 +221,7 @@ dfmat_covidtweets_stem %>%
 textplot_wordcloud(dfmat_covidtweets_stem, max_words = 100)
 ```
 
-## Differences between groups 
+## Differences between groups
 
 ```{r test_grouping_analysis}
 #----------------------
@@ -250,9 +249,7 @@ textplot_wordcloud(dfm_select(dfmat_covidtweets_gpd, pattern = '#*'), comparison
 
 The aim of sentiment analysis is to determine the polarity of a text (i.e., whether the emotions expressed in it are rather positive or negative). This is often done by word lists and by counting terms that were previously assigned to the categories *positive* or *negative* (sometimes a third category is included; *neutral,* and sometimes words can also be assigned a sentiment strength). In some lexicons, words may also be assigned to emotions like joy, anger, sadness, and so forth.
 
-So basically a dictionary ('sentiment/topic dictionary') is used to group a number of individual terms into a 'sentiment' category, then the content of the whole text as the sum of the sentiment content of the individual words. (This isn't the only way to approach sentiment analysis, but it is an often-used approach). The quanteda package provides access to four general-purpose sentiment dictionaries (for English).
-
-We will apply the the Lexicoder Sentiment Dictionary to the selected contexts using **textstat_polarity()**. All three of these lexicons are based on unigrams (i.e., single words), and some bigrams.
+So basically a dictionary ('sentiment/topic dictionary') is used to group a number of individual terms into a 'sentiment' category, then the content of the whole text as the sum of the sentiment content of the individual words. (This isn't the only way to approach sentiment analysis, but it is an often-used approach). The quanteda package provides access to four general-purpose sentiment dictionaries (for English). All of these lexicons are based on unigrams (i.e., single words), and some bigrams.
 
 ```{r sentiment_analysis, message=F}
 #Dictionary based sentiment analysis
@@ -290,14 +287,6 @@ ggplot(data = sentiment_dat, aes(y = mean_sent, x = week_day, group = location_U
   geom_line()+
   geom_hline(yintercept = 0)+
   theme_bw()
-
-#Specific Sentiments - Bing Liu Sentiment Lexicon
-data(sentiments, package = "tidytext")
-sentiment<-textstat_polarity(dfmat_covidtweets, lexicon == "bing")
-as.dictionary(subset(sentiments, lexicon == "bing"))
-
-sentiment<-textstat_polarity(dfmat_covidtweets, dictionary = data_dictionary_LSD2015)
-
 ```
 
 ## Other Dictionaries
@@ -310,13 +299,8 @@ print(data_dictionary_NRC, max_nval = 10)
 #Can also make and use your own bespoke dictionary
 my_dictionary <- dictionary(list(pos = c("happiness", "joy", "light"), neg = c("sadness", "anger", "darkness")))
 
-#Set the polarity categories we wish to use
-my_new_polarity <- list(pos = c("positive"), neg = c("negative"))
-polarity(data_dictionary_NRC) <- my_new_polarity
-
 #Alternative Method - use function tokens_lookup to assign sentiment to tokens
 covidtweets_new_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_NRC, fun = )
-# if you do the above - then need to create a document document-feature matrix
 dfmat_sentiment_gpd <- dfm(covidtweets_new_lsd) %>% dfm_group(c('location_US_UK'))
 dfm_sentiment_prop <- dfm_weight(dfmat_sentiment_gpd, scheme = "prop")
 
@@ -325,7 +309,10 @@ plot_dat <- dfm_sentiment_prop %>%
   pivot_longer(!doc_id, names_to = "sentiment_types", values_to = "proportions")
 
 ggplot(data = plot_dat, aes(x=sentiment_types, y=proportions, fill=doc_id)) + 
-  geom_bar(stat="identity", position=position_dodge())
+  geom_bar(stat="identity", width=0.7, position=position_dodge(width=0.8)) +
+  theme_bw()+
+  theme(legend.title = element_blank())+
+  theme(axis.title.x = element_blank())
 ```
 
 ## Case Study: Using supervised machine learning to build a text classifier
@@ -334,13 +321,11 @@ ggplot(data = plot_dat, aes(x=sentiment_types, y=proportions, fill=doc_id)) +
 
 **Process:**
 
-1.  Create the corpus
-
-    -   I have done the cleaning/pre-processing of the free-text field already
+1.  Create the corpus (In the data provided I have done the cleaning/pre-processing of the free-text field already)
 
 2.  Build the DFM
 
-3.  Split the data into training and testing datasets
+3.  Split the data into a training and a testing dataset
 
 4.  Apply a linear SVM classifier model to classify and predict (can use other models if needed)
 
@@ -348,7 +333,7 @@ ggplot(data = plot_dat, aes(x=sentiment_types, y=proportions, fill=doc_id)) +
 
 6.  Use the model to 'label' the new data
 
-```{r supervised_ML_example}
+```{r prep_for_ML}
 #load the text mining, ML classification packages
 library(quanteda.textmodels)
 library(caret)
@@ -356,32 +341,24 @@ library(caret)
 #*************************************************************
 # 1. Read in data for building the ML model ====
 
-coded_freetext<-read_tsv(here('Working_Data/Supervised_ML/labelled_dataset.txt'))
+coded_freetext<-read_tsv(here('Working_Data/Supervised_ML/labelled_dataset.txt')) %>% arrange(doc_id)
 dim(coded_freetext)
-
-
-  #table(coded_freetext$new_meaning)
-  #table(coded_freetext$new_code)
+head(coded_freetext)
+summary(coded_freetext)
+  table(coded_freetext$label)
+  table(coded_freetext$meaning)
 
 #*************************************************************
 # 4. Create the corpus ====
-
-freetext_codesandtext <- coded_freetext_clean %>% 
-  select(doc_id, new_code, freetext_clean) %>% 
-  rename(Label = new_code) 
-
-##create the corpus and clean
-freetext_corpus<-corpus(freetext_codesandtext, text_field = 'freetext_clean') 
+freetext_corpus<-corpus(coded_freetext, text_field = 'freetext_clean') 
 
 #add the doc_id as to docvars
-docvars(freetext_corpus, field = 'doc_id') <- freetext_codesandtext$doc_id
+docvars(freetext_corpus, field = 'doc_id') <- coded_freetext$doc_id
+#list the docvars [Label is a docvars]
+head(docvars(freetext_corpus) )
 
-  #list the docvars [Label is a docvars]
-  #head(docvars(freetext_corpus) )
-
-  #see bits of the corpus:
-  #summary(freetext_corpus, n = 20)
-  #texts(freetext_corpus)[9]
+#see bits of the corpus:
+texts(freetext_corpus)[9:11]
 
 #*************************************************************
 # 5. Build the Document Feature Matrix ====
@@ -394,12 +371,10 @@ base_dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers =
 
 #remove low freq words and terms only found in a few documents
 base_dfm_nolows <-dfm_trim(base_dfm, min_termfreq = 6, min_docfreq = 3)
-
   #dim(freetext_corpus_dfm_nolows)
   #topfeatures(freetext_corpus_dfm_nolows, 20)
   #featnames(freetext_corpus_dfm_nolows)
   #sparsity(freetext_corpus_dfm_nolows) #0.9973569
-
 
 #*************************************************************
 # 6. Split the data into training and testing datasets ====
