@@ -90,6 +90,7 @@ head(docvars(covid_corpus))
 
 #Inspecting the corpus
 texts(covid_corpus)[2]
+#This is what the original tweet (prior to string manipulation) looked like
 covid_data$text[2]
 summary(covid_corpus, n = 5)
 
@@ -99,7 +100,7 @@ ggplot(data = corp_summary, aes(x = log(followers_count), y = Tokens, group = 1)
 
 ```
 
-The corpus can be manipulated in a variety of ways (somewhat analogous to a data frame). You can subset, concatenate, trim components from the text body, and change the unit of texts between documents, paragraphs and sentences. You can extract segments of texts and tags from documents (useful when you analyze sections of documents or transcripts separately). You can also perform a keywords-in-context search (kwic function).
+The corpus can be manipulated in a variety of ways (analogous to a data frame). You can subset, concatenate, trim components from the text body, and change the unit of texts between documents, paragraphs and sentences. You can extract segments of texts and tags from documents (useful when you analyze sections of documents or transcripts separately). You can also perform a keywords-in-context search (kwic function).
 
 ```{r corpus_manipulations}
 #Corpus manipulations
@@ -116,11 +117,13 @@ ndoc(new_corp)
 #change unit length to sentences/paragraphs/ or document (default)
 corp_sentences <- corpus_reshape(corp_monday, to = "sentences")
 ndoc(corp_sentences)
+summary(corp_sentences, n = 5)
 
 #The kwic function (keywords-in-context) performs a search for a word and allows us to view the contexts in which it occurs:
 head(kwic(covid_corpus, pattern = 'vaccin*'))
-head(kwic(covid_corpus, pattern = phrase("conspiracy theories")))
-texts(covid_corpus)[3138]
+head(kwic(covid_corpus, pattern = phrase("conspiracy theor*")))
+texts(covid_corpus)[1434]
+texts(covid_corpus)[2365]
 
 ```
 
@@ -148,24 +151,26 @@ head(covid_toks<-tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, r
 #Remove stopwords
 head(covid_toks_nostop <- tokens_remove(covid_toks, pattern = stopwords("english")))
 
-#Select only interesting words
+#Select or remove particular interesting words
 head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", "immunis*")))
+head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", "immunis*"), selection = 'remove'))
 ```
 
-To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`. You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then select them from your corpus : `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
+To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`. You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create ngrams - particularly useful for looking for negative bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then once you've found them you can select them from your corpus: `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
 
 ## From tokens to dfm (document feature matrix, aka document term matrix)
 
-The function `dfm()` constructs a document-feature matrix (DFM) from a tokens object or a corpus object (in which case the tokenisation occurs internally). `topfeatures()` will list the features (terms/tokens) in descending order. `textstat_frequency()` shows both term and document frequencies. You can also use the function to find the most frequent features within groups.
+The function `dfm()` constructs a document-feature matrix (DFM) [from a tokens object or a corpus object]{.ul} (in which case the tokenisation occurs internally). `topfeatures()` will list the features (terms/tokens) in descending order. `textstat_frequency()` shows both term and document frequencies. You can also use the function to find the most frequent features within groups.
 
 ```{r get_dfm}
 covid_toks <- tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
 
 my_stopwords<-c('covid*', 'corona*', '#covid*', '#corona*')
 
-dfmat_covidtweets <- dfm(covid_toks, tolower = TRUE, stem = FALSE, remove = c(stopwords(), my_stopwords))
+dfmat_covidtweets <- dfm(covid_toks, tolower = TRUE, remove = c(stopwords(), my_stopwords, stem = FALSE))
 
 dfmat_covidtweets
+docvars(dfmat_covidtweets)
   ndoc(dfmat_covidtweets)
   nfeat(dfmat_covidtweets)
   head(docnames(dfmat_covidtweets))
@@ -179,6 +184,8 @@ topfeatures(dfmat_covidtweets, 10)
 (dfmat_covidtweets<-dfmat_covidtweets %>% 
                     dfm_trim(min_termfreq = 10, verbose = FALSE))
 ```
+
+As with `tokens()`, you can select features from a DFM using `dfm_select()`. You can also select features based on the length of features (e.g. keep features consisting of at least five characters: `dfm_keep(dfmat_inaug, min_nchar = 5)`). While `dfm_select()` selects features based on patterns, `dfm_trim()` does this based on feature frequencies. If `min_termfreq = 10`, features that occur less than 10 times in the corpus are removed. If you want to convert the frequency count to a proportion within documents, use `dfm_weight(scheme = "prop")`
 
 ## Simple text analysis of the tweets
 
@@ -201,8 +208,8 @@ set.seed(132)
 textplot_wordcloud(dfmat_covidtweets, max_words = 100)
 
 ##SHOULD WE STEM TERMS? - we have 'vaccine' and 'vaccines' and 'vaccination' as top terms
-(dfmat_covidtweets_stem <- dfm(covid_toks, tolower = TRUE, stem = TRUE, remove = c(stopwords(), my_stopwords))
-                            %>% dfm_trim(min_termfreq = 10, verbose = FALSE))
+(dfmat_covidtweets_stem <- dfm(covid_toks, tolower = TRUE, remove = c(stopwords(), my_stopwords), stem = TRUE) %>%
+                              dfm_trim(min_termfreq = 10, verbose = FALSE))
 
 dfmat_covidtweets_stem %>% 
   textstat_frequency(n = 30) %>% 
@@ -213,7 +220,11 @@ dfmat_covidtweets_stem %>%
   theme_minimal()
 
 textplot_wordcloud(dfmat_covidtweets_stem, max_words = 100)
+```
 
+## Differences between groups 
+
+```{r test_grouping_analysis}
 #----------------------
 #Look at grouping variables 
 #----------------------
@@ -233,12 +244,7 @@ ggplot(data = tstat_freq_gpd, aes(x = factor(nrow(tstat_freq_gpd):1), y = freque
 dfmat_hashtags <- dfm_select(dfmat_covidtweets, pattern = '#*') 
 textplot_wordcloud(dfmat_hashtags, max_words = 100)
 textplot_wordcloud(dfm_select(dfmat_covidtweets_gpd, pattern = '#*'), comparison = TRUE, max_words = 100, color = c("blue", "red"))
-
 ```
-
-As with `tokens()`, you can select features from a DFM using `dfm_select()`. You can also select features based on the length of features (e.g. keep features consisting of at least five characters: `dfm_keep(dfmat_inaug, min_nchar = 5)`). While `dfm_select()` selects features based on patterns, `dfm_trim()` does this based on feature frequencies. If `min_termfreq = 10`, features that occur less than 10 times in the corpus are removed.
-
-If you want to convert the frequency count to a proportion within documents, use `dfm_weight(scheme = "prop")`
 
 ## Sentiment analysis of the twitter data
 
@@ -248,23 +254,26 @@ So basically a dictionary ('sentiment/topic dictionary') is used to group a numb
 
 We will apply the the Lexicoder Sentiment Dictionary to the selected contexts using **textstat_polarity()**. All three of these lexicons are based on unigrams (i.e., single words), and some bigrams.
 
-```{r sentiment_analysis}
+```{r sentiment_analysis, message=F}
 #Dictionary based sentiment analysis
 lengths(data_dictionary_LSD2015)
 print(data_dictionary_LSD2015, max_nval = 20)
+
+#Can also make and use your own bespoke dictionary
+my_dictionary <- dictionary(list(pos = c("happiness", "joy", "light"), neg = c("sadness", "anger", "darkness")))
 
 #Set the polarity categories we wish to use
 my_polarity <- list(pos = c("positive", "neg_negative"), neg = c("negative", "neg_positive"))
 polarity(data_dictionary_LSD2015) <- my_polarity
 
 #Get sentiment scores on our original corpus 
-
-##default function == log(\frac{pos}{neg}) --> If you have very long documents - you may want to weight the sentiment values by the length (total words) in the document. There are other functions that can do this for you - or you can write your own and feed it in using the option 'fun = xxx'
-
-sentiment<-textstat_polarity(dfmat_covidtweets, dictionary = data_dictionary_LSD2015)
+sentiment<-textstat_polarity(dfmat_covidtweets, dictionary = data_dictionary_LSD2015) #default function == log(\frac{pos}{neg})
+#There are other functions available - or you can write your own and feed it in using the option 'fun = xxx'
+#If you have very long documents - you may want to weight the sentiment values by the length (total words) in the document. 
 range(sentiment$sentiment)
 head(sentiment)
 
+#Alternative Method
 #use function tokens_lookup to assign sentiment to tokens
 covidtweets_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_LSD2015)
 # if you do the above - then need to create a document document-feature matrix
@@ -281,6 +290,42 @@ ggplot(data = sentiment_dat, aes(y = mean_sent, x = week_day, group = location_U
   geom_line()+
   geom_hline(yintercept = 0)+
   theme_bw()
+
+#Specific Sentiments - Bing Liu Sentiment Lexicon
+data(sentiments, package = "tidytext")
+sentiment<-textstat_polarity(dfmat_covidtweets, lexicon == "bing")
+as.dictionary(subset(sentiments, lexicon == "bing"))
+
+sentiment<-textstat_polarity(dfmat_covidtweets, dictionary = data_dictionary_LSD2015)
+
+```
+
+## Other Dictionaries
+
+```{r bin_dictionary}
+#Sentiment "type" dictionary
+lengths(data_dictionary_NRC)
+print(data_dictionary_NRC, max_nval = 10)
+
+#Can also make and use your own bespoke dictionary
+my_dictionary <- dictionary(list(pos = c("happiness", "joy", "light"), neg = c("sadness", "anger", "darkness")))
+
+#Set the polarity categories we wish to use
+my_new_polarity <- list(pos = c("positive"), neg = c("negative"))
+polarity(data_dictionary_NRC) <- my_new_polarity
+
+#Alternative Method - use function tokens_lookup to assign sentiment to tokens
+covidtweets_new_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_NRC, fun = )
+# if you do the above - then need to create a document document-feature matrix
+dfmat_sentiment_gpd <- dfm(covidtweets_new_lsd) %>% dfm_group(c('location_US_UK'))
+dfm_sentiment_prop <- dfm_weight(dfmat_sentiment_gpd, scheme = "prop")
+
+plot_dat <- dfm_sentiment_prop %>% 
+  convert(., to ="data.frame") %>% 
+  pivot_longer(!doc_id, names_to = "sentiment_types", values_to = "proportions")
+
+ggplot(data = plot_dat, aes(x=sentiment_types, y=proportions, fill=doc_id)) + 
+  geom_bar(stat="identity", position=position_dodge())
 ```
 
 ## Case Study: Using supervised machine learning to build a text classifier
@@ -311,9 +356,10 @@ library(caret)
 #*************************************************************
 # 1. Read in data for building the ML model ====
 
-coded_freetext<-fread(here('Data/RFS_recoded_freetextfields.txt'))
+coded_freetext<-read_tsv(here('Working_Data/Supervised_ML/labelled_dataset.txt'))
+dim(coded_freetext)
 
-  #dim(coded_freetext)
+
   #table(coded_freetext$new_meaning)
   #table(coded_freetext$new_code)
 
@@ -366,6 +412,9 @@ set.seed(4321)
 training_data <- dfm_sample(base_dfm_nolows, size = 0.6*nrow(base_dfm_nolows))
 testing_data<-base_dfm_nolows[setdiff(docnames(base_dfm_nolows), docnames(training_data)), ]
 
+```
+
+```{r}
 #*************************************************************
 #NOTES -->
   #Initial investigation showed that 60:40 was the best split (no improvement with higher % for training)
