@@ -291,7 +291,7 @@ ggplot(data = sentiment_dat, aes(y = mean_sent, x = week_day, group = location_U
 
 ## Other Dictionaries
 
-```{r bin_dictionary}
+```{r bing_dictionary}
 #Sentiment "type" dictionary
 lengths(data_dictionary_NRC)
 print(data_dictionary_NRC, max_nval = 10)
@@ -333,11 +333,13 @@ ggplot(data = plot_dat, aes(x=sentiment_types, y=proportions, fill=doc_id)) +
 
 6.  Use the model to 'label' the new data
 
-```{r prep_for_ML}
+```{r load_extra_packages}
 #load the text mining, ML classification packages
 library(quanteda.textmodels)
 library(caret)
+```
 
+```{r prep_for_ML}
 #*************************************************************
 # 1. Read in data for building the ML model ====
 
@@ -345,51 +347,65 @@ coded_freetext<-read_tsv(here('Working_Data/Supervised_ML/labelled_dataset.txt')
 dim(coded_freetext)
 head(coded_freetext)
 summary(coded_freetext)
-  table(coded_freetext$label)
-  table(coded_freetext$meaning)
+  labels<-table(coded_freetext$label)
+  meanings<-table(coded_freetext$meaning)
+  (better_summary<-data.frame(meanings) %>% mutate(labels = names(labels)))
 
 #*************************************************************
 # 4. Create the corpus ====
-freetext_corpus<-corpus(coded_freetext, text_field = 'freetext_clean') 
-
-#add the doc_id as to docvars
-docvars(freetext_corpus, field = 'doc_id') <- coded_freetext$doc_id
-#list the docvars [Label is a docvars]
-head(docvars(freetext_corpus) )
-
+freetext_corpus<-corpus(coded_freetext, text_field = 'freetext_clean')
 #see bits of the corpus:
 texts(freetext_corpus)[9:11]
 
+#add the doc_id as to docvars
+docvars(freetext_corpus, field = 'doc_id') <- coded_freetext$doc_id
+
+#list the docvars [Label is a docvars]
+head(docvars(freetext_corpus) )
+
+
 #*************************************************************
 # 5. Build the Document Feature Matrix ====
-
-#EXTRA STOPWORDS to remove from corpus
-#This lists all the abbreviation variations for participant to remove from the corpus and other random words found during data clean
 #Build the Document Feature Matrix from text field
-base_dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T,
+dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T,
                            remove = stopwords('english')) 
+dfm
 
 #remove low freq words and terms only found in a few documents
-base_dfm_nolows <-dfm_trim(base_dfm, min_termfreq = 6, min_docfreq = 3)
-  #dim(freetext_corpus_dfm_nolows)
-  #topfeatures(freetext_corpus_dfm_nolows, 20)
-  #featnames(freetext_corpus_dfm_nolows)
-  #sparsity(freetext_corpus_dfm_nolows) #0.9973569
+dfm_nolowfreqs <-dfm_trim(dfm, min_termfreq = 6, min_docfreq = 3)
+dfm_nolowfreqs
+  dim(dfm_nolowfreqs)
+  topfeatures(dfm_nolowfreqs, 20)
+  head(featnames(dfm_nolowfreqs), 20) # first 50 features (in original text order)
+  head(sort(featnames(dfm_nolowfreqs)), 20) # first 50 features alphabetically
+  sparsity(dfm_nolowfreqs) 
 
 #*************************************************************
 # 6. Split the data into training and testing datasets ====
-
 #Split in two parts 60:40. A 60% that will become our training data set / 40% for our testing data set 
-
 #set the seed so random draws are reproducible
 set.seed(4321)
-
-training_data <- dfm_sample(base_dfm_nolows, size = 0.6*nrow(base_dfm_nolows))
-testing_data<-base_dfm_nolows[setdiff(docnames(base_dfm_nolows), docnames(training_data)), ]
-
+training_data <- dfm_sample(dfm, size = 0.6*nrow(dfm))
+testing_data<-dfm[setdiff(docnames(dfm), docnames(training_data)), ]
 ```
 
-```{r}
+```{r build_SVMmodels}
+#*************************************************************
+#run SVM classifier model on training data ====
+svm_model <- textmodel_svm(training_data, training_data$Label)
+summary(svm_model)
+
+#Get the predictions (force = T means to only use features that exist in the both training and prediction dfms)
+svm_predicted_class <- predict(svm_model, newdata = testing_data, type = "class", force = T)
+svm_actual_class <- testing_data$Label
+svm_tab_class <- table(svm_actual_class, svm_predicted_class); svm_tab_class
+sum(diag(svm_tab_class))/dim(testing_data)[1] # 0.914
+
+#Look at accuracy etc
+confusionMatrix(svm_tab_class, mode = "everything")
+```
+
+```{r apply_SVMclassifier}
 #*************************************************************
 #NOTES -->
   #Initial investigation showed that 60:40 was the best split (no improvement with higher % for training)
@@ -403,21 +419,7 @@ testing_data<-base_dfm_nolows[setdiff(docnames(base_dfm_nolows), docnames(traini
       #> based_dfm_tfidf <-dfm_tfidf(base_dfm_nolows, scheme_tf = "count", scheme_df = "inverse")
 
 
-#*************************************************************
-#APPLY Linear SVM classifier model to classify and predict ====
 
-#Run the model
-svm_model <- textmodel_svm(training_data, training_data$Label)
-  #summary(svm_model)
-
-#Get the predictions (force = T means to only use features that exist in the both training and prediction dfms)
-svm_predicted_class <- predict(svm_model, newdata = testing_data, type = "class", force = T)
-svm_actual_class <- testing_data$Label
-svm_tab_class <- table(svm_actual_class, svm_predicted_class); svm_tab_class
-sum(diag(svm_tab_class))/dim(testing_data)[1] # 0.914
-
-#Look at accuracy etc
-confusionMatrix(svm_tab_class, mode = "everything")
 
 
 #***********************************************************************
