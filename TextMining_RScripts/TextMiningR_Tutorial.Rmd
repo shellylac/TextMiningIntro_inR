@@ -16,7 +16,7 @@ library(quanteda)
 library(quanteda.sentiment)
 ```
 
-## Importing text data: package(readtext)
+## STEP 1: Importing text data: package(readtext)
 
 The **readtext** function from the package with the same name, detects the file formats of a given list of files and extracts the content into a data.frame. **readtext** supports .txt, .json, .csv, .tab, .tsv, .xml, .pdf, .doc, .docx, .odt, .rtf, files from URLs and archive file (.zip, .tar, .tar.gz, .tar.bz). It can read in multiple files at once and supports glob/wildcard expressions.
 
@@ -45,9 +45,7 @@ str(extracted_texts)
 summary(extracted_texts)
 ```
 
-### A note on encodings
-
-This is from the readtext package tutorial: "*As encoding can also be a challenging issue for those reading in texts, we include functions for diagnosing encodings on a file-by-file basis, and allow you to specify vectorized input encodings to read in file types with individually set (and different) encodings. (All encoding functions are handled by the stringi package.)*"
+A note on [**file encodings**]{.ul}: "*As encoding can also be a challenging issue for those reading in texts, we include functions for diagnosing encodings on a file-by-file basis, and allow you to specify vectorized input encodings to read in file types with individually set (and different) encodings. (All encoding functions are handled by the stringi package.)*"
 
 ## Load our twitter data
 
@@ -88,7 +86,7 @@ covid_data_clean <- covid_data %>%
   select (-text, -created_at)
 ```
 
-## From data to corpus/corpora
+## STEP 2: From data to corpus
 
 ```{r build_corpus}
 
@@ -133,7 +131,7 @@ texts(covid_corpus)[1649]
 texts(covid_corpus)[2365]
 ```
 
-## Tokenisation
+## STEP 3: Tokenisation
 
 The function `tokens()` segments texts in a corpus into tokens (words or sentences) by word boundaries. Usually a corpus is passed to `tokens()`, but it works with a character string too. By default, `tokens()` only removes separators (typically white spaces), but you can set other separators. You can (should?) remove punctuation and numbers prior to tokenisation.
 
@@ -162,18 +160,23 @@ head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", 
 head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", "immunis*"), selection = 'remove'))
 ```
 
-To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`. You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create ngrams - particularly useful for looking for negative bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then once you've found them you can select them from your corpus: `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
+To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`.
 
-## From tokens to dfm (document feature matrix, aka document term matrix)
+You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create ngrams - particularly useful for looking for negative bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then once you've found them you can select them from your corpus: `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
+
+## STEP 4: Build the dfm (document feature matrix)
 
 The function `dfm()` constructs a document-feature matrix (DFM) [from a tokens object or a corpus object]{.ul} (in which case the tokenisation occurs internally). `topfeatures()` will list the features (terms/tokens) in descending order. `textstat_frequency()` shows both term and document frequencies. You can also use the function to find the most frequent features within groups.
 
 ```{r get_dfm}
 covid_toks <- tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
 
+#Remove stopwords and bespoke list of non-informative words
 my_stopwords<-c('covid*', 'corona*', '#covid*', '#corona*', '#sars*')
 
 dfmat_covidtweets <- dfm(covid_toks, tolower = FALSE, remove = c(stopwords(), my_stopwords, stem = FALSE))
+#Can build this straight from the corpus without first generating tokens
+#dfmat_covidtweets <- dfm(covid_corpus, tolower = FALSE, remove = c(stopwords(), my_stopwords, stem = FALSE))
 
 dfmat_covidtweets
 docvars(dfmat_covidtweets)
@@ -193,7 +196,7 @@ topfeatures(dfmat_covidtweets, 10)
 
 As with `tokens()`, you can select features from a DFM using `dfm_select()`. You can also select features based on the length of features (e.g. keep features consisting of at least five characters: `dfm_keep(dfmat_inaug, min_nchar = 5)`). While `dfm_select()` selects features based on patterns, `dfm_trim()` does this based on feature frequencies. If `min_termfreq = 10`, features that occur less than 10 times in the corpus are removed. If you want to convert the frequency count to a proportion within documents, use `dfm_weight(scheme = "prop")`
 
-## Simple text exploration of the tweets
+## Step 5: Exploration/analysis
 
 ```{r text_exploration}
 
@@ -355,13 +358,15 @@ library(caret)
 ```{r prep_for_ML}
 #*************************************************************
 # Read in data for building the ML model ====
-
 coded_freetext<-read_tsv(here('Working_Data/Supervised_ML/labelled_dataset.txt'))
 head(coded_freetext)
 dim(coded_freetext)
-labels<-table(coded_freetext$label)
-meanings<-table(coded_freetext$meaning)
-(quick_summary<-data.frame(meanings) %>% mutate(labels = names(labels)))
+
+(labels_meanings<- coded_freetext %>%  
+            select(label, meaning) %>% 
+            mutate(label = as.character(label)) %>%  
+            distinct() %>% 
+            arrange(label))
 
 #*************************************************************
 # Create the corpus ====
@@ -448,13 +453,9 @@ newdata_dfm <- dfm(newfields_corpus, verbose = T, remove_punct = T, remove_numbe
 newfields_predicted_label <- predict(svm_model, newdata = newdata_dfm, type = "class")
 
 #bind the classifications to the original data
-meaning<- coded_freetext %>%  
-            select(label, meaning) %>% 
-            mutate(label = as.character(label)) %>%  
-            distinct()
 model_classified_newfields<-cbind(newfields_data, newfields_predicted_label) %>% 
           mutate(label = as.character(newfields_predicted_label)) %>% 
-          left_join(meaning, by = 'label') %>% 
+          left_join(labels_meanings, by = 'label') %>% 
           select(-doc_id, -freetext_field_id, -newfields_predicted_label)
 model_classified_newfields
 ```
