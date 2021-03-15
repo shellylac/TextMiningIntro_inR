@@ -1,7 +1,7 @@
 ---
 title: "A brief introduction to text mining in R"
 author: "Shelly Lachish"
-date: "02/02/2021"
+date: "15/03/2021"
 output: 
   html_document
 ---
@@ -25,30 +25,39 @@ The parameter *docvarsfrom* allows you to set metadata variables by splitting on
 ```{r importing_text_data}
 #Import text data files
 #..with docvars taken from file paths (file paths must be same length)
+list.files(here('Working_Data/import_data_types/'))
 extracted_texts<- readtext(here('Working_Data/import_data_types/*'), docvarsfrom = "filepaths", dvsep = "/")
 print(extracted_texts)
 print(extracted_texts[1], n = 12)
+print(extracted_texts$text[1:2])
 
 #Docvars from file names (File names need to be standardised across list - same num/type separator)
-extracted_texts <- readtext(here('Working_Data/import_data_types/Mindy*'), docvarsfrom = "filenames", dvsep = "_", docvarnames = c("author", "place", "year"))
+extracted_texts <- readtext(here('Working_Data/import_data_types/Mindy*'), 
+                            docvarsfrom = "filenames", dvsep = "_", docvarnames = c("author", "place", "year"))
 print(extracted_texts, n=4)
-
 # View beginning of the first extracted text
 cat(substr(extracted_texts$text[1] , 0, 400))
 
 #Get pdfs
-RC_data <- readtext(here('Working_Data/import_data_types/*.pdf'), docvarsfrom = "filenames", dvsep = "_", docvarnames = c("author", "journal", "year"))
-RC_data
-str(RC_data)
+extracted_texts <- readtext(here('Working_Data/import_data_types/*.pdf'), docvarsfrom = "filenames", dvsep = "_", docvarnames = c("author", "journal", "year"))
+extracted_texts
+str(extracted_texts)
+summary(extracted_texts)
 ```
 
 ### A note on encodings
 
-This is from the readtext package tutorial: "As encoding can also be a challenging issue for those reading in texts, we include functions for diagnosing encodings on a file-by-file basis, and allow you to specify vectorized input encodings to read in file types with individually set (and different) encodings. (All encoding functions are handled by the stringi package.)"
+This is from the readtext package tutorial: "*As encoding can also be a challenging issue for those reading in texts, we include functions for diagnosing encodings on a file-by-file basis, and allow you to specify vectorized input encodings to read in file types with individually set (and different) encodings. (All encoding functions are handled by the stringi package.)*"
 
 ## Load our twitter data
 
-Here we will use a data set of \~7,000 tweets with the subject "covid19" (obtained using the rtweet package from the 8th - 15th Feb) to understand concepts in text analysis, do some basic text exploration, run some simple statistics and perform a sentiment analysis on the content of the tweets
+Here we will use a data set of \~7,000 tweets with the subject "covid19" (obtained using the rtweet package from the 8th - 15th Feb) to
+
+-   understand concepts in text analysis (corpus, tokenisation, document feature matrix)
+
+-   do some basic text exploration (word frequencies, wordclouds, keywords in context)
+
+-   perform a sentiment analysis on the content of the tweets
 
 ```{r load_tweet_data, message = FALSE}
 
@@ -93,10 +102,9 @@ texts(covid_corpus)[2]
 covid_data$text[2]
 summary(covid_corpus, n = 5)
 
-#Can save and plot from this (but only summary of first 50 texts)
-corp_summary <- summary(covid_corpus)
+#Can save and plot from this (but only summary of first 'n' texts)
+corp_summary <- summary(covid_corpus, n = 50)
 ggplot(data = corp_summary, aes(x = log(followers_count), y = Tokens, group = 1)) + geom_line() + geom_point()  + theme_bw()
-
 ```
 
 The corpus can be manipulated in a variety of ways (analogous to a data frame). You can subset, concatenate, trim components from the text body, and change the unit of texts between documents, paragraphs and sentences. You can extract segments of texts and tags from documents (useful when you analyze sections of documents or transcripts separately). You can also perform a keywords-in-context search (kwic function).
@@ -116,14 +124,13 @@ ndoc(new_corp)
 #change unit length to sentences/paragraphs/ or document (default)
 corp_sentences <- corpus_reshape(corp_monday, to = "sentences")
 ndoc(corp_sentences)
-summary(corp_sentences, n = 5)
+summary(corp_sentences, n = 7)
 
 #The kwic function (keywords-in-context) performs a search for a word and allows us to view the contexts in which it occurs:
 head(kwic(covid_corpus, pattern = 'vaccin*'))
 head(kwic(covid_corpus, pattern = phrase("conspiracy theor*")))
-texts(covid_corpus)[1434]
+texts(covid_corpus)[1649]
 texts(covid_corpus)[2365]
-
 ```
 
 ## Tokenisation
@@ -164,9 +171,9 @@ The function `dfm()` constructs a document-feature matrix (DFM) [from a tokens o
 ```{r get_dfm}
 covid_toks <- tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
 
-my_stopwords<-c('covid*', 'corona*', '#covid*', '#corona*')
+my_stopwords<-c('covid*', 'corona*', '#covid*', '#corona*', '#sars*')
 
-dfmat_covidtweets <- dfm(covid_toks, tolower = TRUE, remove = c(stopwords(), my_stopwords, stem = FALSE))
+dfmat_covidtweets <- dfm(covid_toks, tolower = FALSE, remove = c(stopwords(), my_stopwords, stem = FALSE))
 
 dfmat_covidtweets
 docvars(dfmat_covidtweets)
@@ -186,7 +193,7 @@ topfeatures(dfmat_covidtweets, 10)
 
 As with `tokens()`, you can select features from a DFM using `dfm_select()`. You can also select features based on the length of features (e.g. keep features consisting of at least five characters: `dfm_keep(dfmat_inaug, min_nchar = 5)`). While `dfm_select()` selects features based on patterns, `dfm_trim()` does this based on feature frequencies. If `min_termfreq = 10`, features that occur less than 10 times in the corpus are removed. If you want to convert the frequency count to a proportion within documents, use `dfm_weight(scheme = "prop")`
 
-## Simple text analysis of the tweets
+## Simple text exploration of the tweets
 
 ```{r text_exploration}
 
@@ -207,7 +214,7 @@ set.seed(132)
 textplot_wordcloud(dfmat_covidtweets, max_words = 100)
 
 ##SHOULD WE STEM TERMS? - we have 'vaccine' and 'vaccines' and 'vaccination' as top terms
-(dfmat_covidtweets_stem <- dfm(covid_toks, tolower = TRUE, remove = c(stopwords(), my_stopwords), stem = TRUE) %>%
+(dfmat_covidtweets_stem <- dfm(covid_toks, tolower = FALSE, remove = c(stopwords(), my_stopwords), stem = TRUE) %>%
                               dfm_trim(min_termfreq = 10, verbose = FALSE))
 
 dfmat_covidtweets_stem %>% 
@@ -228,16 +235,17 @@ textplot_wordcloud(dfmat_covidtweets_stem, max_words = 100)
 #Look at grouping variables 
 #----------------------
 dfmat_covidtweets_gpd<-dfm_group(dfmat_covidtweets_stem, groups = 'location_US_UK')
-tstat_freq_gpd <- textstat_frequency(dfmat_covidtweets_stem, n = 30, groups = 'location_US_UK')
+####dfmat_covidtweets_gpd<-dfm_weight(dfmat_covidtweets_gpd, scheme = 'prop')
 
 #Plot group differences
-ggplot(data = tstat_freq_gpd, aes(x = factor(nrow(tstat_freq_gpd):1), y = frequency)) +
+gpd_diffs<- dfmat_covidtweets_gpd %>% textstat_frequency(n = 30, groups = 'location_US_UK')
+
+ggplot(data = gpd_diffs, aes(x = factor(nrow(gpd_diffs):1), y = frequency)) +
     geom_point() +
     facet_wrap(~ group, scales = "free") +
     coord_flip() +
-    scale_x_discrete(breaks = nrow(tstat_freq_gpd):1,labels = tstat_freq_gpd$feature) +
+    scale_x_discrete(breaks = nrow(gpd_diffs):1,labels = gpd_diffs$feature) +
     labs(x = NULL, y = "Relative frequency")
-
 
 #Let's subset the dfm to look at popular hastags
 dfmat_hashtags <- dfm_select(dfmat_covidtweets, pattern = '#*') 
@@ -264,17 +272,25 @@ my_polarity <- list(pos = c("positive", "neg_negative"), neg = c("negative", "ne
 polarity(data_dictionary_LSD2015) <- my_polarity
 
 #Get sentiment scores on our original corpus 
-sentiment<-textstat_polarity(dfmat_covidtweets, dictionary = data_dictionary_LSD2015) #default function == log(\frac{pos}{neg})
-#There are other functions available - or you can write your own and feed it in using the option 'fun = xxx'
-#If you have very long documents - you may want to weight the sentiment values by the length (total words) in the document. 
+sentiment<-textstat_polarity(dfmat_covidtweets, dictionary = data_dictionary_LSD2015)
 range(sentiment$sentiment)
 head(sentiment)
 
-#Alternative Method
-#use function tokens_lookup to assign sentiment to tokens
-covidtweets_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_LSD2015)
-# if you do the above - then need to create a document document-feature matrix
-dfmat_covidtweets_lsd <- dfm(covidtweets_lsd) %>% dfm_group(c('location_US_UK', 'week_day')) 
+#default function == log(\frac{pos}{neg})
+#There are other functions available - or you can write your own and feed it in using the option 'fun = xxx'
+#If you have very long documents - you may want to weight the sentiment values by the length (total words) in the document. 
+
+#--------------
+#Let's see what is happening in the assignment
+covid_toks[1:2]
+tokens_lookup(covid_toks, data_dictionary_LSD2015, nested_scope = "dictionary", exclusive = FALSE)[1:2]
+#--------------
+
+#Alternative Method - use function tokens_lookup to assign sentiment to tokens
+# --- covidtweets_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_LSD2015)
+# --- if you do the above - then need to create a document document-feature matrix
+# --- dfmat_covidtweets_lsd <- dfm(covidtweets_lsd) %>% dfm_group(c('location_US_UK', 'week_day')) 
+# --- head(dfmat_covidtweets_lsd)
 
 #Create data for plotting
 sentiment_dat<- cbind(sentiment, docvars(covid_corpus)) %>%
@@ -296,11 +312,8 @@ ggplot(data = sentiment_dat, aes(y = mean_sent, x = week_day, group = location_U
 lengths(data_dictionary_NRC)
 print(data_dictionary_NRC, max_nval = 10)
 
-#Can also make and use your own bespoke dictionary
-my_dictionary <- dictionary(list(pos = c("happiness", "joy", "light"), neg = c("sadness", "anger", "darkness")))
-
 #Alternative Method - use function tokens_lookup to assign sentiment to tokens
-covidtweets_new_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_NRC, fun = )
+covidtweets_new_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_NRC )
 dfmat_sentiment_gpd <- dfm(covidtweets_new_lsd) %>% dfm_group(c('location_US_UK'))
 dfm_sentiment_prop <- dfm_weight(dfmat_sentiment_gpd, scheme = "prop")
 
@@ -341,32 +354,26 @@ library(caret)
 
 ```{r prep_for_ML}
 #*************************************************************
-# 1. Read in data for building the ML model ====
+# Read in data for building the ML model ====
 
 coded_freetext<-read_tsv(here('Working_Data/Supervised_ML/labelled_dataset.txt'))
-dim(coded_freetext)
 head(coded_freetext)
-summary(coded_freetext)
-  labels<-table(coded_freetext$label)
-  meanings<-table(coded_freetext$meaning)
-  (better_summary<-data.frame(meanings) %>% mutate(labels = names(labels)))
+dim(coded_freetext)
+labels<-table(coded_freetext$label)
+meanings<-table(coded_freetext$meaning)
+(quick_summary<-data.frame(meanings) %>% mutate(labels = names(labels)))
 
 #*************************************************************
-# 4. Create the corpus ====
-freetext_corpus<-corpus(coded_freetext[,1:3 ], text_field = 'freetext_clean')
+# Create the corpus ====
+freetext_corpus<-corpus(coded_freetext, text_field = 'freetext_clean')
 #see bits of the corpus:
 texts(freetext_corpus)[9:11]
-
-#add the doc_id as to docvars
-#docvars(freetext_corpus, field = 'doc_id') <- coded_freetext$doc_id
 
 #list the docvars [Label is a docvars]
 head(docvars(freetext_corpus) )
 
-
 #*************************************************************
-# 5. Build the Document Feature Matrix ====
-#Build the Document Feature Matrix from text field
+# Build the Document Feature Matrix ====
 dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T,
                            remove = stopwords('english')) 
 dfm
@@ -379,29 +386,35 @@ dfm_nolowfreqs
   head(featnames(dfm_nolowfreqs), 20) # first 50 features (in original text order)
   head(sort(featnames(dfm_nolowfreqs)), 20) # first 50 features alphabetically
   sparsity(dfm_nolowfreqs) 
+```
 
+**quanteda.textmodels** package includes models and classifiers for sparse matrix objects representing textual data in the form of a document-feature matrix. Includes methods for correspondence analysis, latent semantic analysis, and fast Naive Bayes and linear 'SVMs' specially designed for sparse textual data.
+
+```{r build_SVMmodels}
 #*************************************************************
-# 6. Split the data into training and testing datasets ====
-#Split in two parts 60:40. A 60% that will become our training data set / 40% for our testing data set 
+#Split the data into training and testing datasets ==== A 60% that will become our training data set / 40% for our testing data set 
 #set the seed so random draws are reproducible
 set.seed(4321)
 training_data <- dfm_sample(dfm_nolowfreqs, size = 0.6*nrow(dfm_nolowfreqs))
 testing_data<-dfm[setdiff(docnames(dfm_nolowfreqs), docnames(training_data)), ]
-```
 
-```{r build_SVMmodels}
-#*************************************************************
+#use base r if you want [[sample(1:nrow(dfm_nolowfreqs), floor(.60 * nrow(dfm_nolowfreqs)))]]
+
 #run SVM classifier model on training data ====
 svm_model <- textmodel_svm(training_data, training_data$label, type = 0)
+svm_model <- textmodel_svm(training_data, training_data$label)
 summary(svm_model)
 
 #Get the predictions (force = T means to only use features that exist in the both training and prediction dfms)
-svm_predicted_class <- predict(svm_model, newdata = testing_data, type = "probability", force = T)
+svm_predicted_class <- predict(svm_model, newdata = testing_data, type = "class", force = T)
+head(svm_predicted_class)
+svm_predicted_prob <- predict(svm_model, newdata = testing_data, type = "probability", force = T)
+head(svm_predicted_prob)
 svm_actual_class <- testing_data$label
 svm_tab_class <- table(svm_actual_class, svm_predicted_class); svm_tab_class
-sum(diag(svm_tab_class))/dim(testing_data)[1] # 0.914
+sum(diag(svm_tab_class))/dim(testing_data)[1]
 
-#Look at accuracy etc
+#Look at accuracy etc (from caret package)
 confusionMatrix(svm_tab_class, mode = "everything")
 ```
 
@@ -419,67 +432,66 @@ confusionMatrix(svm_tab_class, mode = "everything")
       #> based_dfm_tfidf <-dfm_tfidf(base_dfm_nolows, scheme_tf = "count", scheme_df = "inverse")
 
 #***********************************************************************
-# 8. APPLY SVM model to predict classes of new freetext data fields ====
+# APPLY SVM model to predict classes of new freetext data fields ====
 
-#load the new data
+#load the new data that needs labelling
 newfields_data<-read_tsv(here('Working_Data/Supervised_ML/unlabelled_dataset.txt'))
-dim(newfields_data)
 head(newfields_data)
 
-#create the corpus and clean
+#create the corpus
 newfields_corpus<-corpus(newfields_data, text_field = 'freetext_clean') 
-
-#add the doc_id as to docvars
-#docvars(newfields_corpus, field = 'doc_id') <- newfields_data$doc_id
-
-#Add new stopwords (these are common words that I found in this second corpus that were not in the first))
-#extra_stopwords<-c('core', 'core protocol', 'core scan', 'scans', 'only', 'due to', 'fmri', 'history', 'trigger')
-
 newdata_dfm <- dfm(newfields_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T, 
-                            remove = c(stopwords('english'))) 
-
-#remove low freq words and terms only found in a few documents
-newfields_dfm_nolows <-dfm_trim(newdata_dfm, min_termfreq = 5, min_docfreq = 3)
-
-#Match the features of the new corpus to that used to build the model
-newfields_matched <- newfields_dfm_nolows
-#newfields_matched <- dfm_match(newfields_dfm_nolows, features = featnames(training_data))
+                            remove = c(stopwords('english'))) %>% 
+               dfm_trim(min_termfreq = 5, min_docfreq = 3)
 
 #Predict new classes for the new fields
-newfields_predicted_class <- predict(svm_model, newdata = newfields_matched, type = "class")
-#newfields_predicted_probs <- predict(svm_model, newdata = newfields_matched, type = "probability")
-
-#Find second highest class
-#secondhighest<- newfields_predicted_probs %>%
-#  as_tibble() %>% 
-#  mutate(doc_id  = newfields_data$doc_id) %>% 
-#  pivot_longer(!doc_id, names_to = "PredLabel", values_to = "Probs") %>% 
-#  group_by(doc_id) %>%
-#  arrange(doc_id, desc(Probs))%>% 
-#  slice(2) %>%  #This takes the second value for each group
-#  select(doc_id, PredLabel)
+newfields_predicted_label <- predict(svm_model, newdata = newdata_dfm, type = "class")
 
 #bind the classifications to the original data
-model_classified_newfields<-cbind(newfields_data, newfields_predicted_class) %>% 
-  rename(ModelClassified_Label = newfields_predicted_class)
-
+meaning<- coded_freetext %>%  
+            select(label, meaning) %>% 
+            mutate(label = as.character(label)) %>%  
+            distinct()
+model_classified_newfields<-cbind(newfields_data, newfields_predicted_label) %>% 
+          mutate(label = as.character(newfields_predicted_label)) %>% 
+          left_join(meaning, by = 'label') %>% 
+          select(-doc_id, -freetext_field_id, -newfields_predicted_label)
+model_classified_newfields
 ```
 
 ```{r spell_check_textfields}
 #*************************************************************
 library(hunspell)
 
-# Get bad words.
-  incorrectly_spelled_words <- hunspell(coded_freetext_clean$freetext_clean) %>% unlist()
+# Check individual words
+words <- c("beer", "wiskey", "wyne")
+correct <- hunspell_check(words)
+print(correct)
+hunspell_suggest(words)
+hunspell_suggest(words[!correct])
 
-# Extract the first suggestion for each bad word. - TAKES ~ A FEW  MINUTES TO RUN
+text <- pdftools::pdf_text(here('Working_Data/import_data_types/Morris_Lancet_2021.pdf'))
+bad_words <- hunspell(text)
+sort(unique(unlist(bad_words)))
+#Can install a medical dictionary:
+#See details in this blog post;
+#https://science.data.blog/2018/11/23/correcting-misspelled-medical-words-in-raw-text-data-with-r/
+#and here --> https://cran.r-project.org/web/packages/hunspell/vignettes/intro.html#Custom_Dictionaries
+
+#Automate the spell check process - a simple example:
+
+text_data<-'Too Atlantic bottle-nosed dolfins have been traned by the Navy to serch waters for explosives nere the citty of London'
+
+# Get bad words.
+  incorrectly_spelled_words <- hunspell(text_data) %>% unlist()
+
+# Extract the first suggestion for each bad word. - Is slow for large numbers of documents
   suggestions <- sapply(incorrectly_spelled_words, function(x) hunspell_suggest(x)[[1]][1]) %>% unname()
 
 #replace in the original text - TAKES ~ A FEW  MINUTES TO RUN
-  corrected_coded_freetext_clean <- mutate(coded_freetext_clean, 
-                             freetext_clean = stringi::stri_replace_all_regex(str = freetext_clean, 
-                                              pattern = paste0('\\b', incorrectly_spelled_words, '\\b'),
-                                              replacement = suggestions, vectorize_all = FALSE))
-
+  corrected_text <- stringi::stri_replace_all_regex(str = text_data, 
+                          pattern = paste0('\\b', incorrectly_spelled_words, '\\b'),
+                          replacement = suggestions, vectorize_all = FALSE)
+  corrected_text
 
 ```
