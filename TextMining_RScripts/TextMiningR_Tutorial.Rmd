@@ -24,8 +24,9 @@ The parameter *docvarsfrom* allows you to set metadata variables by splitting on
 
 ```{r importing_text_data}
 #Import text data files
-#..with docvars taken from file paths (file paths must be same length)
 list.files(here('Working_Data/import_data_types/'))
+
+#..with docvars taken from file paths (file paths must be same length)
 extracted_texts<- readtext(here('Working_Data/import_data_types/*'), docvarsfrom = "filepaths", dvsep = "/")
 print(extracted_texts)
 print(extracted_texts[1], n = 12)
@@ -137,7 +138,7 @@ texts(covid_corpus)[2365]
 
 ## STEP 3: Tokenisation
 
-The function `tokens()` segments texts in a corpus into tokens (words or sentences) by word boundaries. Usually a corpus is passed to `tokens()`, but it works with a character string too. By default, `tokens()` only removes separators (typically white spaces), but you can set other separators. You can (should?) remove punctuation and numbers prior to tokenisation.
+The function `tokens()` segments texts in a corpus into tokens (words or sentences) by word boundaries. Usually a corpus is passed to `tokens()`, but it works with a character string too. By default, `tokens()` only removes separators (typically white spaces), but you can set other separators. You can remove punctuation and numbers prior to tokenisation.
 
 You can remove tokens that you are not interested in using `tokens_select()`. Usually we remove grammatical words that have little or no substantive meaning in pre-processing. These are known as **stopwords**. The function `stopwords()` returns a pre-defined list of function words.
 
@@ -164,6 +165,9 @@ head(covid_toks_nostop <- tokens_remove(covid_toks, pattern = stopwords("english
 #Select or remove particular interesting words
 head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", "immunis*")))
 head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", "immunis*"), selection = 'remove'))
+
+#-------- ngrams (multiword expressions)
+tokens_ngrams(covid_toks, n = 2) #options to change concatenator, and skip distance
 ```
 
 To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`.
@@ -177,7 +181,9 @@ You can discover multiword expressions in your tokens using `textstat_collocatio
 The function `dfm()` constructs a document-feature matrix (DFM) [from a tokens object or a corpus object]{.ul} (in which case the tokenisation occurs internally). `topfeatures()` will list the features (terms/tokens) in descending order. `textstat_frequency()` shows both term and document frequencies. You can also use the function to find the most frequent features within groups.
 
 ```{r get_dfm}
-covid_toks <- tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
+#So we have our tokens - we now build the dfm
+#covid_toks <- tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
+dfm(covid_toks)
 
 #Remove stopwords and bespoke list of non-informative words
 my_stopwords<-c('covid*', 'corona*', '#covid*', '#corona*', '#sars*')
@@ -198,6 +204,8 @@ docvars(dfmat_covidtweets)
 topfeatures(dfmat_covidtweets, 10)
 
 #For analysis purposes it is often a really good idea to remove very sparse terms from the dfm
+sparsity(dfmat_covidtweets)
+nfeat(dfmat_covidtweets)
 (dfmat_covidtweets<-dfmat_covidtweets %>% 
                     dfm_trim(min_termfreq = 10, verbose = FALSE))
 ```
@@ -225,7 +233,7 @@ set.seed(132)
 textplot_wordcloud(dfmat_covidtweets, max_words = 100)
 ```
 
-##### SHOULD WE STEM TERMS? 
+##### SHOULD WE STEM TERMS?
 
 We have 'vaccine' and 'vaccines' and 'vaccination' as top terms - but these are all essentially the same word.
 
@@ -294,7 +302,7 @@ polarity(data_dictionary_LSD2015) <- my_polarity
 
 #Get sentiment scores on our original corpus 
 sentiment<-textstat_polarity(dfmat_covidtweets, dictionary = data_dictionary_LSD2015)
-range(sentiment$sentiment)
+summary(sentiment)
 head(sentiment)
 
 #default function == log(\frac{pos}{neg})
@@ -355,6 +363,7 @@ ggplot(data = plot_dat, aes(x=sentiment_types, y=proportions, fill=doc_id)) +
 
 ```{r load_extra_packages}
 #load the text mining, ML classification packages
+#quanteda.textmodels package includes models and classifiers for sparse matrix objects representing textual data (includes methods for correspondence analysis, latent semantic analysis, Naive Bayes and linear 'SVMs'  designed for sparse textual data)
 library(quanteda.textmodels)
 library(caret)
 ```
@@ -378,9 +387,6 @@ freetext_corpus<-corpus(coded_freetext, text_field = 'freetext_clean')
 #see bits of the corpus:
 texts(freetext_corpus)[9:11]
 
-#list the docvars [Label is a docvars]
-head(docvars(freetext_corpus) )
-
 #*************************************************************
 # Build the Document Feature Matrix ====
 dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T,
@@ -397,49 +403,32 @@ dfm_nolowfreqs
   sparsity(dfm_nolowfreqs) 
 ```
 
-**quanteda.textmodels** package includes models and classifiers for sparse matrix objects representing textual data in the form of a document-feature matrix. Includes methods for correspondence analysis, latent semantic analysis, and fast Naive Bayes and linear 'SVMs' specially designed for sparse textual data.
-
 ```{r build_SVMmodels}
 #*************************************************************
-#Split the data into training and testing datasets ==== A 60% that will become our training data set / 40% for our testing data set 
+#Split the data into training and testing datasets 
+# -- 60% will become our training data set / 40% for our testing data set 
 #set the seed so random draws are reproducible
 set.seed(4321)
 training_data <- dfm_sample(dfm_nolowfreqs, size = 0.6*nrow(dfm_nolowfreqs))
 testing_data<-dfm[setdiff(docnames(dfm_nolowfreqs), docnames(training_data)), ]
 
-#use base r if you want [[sample(1:nrow(dfm_nolowfreqs), floor(.60 * nrow(dfm_nolowfreqs)))]]
-
 #run SVM classifier model on training data ====
-svm_model <- textmodel_svm(training_data, training_data$label, type = 0)
 svm_model <- textmodel_svm(training_data, training_data$label)
-summary(svm_model)
 
 #Get the predictions (force = T means to only use features that exist in the both training and prediction dfms)
 svm_predicted_class <- predict(svm_model, newdata = testing_data, type = "class", force = T)
 head(svm_predicted_class)
-svm_predicted_prob <- predict(svm_model, newdata = testing_data, type = "probability", force = T)
-head(svm_predicted_prob)
 svm_actual_class <- testing_data$label
-svm_tab_class <- table(svm_actual_class, svm_predicted_class); svm_tab_class
+(svm_tab_class <- table(svm_predicted_class, svm_actual_class))
 sum(diag(svm_tab_class))/dim(testing_data)[1]
 
 #Look at accuracy etc (from caret package)
 confusionMatrix(svm_tab_class, mode = "everything")
 ```
 
-```{r apply_SVMclassifier}
-#*************************************************************
-#NOTES -->
-  #Initial investigation showed that 60:40 was the best split (no improvement with higher % for training)
-  #Initial investigation showed that stemming words did not improve accuracy or kappa significantly
-  #Initial investigation showed that weighting the dfm (i.e. using tf-idf matrix) did not improve accuracy or kappa significantly
-  #Initial investigation showed that svm model outperforms the nb model
-  #If you need to do stemming then run this line of code
-      #>  stemd_dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, remove = c(stopwords('english'), mystopwords), stem = T) 
-  #If you want to use tf-idf weighting then run these lines of code
-      #> base_dfm_nolows <-dfm_trim(base_dfm, min_termfreq = 6, min_docfreq = 3)
-      #> based_dfm_tfidf <-dfm_tfidf(base_dfm_nolows, scheme_tf = "count", scheme_df = "inverse")
+##### *📖 go to slides*
 
+```{r apply_SVMclassifier}
 #***********************************************************************
 # APPLY SVM model to predict classes of new freetext data fields ====
 
