@@ -49,7 +49,7 @@ A note on [**file encodings**]{.ul}: "*As encoding can also be a challenging iss
 
 ## Load our twitter data
 
-Here we will use a data set of \~7,000 tweets with the subject "covid19" (obtained using the rtweet package from the 8th - 15th Feb) to
+Here we will use a data set of \~7,000 tweets with the subject "covid19" (obtained using the rtweet package from the 8th - 15th Feb) to:
 
 -   understand concepts in text analysis (corpus, tokenisation, document feature matrix)
 
@@ -85,6 +85,8 @@ covid_data_clean <- covid_data %>%
                                  ifelse(str_detect(location, regex("us|usa|america*", ignore_case = T)), "US", NA))) %>%
   select (-text, -created_at)
 ```
+
+##### *📖 go to slides*
 
 ## STEP 2: From data to corpus
 
@@ -131,6 +133,8 @@ texts(covid_corpus)[1649]
 texts(covid_corpus)[2365]
 ```
 
+##### *📖 go to slides*
+
 ## STEP 3: Tokenisation
 
 The function `tokens()` segments texts in a corpus into tokens (words or sentences) by word boundaries. Usually a corpus is passed to `tokens()`, but it works with a character string too. By default, `tokens()` only removes separators (typically white spaces), but you can set other separators. You can (should?) remove punctuation and numbers prior to tokenisation.
@@ -143,8 +147,10 @@ You can remove tokens that you are not interested in using `tokens_select()`. Us
 #Describe a bit how tokens are interpreted
 txt <- c(text1 = 'This is $10 in 999 different ways,\n up and down; left and #right!', 
          text2 = '@shellstar working: @ something on #Rtexttutorial 2day\t4ever !')#
-tokens(txt)
-tokens(txt, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
+(tokens<-tokens(txt))
+(tokens<-tokens(txt, remove_punct = TRUE, remove_symbols = T, remove_numbers = T))
+ntoken(tokens)
+ntype(tokens)
 
 #----------------------------------------
 #Get tokens from covid_tweets data
@@ -163,6 +169,8 @@ head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", 
 To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`.
 
 You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create ngrams - particularly useful for looking for negative bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then once you've found them you can select them from your corpus: `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
+
+##### *📖 go to slides*
 
 ## STEP 4: Build the dfm (document feature matrix)
 
@@ -215,10 +223,18 @@ dfmat_covidtweets %>%
 #Let's take a look at a word cloud
 set.seed(132)
 textplot_wordcloud(dfmat_covidtweets, max_words = 100)
+```
 
-##SHOULD WE STEM TERMS? - we have 'vaccine' and 'vaccines' and 'vaccination' as top terms
+##### SHOULD WE STEM TERMS? 
+
+We have 'vaccine' and 'vaccines' and 'vaccination' as top terms - but these are all essentially the same word.
+
+📖 go to slides
+
+```{r text_exploration_2}
 (dfmat_covidtweets_stem <- dfm(covid_toks, tolower = FALSE, remove = c(stopwords(), my_stopwords), stem = TRUE) %>%
                               dfm_trim(min_termfreq = 10, verbose = FALSE))
+
 
 dfmat_covidtweets_stem %>% 
   textstat_frequency(n = 30) %>% 
@@ -257,6 +273,8 @@ textplot_wordcloud(dfm_select(dfmat_covidtweets_gpd, pattern = '#*'), comparison
 ```
 
 ## Sentiment analysis of the twitter data
+
+##### *📖 go to slides*
 
 The aim of sentiment analysis is to determine the polarity of a text (i.e., whether the emotions expressed in it are rather positive or negative). This is often done by word lists and by counting terms that were previously assigned to the categories *positive* or *negative* (sometimes a third category is included; *neutral,* and sometimes words can also be assigned a sentiment strength). In some lexicons, words may also be assigned to emotions like joy, anger, sadness, and so forth.
 
@@ -333,21 +351,7 @@ ggplot(data = plot_dat, aes(x=sentiment_types, y=proportions, fill=doc_id)) +
 
 ## Case Study: Using supervised machine learning to build a text classifier
 
-**Aim:** create a automatic/semiautomatic classification system that could code (label) the free-text answers into one of the existing coded categories.
-
-**Process:**
-
-1.  Create the corpus (In the data provided I have done the cleaning/pre-processing of the free-text field already)
-
-2.  Build the DFM
-
-3.  Split the data into a training and a testing dataset
-
-4.  Apply a linear SVM classifier model to classify and predict (can use other models if needed)
-
-5.  Assess the accuracy/precision of our model
-
-6.  Use the model to 'label' the new data
+##### *📖 go to slides*
 
 ```{r load_extra_packages}
 #load the text mining, ML classification packages
