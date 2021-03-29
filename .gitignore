@@ -4,7 +4,7 @@ TextMining_RScripts/Prelim/
 Images/
 
 ## Prelim data files
-TextMining_RScripts/Original_Data/
+#TextMining_RScripts/Original_Data/*
 
 ## Windows
 
