@@ -29,8 +29,8 @@ list.files(here('Working_Data/import_data_types/'))
 #..with docvars taken from file paths (file paths must be same length)
 extracted_texts<- readtext(here('Working_Data/import_data_types/*'), docvarsfrom = "filepaths", dvsep = "/")
 print(extracted_texts)
-print(extracted_texts[1], n = 12)
-print(extracted_texts$text[1:2])
+print(extracted_texts$text[1])
+print(extracted_texts$text[2])
 
 #Docvars from file names (File names need to be standardised across list - same num/type separator)
 extracted_texts <- readtext(here('Working_Data/import_data_types/Mindy*'), 
@@ -59,52 +59,56 @@ Here we will use a data set of \~7,000 tweets with the subject "covid19" (obtain
 -   perform a sentiment analysis on the content of the tweets
 
 ```{r load_tweet_data, message = FALSE}
-
 #Load the data
 covid_data<-read_tsv(here('Working_Data/covid19_tweets.tsv'))
+summary(covid_data)
+covid_data$text[1:4]
+```
 
-#Clean the dataset
+##### *📖 go to slides - Regular Expressions*
+
+```{r clean_tweet_data, message = FALSE}
+#Clean the dataset - string manipulation to preprocess the data
 covid_data_clean <- covid_data %>% 
-  #Remove @mentions
+  #Replace @mentions
   mutate(text_clean = str_replace_all(text, '@\\S+', ' ')) %>%
-  #Remove URLs
+  #Replace URLs
   mutate(text_clean = str_replace_all(text_clean, 'http\\S+', ' ')) %>%  
-  #trim new line indicators and retweet indicators
+  #Replace new line indicators and re-tweet indicators
   mutate(text_clean = str_replace_all(text_clean, '\\n|\\r', ' ')) %>%
   #Replace ampersand indicators
   mutate(text_clean = str_replace_all(text_clean, '&amp', 'and')) %>%
-  #Remove unicode character indicators <U+0001F449> (used in place of emojis)
+  #Replace unicode character indicators <U+0001F449> (e.g. used for emojis)
   mutate(text_clean = str_replace_all(text_clean, '<U.*>', ' ')) %>%
-  #trim leading/tailing whitespace
+  #trim leading/tailing white space characters
   mutate(text_clean = trimws(text_clean, which = 'both')) %>%     
-  #Format date to ymd
-  mutate(tweet_date = as.Date(lubridate::ymd_hms(created_at))) %>% 
   #Add day of week variable
   mutate(week_day = lubridate::wday(ymd_hms(created_at), label = T)) %>%
   #Add UK vs US location variable
   mutate(location_US_UK = ifelse(str_detect(location, regex("uk|britain|england|scotland|wales", ignore_case = T)), "UK", 
                                  ifelse(str_detect(location, regex("us|usa|america*", ignore_case = T)), "US", NA))) %>%
   select (-text, -created_at)
+
+covid_data_clean$text_clean[1:4]
 ```
 
-##### *📖 go to slides*
+##### *📖 go to slides - Build the Corpus*
 
 ## STEP 2: From data to corpus
 
 ```{r build_corpus}
-
 #Create your corpus
 covid_corpus<-corpus(covid_data_clean, text_field = 'text_clean')
+covid_corpus
 head(docvars(covid_corpus))
 
 #Inspecting the corpus
 texts(covid_corpus)[2]
-#This is what the original tweet (prior to string manipulation) looked like
-covid_data$text[2]
-summary(covid_corpus, n = 5)
 
-#Can save and plot from this (but only summary of first 'n' texts)
-corp_summary <- summary(covid_corpus, n = 50)
+#Can get and save a summary of the first n records
+(corp_summary <- summary(covid_corpus, n = 50))
+
+#plot from this (but only summary of first 'n' texts)
 ggplot(data = corp_summary, aes(x = log(followers_count), y = Tokens, group = 1)) + geom_line() + geom_point()  + theme_bw()
 ```
 
@@ -146,8 +150,8 @@ You can remove tokens that you are not interested in using `tokens_select()`. Us
 #Get Tokens
 
 #Describe a bit how tokens are interpreted
-txt <- c(text1 = 'This is $10 in 999 different ways,\n up and down; left and #right!', 
-         text2 = '@shellstar working: @ something on #Rtexttutorial 2day\t4ever !')#
+(txt <- c(text1 = 'This is $10 in 999 different ways,\n up and down; left and #right!', 
+         text2 = '@shellstar working: @ something on #Rtexttutorial 2day\t4ever !'))
 (tokens<-tokens(txt))
 (tokens<-tokens(txt, remove_punct = TRUE, remove_symbols = T, remove_numbers = T))
 ntoken(tokens)
@@ -170,25 +174,27 @@ head(covid_toks_vaccination <- tokens_select(covid_toks, pattern = c("vaccin*", 
 tokens_ngrams(covid_toks, n = 2) #options to change concatenator, and skip distance
 ```
 
-To preserve [multiword expressions]{.ul} (which you may want to do in a bag-of-words type analysis), you have to compound them using `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`.
+It is possible to create multi-word tokens (ngrams). One way is via the function `tokens_ngrams(covid_toks, n = 2)`. Another is using the function `tokens_compound()`. For example, `tokens_compound(covid_toks, pattern = phrase(c('Boris Johnson','hospital admission*')))`.
 
 You can discover multiword expressions in your tokens using `textstat_collocations()`. This kind of thing is also useful if you want to create ngrams - particularly useful for looking for negative bigrams: `toks_neg_bigram<-tokens_compound(toks, pattern = phrase("not *"))` and then once you've found them you can select them from your corpus: `toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("not_*"))`
 
-##### *📖 go to slides*
+##### *📖  go to slides*
 
 ## STEP 4: Build the dfm (document feature matrix)
 
 The function `dfm()` constructs a document-feature matrix (DFM) [from a tokens object or a corpus object]{.ul} (in which case the tokenisation occurs internally). `topfeatures()` will list the features (terms/tokens) in descending order. `textstat_frequency()` shows both term and document frequencies. You can also use the function to find the most frequent features within groups.
 
 ```{r get_dfm}
-#So we have our tokens - we now build the dfm
-#covid_toks <- tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
+#So we have our tokens 
+covid_toks <- tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
+#- we now build the dfm
 dfm(covid_toks)
 
 #Remove stopwords and bespoke list of non-informative words
 my_stopwords<-c('covid*', 'corona*', '#covid*', '#corona*', '#sars*')
 
 dfmat_covidtweets <- dfm(covid_toks, tolower = FALSE, remove = c(stopwords(), my_stopwords, stem = FALSE))
+
 #Can build this straight from the corpus without first generating tokens
 #dfmat_covidtweets <- dfm(covid_corpus, tolower = FALSE, remove = c(stopwords(), my_stopwords, stem = FALSE))
 
