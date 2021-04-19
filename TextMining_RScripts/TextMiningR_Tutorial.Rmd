@@ -161,7 +161,6 @@ You can remove tokens that you are not interested in using `tokens_select()`. Us
 (tokens<-tokens(txt))
 (tokens<-tokens(txt, remove_punct = TRUE, remove_symbols = T, remove_numbers = T))
 ntoken(tokens)
-ntype(tokens)
 
 #----------------------------------------
 #Get tokens from covid_tweets data
@@ -191,7 +190,7 @@ You can discover multiword expressions in your tokens using `textstat_collocatio
 The function `dfm()` constructs a document-feature matrix (DFM) [from a tokens object or a corpus object]{.ul} (in which case the tokenisation occurs internally). `topfeatures()` will list the features (terms/tokens) in descending order. `textstat_frequency()` shows both term and document frequencies. You can also use the function to find the most frequent features within groups.
 
 ```{r get_dfm}
-#So we have our tokens 
+#So let's get our tokens again -- 
 covid_toks <- tokens(covid_corpus, remove_punct = TRUE, remove_symbols = T, remove_numbers = T)
 #- we now build the dfm
 dfm(covid_toks)
@@ -199,12 +198,11 @@ dfm(covid_toks)
 #Remove stopwords and bespoke list of non-informative words
 my_stopwords<-c('covid*', 'corona*', '#covid*', '#corona*', '#sars*')
 
-dfmat_covidtweets <- dfm(covid_toks, tolower = TRUE, remove = c(stopwords(), my_stopwords), stem = FALSE)
+(dfmat_covidtweets <- dfm(covid_toks, tolower = TRUE, remove = c(stopwords("english"), my_stopwords)))
 
 #Can build this straight from the corpus without first generating tokens
-#dfmat_covidtweets <- dfm(covid_corpus, tolower = FALSE, remove = c(stopwords(), my_stopwords, stem = FALSE))
+#dfmat_covidtweets <- dfm(covid_corpus, tolower = FALSE, remove = c(stopwords("english"), my_stopwords))
 
-dfmat_covidtweets
 docvars(dfmat_covidtweets)
   ndoc(dfmat_covidtweets)
   nfeat(dfmat_covidtweets)
@@ -212,12 +210,11 @@ docvars(dfmat_covidtweets)
   head(featnames(dfmat_covidtweets))
   head(rowSums(dfmat_covidtweets), 10)
   head(colSums(dfmat_covidtweets), 10)
+  sparsity(dfmat_covidtweets)
 
-topfeatures(dfmat_covidtweets, 10)
+topfeatures(dfmat_covidtweets, 1000)
 
-#For analysis purposes it is often a really good idea to remove very sparse terms from the dfm
-sparsity(dfmat_covidtweets)
-nfeat(dfmat_covidtweets)
+#For analysis purposes it is often a very good idea to remove very sparse terms from the dfm
 (dfmat_covidtweets<-dfmat_covidtweets %>% 
                     dfm_trim(min_termfreq = 10, verbose = FALSE))
 ```
@@ -309,10 +306,10 @@ library(quanteda.sentiment)
 
 #Dictionary based sentiment analysis
 lengths(data_dictionary_LSD2015)
-print(data_dictionary_LSD2015, max_nval = 20)
+print(data_dictionary_LSD2015, max_nval = 10)
 
 #Can also make and use your own bespoke dictionary
-my_dictionary <- dictionary(list(pos = c("happiness", "joy", "light"), neg = c("sadness", "anger", "darkness")))
+#my_dictionary <- dictionary(list(pos = c("happiness", "joy", "light"), neg = c("sadness", "anger", "darkness")))
 
 #Set the polarity categories we wish to use
 my_polarity <- list(pos = c("positive", "neg_negative"), neg = c("negative", "neg_positive"))
@@ -332,7 +329,7 @@ covid_toks[1:2]
 tokens_lookup(covid_toks, data_dictionary_LSD2015, nested_scope = "dictionary", exclusive = FALSE)[1:2]
 #--------------
 
-#Create data for plotting
+#Create data for plotting - Sentiment by week-day and location
 sentiment_dat<- cbind(sentiment, docvars(covid_corpus)) %>%
   filter(!is.na(location_US_UK)) %>% 
   mutate(week_day = fct_relevel(week_day, 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')) %>% 
@@ -410,10 +407,9 @@ dfm
 #remove low freq words and terms only found in a few documents
 dfm_nolowfreqs <-dfm_trim(dfm, min_termfreq = 5, min_docfreq = 3)
 dfm_nolowfreqs
-  dim(dfm_nolowfreqs)
-  topfeatures(dfm_nolowfreqs, 20)
-  head(featnames(dfm_nolowfreqs), 20) 
-  sparsity(dfm_nolowfreqs) 
+  #dim(dfm_nolowfreqs)
+  #topfeatures(dfm_nolowfreqs, 20)
+  #sparsity(dfm_nolowfreqs) 
 ```
 
 ```{r build_SVMmodels}
@@ -455,12 +451,13 @@ newdata_dfm <- dfm(newfields_corpus, verbose = T, remove_punct = T, remove_numbe
 
 #Predict new classes for the new fields
 newfields_predicted_label <- predict(svm_model, newdata = newdata_dfm, type = "class")
+newfields_predicted_label[1:10]
 
 #bind the classifications to the original data
 model_classified_newfields<-cbind(newfields_data, newfields_predicted_label) %>% 
           mutate(label = as.character(newfields_predicted_label)) %>% 
           left_join(labels_meanings, by = 'label') %>% 
-          select(-doc_id, -freetext_field_id, -newfields_predicted_label)
+          select(-doc_id, -newfields_predicted_label)
 model_classified_newfields
 ```
 
