@@ -1156,7 +1156,7 @@ doc_id	freetext_clean	label	meaning
 8660	 unwilling	101	Against participant wishes
 4481	 unwilling	101	Against participant wishes
 48807	. had stroke	407	Wheelchair user or unable to stand or sit
-51817		410	Recent surgery
+51817	had shoulder surgery	410	Recent surgery
 14503	needs replacing	200	Equipment unavailable or malfunction
 2507	 unwilling	101	Against participant wishes
 55999	cannot fixate eye	415	Other eye problem
@@ -2093,7 +2093,7 @@ doc_id	freetext_clean	label	meaning
 65631	requested to omit measure due to number of  waiting	419	Lack of time or staffing shortage
 1803	. refused.	101	Against participant wishes
 50901	wheelchair user	407	Wheelchair user or unable to stand or sit
-2101	 	101	Against participant wishes
+2101	unwilling 	101	Against participant wishes
 59713	did not want to due to watery and itchy eye condition made worse by wind	415	Other eye problem
 16376	power cut	200	Equipment unavailable or malfunction
 59228	mustangs (involuntary eye movement)	415	Other eye problem
@@ -10561,7 +10561,7 @@ doc_id	freetext_clean	label	meaning
 5925	 unwilling	101	Against participant wishes
 64473	cot not performed due to time issues ( authorized by d)	419	Lack of time or staffing shortage
 20148	tried  times, unable to take measurement	401	Physically unable or outside wt/ht specs
-2102	 	101	Against participant wishes
+2102	unwilling 	101	Against participant wishes
 20114	tried  times unable take measurement	401	Physically unable or outside wt/ht specs
 60372	pt cannot keep eye still enough	415	Other eye problem
 889	denied to remove turban.	417	Unsuitable clothing or false nails or varnish

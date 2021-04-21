@@ -4211,7 +4211,7 @@ doc_id	freetext_clean
 4210	recently had surgery on hand
 4211	recently had surgery on hand.
 4212	replacement joints in the fingers
-4213	NA
+4213	ppt unwilling
 4214	surgery to nose within  months
 4215	unable to do as operation on finger
 4216	() figures are very week
