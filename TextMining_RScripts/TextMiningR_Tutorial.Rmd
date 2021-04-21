@@ -379,7 +379,7 @@ library(quanteda.textmodels)
 library(caret)
 ```
 
-```{r prep_for_ML}
+```{r prep_for_ML, message=F}
 #*************************************************************
 # Read in data for building the ML model ====
 coded_freetext<-read_tsv(here('Working_Data/Supervised_ML/labelled_dataset.txt'))
@@ -396,23 +396,17 @@ dim(coded_freetext)
 # Create the corpus ====
 freetext_corpus<-corpus(coded_freetext, text_field = 'freetext_clean')
 #see bits of the corpus:
-texts(freetext_corpus)[9:11]
+#texts(freetext_corpus)[9:11]
 
 #*************************************************************
 # Build the Document Feature Matrix ====
-dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T,
-                           remove = stopwords('english')) 
-dfm
+dfm <- dfm(freetext_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T, remove = stopwords('english')) 
 
 #remove low freq words and terms only found in a few documents
-dfm_nolowfreqs <-dfm_trim(dfm, min_termfreq = 5, min_docfreq = 3)
-dfm_nolowfreqs
-  #dim(dfm_nolowfreqs)
-  #topfeatures(dfm_nolowfreqs, 20)
-  #sparsity(dfm_nolowfreqs) 
+(dfm_nolowfreqs <-dfm_trim(dfm, min_termfreq = 5, min_docfreq = 3))
 ```
 
-```{r build_SVMmodels}
+```{r build_SVMmodels, message=F}
 #*************************************************************
 #Split the data into training and testing datasets 
 # -- 60% will become our training data set / 40% for our testing data set 
@@ -427,15 +421,19 @@ svm_model <- textmodel_svm(training_data, training_data$label)
 #Get the predictions (force = T means to only use features that exist in the both training and prediction dfms)
 svm_predicted_class <- predict(svm_model, newdata = testing_data, type = "class", force = T)
 head(svm_predicted_class)
+
+#Extract the actual classifications
 svm_actual_class <- testing_data$label
+
+#Build the confusion matrix
 (svm_tab_class <- table(svm_predicted_class, svm_actual_class))
 sum(diag(svm_tab_class))/dim(testing_data)[1]
 
-#Look at accuracy etc (from caret package)
+#Look at accuracy in more detail (from caret package)
 confusionMatrix(svm_tab_class, mode = "everything")
 ```
 
-```{r apply_SVMclassifier}
+```{r apply_SVMclassifier, message=F}
 #***********************************************************************
 # APPLY SVM model to predict classes of new freetext data fields ====
 
@@ -445,8 +443,8 @@ head(newfields_data)
 
 #create the corpus
 newfields_corpus<-corpus(newfields_data, text_field = 'freetext_clean') 
-newdata_dfm <- dfm(newfields_corpus, verbose = T, remove_punct = T, remove_numbers = T, remove_symbols = T, stem = T, 
-                            remove = c(stopwords('english'))) %>% 
+newdata_dfm <- dfm(newfields_corpus, verbose = T, remove_punct = T, remove_numbers = T,   
+                   remove_symbols = T, stem = T, remove = c(stopwords('english'))) %>%  
                dfm_trim(min_termfreq = 5, min_docfreq = 3)
 
 #Predict new classes for the new fields
