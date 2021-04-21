@@ -28,3 +28,7 @@ sessionInfo()
 #[1] compiler_4.0.3    htmltools_0.5.1.1 tools_4.0.3       yaml_2.2.1       
 #[5] rmarkdown_2.7     knitr_1.31        xfun_0.22         digest_0.6.27    
 #[9] rlang_0.4.10      renv_0.13.1       evaluate_0.14
+
+
+#To remove renv from a project use
+renv::deactivate()
