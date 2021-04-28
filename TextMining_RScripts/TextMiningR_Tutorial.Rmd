@@ -13,6 +13,9 @@ library(tidyverse)
 library(lubridate)
 library(readtext)
 library(quanteda)
+library(quanteda.textmodels)
+library(quanteda.textstats)
+library(quanteda.textplots)
 ```
 
 ## STEP 1: Importing text data: package(readtext)
@@ -85,6 +88,7 @@ covid_data_clean <- covid_data %>%
   #Add UK vs US location variable
   mutate(location_US_UK = ifelse(str_detect(location, regex("uk|britain|england|scotland|wales", ignore_case = T)), "UK", 
                                  ifelse(str_detect(location, regex("us|usa|america*", ignore_case = T)), "US", NA))) %>%
+  mutate(location_US_UK = replace_na(location_US_UK,"Other"))%>%
   select (-text, -created_at)
 
 covid_data_clean$text_clean[1:4]
@@ -269,13 +273,13 @@ textplot_wordcloud(dfmat_covidtweets_stem, max_words = 100)
 #----------------------
 #Look at grouping variables 
 #----------------------
-dfmat_covidtweets_gpd<-dfm_group(dfmat_covidtweets_stem, groups = 'location_US_UK')
+dfmat_covidtweets_gpd<-dfm_group(dfmat_covidtweets_stem, groups = location_US_UK)
 
 ##It is possible to change the "weighting" of values in the dfm -- e.g.
 ##dfmat_covidtweets_gpd<-dfm_weight(dfmat_covidtweets_gpd, scheme = 'prop')
 
 #Plot group differences
-gpd_diffs<- dfmat_covidtweets_gpd %>% textstat_frequency(n = 30, groups = 'location_US_UK')
+gpd_diffs<- dfmat_covidtweets_gpd %>% textstat_frequency(n = 30, groups = location_US_UK)
 
 ggplot(data = gpd_diffs, aes(x = factor(nrow(gpd_diffs):1), y = frequency)) +
     geom_point() +
@@ -351,7 +355,7 @@ print(data_dictionary_NRC, max_nval = 10)
 
 #Alternative Method - use function tokens_lookup to assign sentiment to tokens
 covidtweets_new_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_NRC )
-dfmat_sentiment_gpd <- dfm(covidtweets_new_lsd) %>% dfm_group(c('location_US_UK'))
+dfmat_sentiment_gpd <- dfm(covidtweets_new_lsd) %>% dfm_group(groups=location_US_UK)
 dfmat_sentiment_gpd
 
 #But I know my dataset has many more tweets from the UK than from the US - so need to weight the counts!
