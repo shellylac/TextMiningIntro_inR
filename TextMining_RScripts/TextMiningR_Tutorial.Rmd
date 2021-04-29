@@ -13,9 +13,9 @@ library(tidyverse)
 library(lubridate)
 library(readtext)
 library(quanteda)
-library(quanteda.textmodels)
 library(quanteda.textstats)
 library(quanteda.textplots)
+library(quanteda.sentiment)
 ```
 
 ## STEP 1: Importing text data: package(readtext)
@@ -273,13 +273,15 @@ textplot_wordcloud(dfmat_covidtweets_stem, max_words = 100)
 #----------------------
 #Look at grouping variables 
 #----------------------
-dfmat_covidtweets_gpd<-dfm_group(dfmat_covidtweets_stem, groups = location_US_UK)
+dfmat_covidtweets_gpd<-dfm_group(dfmat_covidtweets_stem, groups = 'location_US_UK') %>% 
+            dfm_subset(!location_US_UK == "Other")
 
 ##It is possible to change the "weighting" of values in the dfm -- e.g.
 ##dfmat_covidtweets_gpd<-dfm_weight(dfmat_covidtweets_gpd, scheme = 'prop')
 
 #Plot group differences
-gpd_diffs<- dfmat_covidtweets_gpd %>% textstat_frequency(n = 30, groups = location_US_UK)
+gpd_diffs<- dfmat_covidtweets_gpd %>% 
+            textstat_frequency(n = 30, groups = location_US_UK)
 
 ggplot(data = gpd_diffs, aes(x = factor(nrow(gpd_diffs):1), y = frequency)) +
     geom_point() +
@@ -306,7 +308,6 @@ The aim of sentiment analysis is to determine the polarity of a text (i.e., whet
 So basically a dictionary ('sentiment/topic dictionary') is used to group a number of individual terms into a 'sentiment' category, then the content of the whole text is calculated as the sum of the sentiment content of the individual words. (This isn't the only way to approach sentiment analysis, but it is an often-used approach). The quanteda package provides access to four general-purpose sentiment dictionaries (for English). All of these lexicons are based on unigrams (i.e., single words), and some bigrams.
 
 ```{r sentiment_analysis, message=F}
-library(quanteda.sentiment)
 
 #Dictionary based sentiment analysis
 lengths(data_dictionary_LSD2015)
@@ -355,7 +356,8 @@ print(data_dictionary_NRC, max_nval = 10)
 
 #Alternative Method - use function tokens_lookup to assign sentiment to tokens
 covidtweets_new_lsd <- tokens_lookup(covid_toks, dictionary = data_dictionary_NRC )
-dfmat_sentiment_gpd <- dfm(covidtweets_new_lsd) %>% dfm_group(groups=location_US_UK)
+dfmat_sentiment_gpd <- dfm(covidtweets_new_lsd) %>% dfm_group(groups='location_US_UK') %>% 
+            dfm_subset(!location_US_UK == "Other")
 dfmat_sentiment_gpd
 
 #But I know my dataset has many more tweets from the UK than from the US - so need to weight the counts!
